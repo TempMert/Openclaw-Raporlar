@@ -1,0 +1,19 @@
+# Sensitive files
+credentials.json
+token.json
+gogcli/
+.openclaw/media/inbound/
+*.mp3
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
