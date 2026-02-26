@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretty Little Pets — Mini Brick Koleksiyonu</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- POPUP KAMPANYA -->
+  <div class="popup-banner" id="popupBanner">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <span class="popup-emoji">🎁</span>
+    <h4>Hoşgeldin İndirimi!</h4>
+    <p>İlk alışverişine özel <strong>%10 indirim!</strong> Fırsatı kaçırma.</p>
+    <a href="#products" class="popup-cta" onclick="closePopup()">Hemen Keşfet →</a>
+  </div>
+
+  <!-- ANN BAR -->
+  <div class="ann-bar">
+    ✨ <span class="hl">Tüm siparişlerde ücretsiz kargo</span> &nbsp;·&nbsp; Güvenli ödeme 🔒 &nbsp;·&nbsp; 14 gün
+    koşulsuz iade ↩️
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo" onclick="window.scrollTo(0,0)">
+      <div class="logo-icon"></div>
+      Pretty Little Pets
+    </div>
+    <ul class="nav-links">
+      <li><a href="#products">Ürünler</a></li>
+      <li><a href="#features">Güvencemiz</a></li>
+      <li><a href="#reviews">Yorumlar</a></li>
+      <li><a href="#contact">İletişim</a></li>
+    </ul>
+    <div class="nav-right" id="navRight">
+      <button class="nbtn nbtn-ghost" onclick="openModal('login')">Giriş Yap</button>
+      <button class="nbtn nbtn-fill" onclick="openModal('register')">Kayıt Ol</button>
+      <button class="cart-nbtn" onclick="toggleCart()">🛒 Sepet <span class="cart-badge"
+          id="cartCount">0</span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">🧱 Yeni Koleksiyon 2026</div>
+      <h1>Sevimli Mini<br><span class="c1">Brick</span> <span class="c2">Dünyası</span></h1>
+      <p>Sanrio'dan Disney'e, SpongeBob'dan Sailor Moon'a — sevdiğin karakterleri küçük brick figürlere dönüştür. Özenle
+        hazırlanmış, kaliteli, sevimli.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-main">Koleksiyonu Keşfet 🛍️</a>
+        <a href="#contact" class="btn-sec">Bize Ulaşın</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-pill"><span>🔒</span><span>Güvenli Ödeme</span></div>
+        <div class="trust-pill"><span>🚚</span><span>Ücretsiz Kargo</span></div>
+        <div class="trust-pill"><span>↩️</span><span>14 Gün İade</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="brick-stage">
+        <div class="bp f1">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="bp f2">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="bp f3">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="bp f4">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="bp f5">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="bp f6">
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+          <div class="bs"></div>
+        </div>
+        <div class="hero-card">
+          <img class="hce"
+            src="https://cdn.myikas.com/images/8056384c-a086-458c-a400-f7587740fcdf/889fad65-2f6e-4813-9c4c-5d18305e108d/image_720.webp"
+            alt="My Melody" style="width:70px;height:70px;object-fit:cover;border-radius:10px;margin:0 auto 10px;">
+          <div class="hcn">My Melody Mini Brick</div>
+          <div class="hcp">₺299.99 <span class="hco">₺489</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-val">23</span>
+      <div class="stat-label">Farklı Ürün</div>
+    </div>
+    <div class="stat-item"><span class="stat-val">%50</span>
+      <div class="stat-label">Kadar İndirim</div>
+    </div>
+    <div class="stat-item"><span class="stat-val">14 Gün</span>
+      <div class="stat-label">Koşulsuz İade</div>
+    </div>
+    <div class="stat-item"><span class="stat-val">%100</span>
+      <div class="stat-label">Güvenli Ödeme</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="sec" id="products">
+    <div class="sec-tag">🧸 Koleksiyon</div>
+    <h2 class="sec-title">Tüm Ürünler</h2>
+    <p class="sec-sub">Sevdiğin karakteri bul, sepete ekle!</p>
+    <div class="filters">
+      <button class="filter-pill active" onclick="fp('all',this)">Tümü (23)</button>
+      <button class="filter-pill" onclick="fp('sanrio',this)">🎀 Sanrio</button>
+      <button class="filter-pill" onclick="fp('disney',this)">🏰 Disney</button>
+      <button class="filter-pill" onclick="fp('spongebob',this)">🧽 SpongeBob</button>
+      <button class="filter-pill" onclick="fp('anime',this)">🌙 Anime</button>
+      <button class="filter-pill" onclick="fp('flying',this)">🐾 Flying Cats &amp; Dogs</button>
+      <button class="filter-pill" onclick="fp('bundle',this)">🎁 Bundle Setler</button>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="sec" id="features" style="padding-top:0">
+    <div class="sec-tag">⭐ Neden Biz?</div>
+    <h2 class="sec-title">Alışveriş Güvencen</h2>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🚚</div>
+        <h3>Ücretsiz Kargo</h3>
+        <p>Tüm siparişlerde kargo bedava. Sipariş ver, kapında beklesin.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔒</div>
+        <h3>Güvenli Ödeme</h3>
+        <p>256-bit SSL şifrelemesiyle korunan altyapı. Visa, Mastercard ve Maestro kabul edilir.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">↩️</div>
+        <h3>14 Gün İade</h3>
+        <p>Ürün beklentini karşılamazsa 14 gün içinde koşulsuz iade hakkın var.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💬</div>
+        <h3>WhatsApp Destek</h3>
+        <p>+90 538 706 81 51 numaralı hattımızdan hızlı destek alabilirsin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec sec-bg" id="reviews">
+    <div class="sec-tag">💬 Yorumlar</div>
+    <h2 class="sec-title">Müşterilerimiz Ne Diyor?</h2>
+    <div class="reviews-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">Spongebob ve Patrick figürlerini aldım kızım için, çok tatlılar ve detaylı yüzeyleri var.
+          Kalitesine hayran kaldım, fiyatını sonuna kadar hak ediyor. Kargolama epey hızlıydı.</div>
+        <div class="rev-user">
+          <div class="rev-avatar">👩🏼</div>
+          <div>
+            <div class="rev-name">Ayşe Y.</div>
+            <div class="rev-loc">Bursa · 3 gün önce</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">Cinnamoroll brick efsane güzel bir süs. Koleksiyon yapmak isteyenler için harika bir
+          parça, boyutu da oldukça iyi. Sanırım diğer Sanrio karakterlerini de toplayacağım :)</div>
+        <div class="rev-user">
+          <div class="rev-avatar">🧑🏻</div>
+          <div>
+            <div class="rev-name">Can T.</div>
+            <div class="rev-loc">Antalya · 1 hafta önce</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">Mickey Mouse serisini aldık eşimle birlikte, parçaların birbirine tam oturması harika bir
+          detay olmuş. Bu markadan aldığım diğer ürünler gibi bu da yüzümü güldürdü.</div>
+        <div class="rev-user">
+          <div class="rev-avatar">👨🏻</div>
+          <div>
+            <div class="rev-name">Kerem L.</div>
+            <div class="rev-loc">Ankara · 2 hafta önce</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="sec-tag">📬 İletişim</div>
+    <h2 class="sec-title">Bize Ulaşın</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Sormak istediğin bir şey mi var?</h3>
+        <p>Görüş, öneri ya da sorularınız için her zaman buradayız. En kısa sürede geri döneceğiz.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://wa.me/905387068151" target="_blank">
+            <div class="cl-icon">💬</div>
+            <div>
+              <div class="cl-text">+90 538 706 81 51</div>
+              <div class="cl-label">WhatsApp Destek Hattı</div>
+            </div>
+          </a>
+          <div class="contact-link" style="cursor:default;opacity:0.55">
+            <div class="cl-icon">📸</div>
+            <div>
+              <div class="cl-text">Instagram</div>
+              <div class="cl-label">Yakında duyurulacak</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label>Ad</label><input type="text" id="cName" placeholder="Adınız"></div>
+          <div class="form-group"><label>Soyad</label><input type="text" id="cSurname" placeholder="Soyadınız"></div>
+        </div>
+        <div class="form-group"><label>E-posta</label><input type="email" id="cEmail" placeholder="ornek@email.com">
+        </div>
+        <div class="form-group"><label>Mesaj</label><textarea id="cMsg" rows="5"
+            placeholder="Mesajınızı yazın..."></textarea></div>
+        <button class="btn-main" style="width:100%;border-radius:12px;padding:14px;margin-top:4px"
+          onclick="submitContact()">Gönder 📨</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Pretty Little Pets</span>
+        <p>Sevimli mini brick figürlerin en güvenilir adresi. Orijinal, kaliteli, hızlı teslimat.</p>
+        <div class="social-row">
+          <div class="social-btn" onclick="showToast('Instagram yakında! 📸')">📸</div>
+          <div class="social-btn">📘</div>
+          <div class="social-btn">🐦</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Koleksiyon</h4>
+        <ul>
+          <li onclick="filterAndScroll('sanrio')">Sanrio Serisi</li>
+          <li onclick="filterAndScroll('disney')">Disney Serisi</li>
+          <li onclick="filterAndScroll('spongebob')">SpongeBob Serisi</li>
+          <li onclick="filterAndScroll('anime')">Anime Serisi</li>
+          <li onclick="filterAndScroll('flying')">Flying Cats &amp; Dogs</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Politikalar</h4>
+        <ul>
+          <li>Gizlilik Politikası</li>
+          <li>Hizmet Koşulları</li>
+          <li>İade Politikası</li>
+          <li>KVKK Aydınlatma</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hesabım</h4>
+        <ul>
+          <li onclick="openModal('login')">Giriş Yap</li>
+          <li onclick="openModal('register')">Kayıt Ol</li>
+          <li onclick="openModal('forgot')">Şifremi Unuttum</li>
+          <li onclick="openProfile()">Siparişlerim</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Pretty Little Pets. Tüm hakları saklıdır.</span>
+      <div class="pay-row">
+        <span class="pay-badge">VISA</span><span class="pay-badge">Mastercard</span><span
+          class="pay-badge">Maestro</span><span class="pay-badge">🔒 SSL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="panel-head">
+      <h3>🛒 Sepetim</h3><button class="close-btn" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot" id="cartFoot"></div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="cart-overlay" id="profileOverlay" onclick="toggleProfile()"></div>
+  <div class="profile-panel" id="profilePanel">
+    <div class="panel-head">
+      <h3>👤 Hesabım</h3><button class="close-btn" onclick="toggleProfile()">✕</button>
+    </div>
+    <div class="p-body" id="profileBody"></div>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="vLogin">
+        <span class="m-logo">Pretty Little Pets 🧱</span>
+        <div class="m-title">Tekrar Hoşgeldin!</div>
+        <div class="m-sub">Hesabına giriş yap, siparişlerini takip et.</div>
+        <div class="err-msg" id="errLogin"></div>
+        <div class="iw"><span class="ii">📧</span><input type="email" id="lEmail" placeholder="E-posta adresi"
+            onkeydown="if(event.key==='Enter')doLogin()"></div>
+        <div class="iw"><span class="ii">🔑</span><input type="password" id="lPass" placeholder="Şifre"
+            onkeydown="if(event.key==='Enter')doLogin()"></div>
+        <a class="forgot-link" onclick="showV('vForgot')">Şifremi unuttum</a>
+        <button class="m-btn" onclick="doLogin()">Giriş Yap →</button>
+        <div class="m-switch">Hesabın yok mu? <a onclick="showV('vReg')">Hemen kayıt ol</a></div>
+      </div>
+      <div id="vReg" style="display:none">
+        <span class="m-logo">Pretty Little Pets 🧱</span>
+        <div class="m-title">Hesap Oluştur ✨</div>
+        <div class="m-sub">Kayıt ol, siparişlerini kolayca yönet.</div>
+        <div class="err-msg" id="errReg"></div>
+        <div class="name-row">
+          <div class="iw" style="margin-bottom:12px"><span class="ii">👤</span><input type="text" id="rName"
+              placeholder="Adınız"></div>
+          <div class="iw" style="margin-bottom:12px"><span class="ii">👤</span><input type="text" id="rSurname"
+              placeholder="Soyadınız"></div>
+        </div>
+        <div class="iw"><span class="ii">📧</span><input type="email" id="rEmail" placeholder="E-posta adresi"></div>
+        <div class="iw" style="margin-bottom:4px"><span class="ii">🔑</span><input type="password" id="rPass"
+            placeholder="Şifre (en az 6 karakter)" oninput="pwdStrength(this.value)"
+            onkeydown="if(event.key==='Enter')doRegister()"></div>
+        <div class="pwd-bar-wrap">
+          <div class="pwd-bar" id="pwdBar"></div>
+        </div>
+        <div class="pwd-hint" id="pwdHint"></div>
+        <button class="m-btn" onclick="doRegister()">Kayıt Ol →</button>
+        <div class="m-switch">Zaten hesabın var mı? <a onclick="showV('vLogin')">Giriş yap</a></div>
+      </div>
+      <div id="vForgot" style="display:none">
+        <span class="m-logo">Pretty Little Pets 🧱</span>
+        <div class="m-title">Şifremi Unuttum 🔐</div>
+        <div class="m-sub">E-posta adresini gir, sıfırlama bağlantısını gönderelim.</div>
+        <div class="err-msg" id="errForgot"></div>
+        <div class="ok-msg" id="okForgot"></div>
+
+        <div id="forgotStep1">
+          <div class="iw"><span class="ii">📧</span><input type="email" id="fEmail" placeholder="E-posta adresin"
+              onkeydown="if(event.key==='Enter')doForgot()"></div>
+          <button class="m-btn" onclick="doForgot()">Sıfırlama Maili Gönder →</button>
+        </div>
+
+        <div id="forgotStep2" style="display:none; margin-top:20px;">
+          <div class="m-sub" style="margin-bottom:12px">Mailine gelen 6 haneli kodu ve yeni şifreni gir:</div>
+          <div class="iw"><span class="ii">🔢</span><input type="text" id="fCode" placeholder="6 Haneli Kod"
+              maxlength="6"></div>
+          <div class="iw"><span class="ii">🔑</span><input type="password" id="fNewPass"
+              placeholder="Yeni Şifren (en az 6 karakter)"></div>
+          <button class="m-btn" onclick="doResetPassword()">Şifreyi Yenile →</button>
+        </div>
+
+        <div class="m-switch"><a onclick="showV('vLogin')">← Giriş sayfasına dön</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL -->
+  <div class="modal-overlay" id="imageModal" onclick="if(event.target.id==='imageModal')closeImageModal()">
+    <div class="image-modal-box">
+      <button class="modal-close" onclick="closeImageModal()">✕</button>
+      <div class="image-modal-title" id="modalImageTitle"></div>
+      <img id="modalImageDisplay" src="" alt="">
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
