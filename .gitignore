@@ -1,9 +1,20 @@
-# Sensitive files
+# Sensitive files - DO NOT COMMIT
 credentials.json
 token.json
 gogcli/
 .openclaw/media/inbound/
 *.mp3
+
+# Personal/private workspace files
+AGENTS.md
+SOUL.md
+IDENTITY.md
+USER.md
+TOOLS.md
+memory/
+HEARTBEAT.md
+BOOTSTRAP.md
+.openclaw/workspace-state.json
 
 # OS
 .DS_Store
