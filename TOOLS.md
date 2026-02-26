@@ -56,6 +56,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ### Reminders
 
-- **2026-02-26 11:00** → Yeni Google Cloud projesi (notional-cirrus-488607-i6) ve client ID (1088750391678-punto3ake7m9s9pc5095dng19bobdqmg) ile gog auth setup. Mail adresi: **mertshp5@gmail.com**. Yetkilendirme kaldı.
+- **2026-02-26 15:50** → GitHub repo oluşturuldu: `Openclaw-in-Reposu`. Tüm workspace başarıyla push edildi.
+- **2026-02-26** → Gmail send eklemek için OAuth consent screen'e `gmail.send` scope'u eklendi, yeni credentials indirildi. Token alındı. Calendar testi başarılı. Drive/Sheets testi başarılı.
+
+Add whatever helps you do your job. This is your cheat sheet.
 
 Add whatever helps you do your job. This is your cheat sheet.
