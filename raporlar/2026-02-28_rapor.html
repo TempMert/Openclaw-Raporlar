@@ -23,7 +23,6 @@ h1 { margin:0; font-size:1.8em; color:var(--text); font-weight:700; }
 .category-card.open { border-color:var(--accent); background:var(--bg); }
 .articles { display:none; margin-top:16px; }
 .articles.open { display:block; }
-.category-card.open + .articles { display:block; }
 .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:16px; box-shadow:0 2px 6px var(--shadow); }
 .card h3 { margin:0 0 8px; font-size:1.15em; color:var(--text); line-height:1.3; }
 .card h3 a { color:var(--accent); text-decoration:none; word-break:break-word; overflow-wrap:anywhere; }
@@ -32,12 +31,10 @@ h1 { margin:0; font-size:1.8em; color:var(--text); font-weight:700; }
 .card .meta a { word-break:break-word; overflow-wrap:anywhere; }
 .card .summary { margin:12px 0; line-height:1.7; }
 .card .details { display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--border); }
-.card .open > .details { display:block; }
-.card .readmore { display:inline-block; margin-top:6px; color:var(--accent); font-weight:600; cursor:pointer; }
+.card.open > .details { display:block; }
 img.max-w { max-width:100%; height:auto; border-radius:8px; margin:8px 0; }
 .fav-btn { background:none; border:none; cursor:pointer; font-size:1.3em; opacity:0.6; }
 .fav-btn.active { opacity:1; color:#e53e3e; }
-.article-id { display:none; }
 footer { text-align:center; margin-top:40px; color:var(--muted); font-size:0.9em; }
 @media (max-width:600px) { .container { padding:12px; } h1 { font-size:1.5em; } .category-card { width:100%; } }
 </style>
@@ -53,7 +50,7 @@ footer { text-align:center; margin-top:40px; color:var(--muted); font-size:0.9em
 </header>
 <div class="hero">Son 7 gündeki en önemli AI haberlerinin Türkçe özetleri</div>
 
-<!-- Favori Paneli (başlangıta gizli) -->
+<!-- Favori Paneli -->
 <div id="fav-panel" style="display:none; margin-bottom:24px; padding:16px; background:var(--card); border:1px solid var(--border); border-radius:12px;">
 <h2 style="margin-top:0;">Beğendiğiniz Haberler</h2>
 <div id="fav-list"></div>
@@ -79,8 +76,7 @@ footer { text-align:center; margin-top:40px; color:var(--muted); font-size:0.9em
 </div>
 </div>
 
-<!-- Articles Container -->
-<div id="articles-container">
+<!-- Articles -->
 <div class="articles" id="articles-OpenClaw">
 <article class="card" data-id="a5370af2">
 <h3><a href="https://www.reddit.com/r/AISEOInsider/comments/1rb03t4/openclaw_2026219_update_just_made_ai_automation/" target="_blank">OpenClaw 2026.2.19 Update Just Made AI Automation Way ... - Reddit</a></h3>
@@ -1144,14 +1140,11 @@ Antigravity is not a bad idea to download, in case you would like to watch the w
 The other advantage is that it can have as many functions as possible at a central location. The Agent Manager displays every task that the AI is busy working on and the plans it develops, and any artifact it generates. The testing option is highly effective. It allows the AI to automate the process of clicking on a site instead of having to do it manually. It also captures a video of the interaction, which can later be useful in debugging. The tool pr</p></details>
 </article>
 </div>
-</div>
-
 <footer>
 Rapor otomatik oluşturuldu • OpenRouter AI (NVIDIA Nemotron) • GitHub Pages
 </footer>
 
 <script>
-// Theme toggle
 function toggleTheme() {
   const b = document.body;
   const t = b.getAttribute('data-theme');
@@ -1159,19 +1152,10 @@ function toggleTheme() {
   b.setAttribute('data-theme', n);
   localStorage.setItem('theme', n);
 }
-// Category accordion
 function toggleCategory(cat) {
-  const card = document.querySelector(`.category-card:has(+ #articles-${cat})`);
-  // Find the card that precedes the articles div
   const articles = document.getElementById('articles-' + cat);
-  if (articles) {
-    const catCard = articles.previousElementSibling;
-    if (catCard && catCard.classList.contains('category-card')) {
-      catCard.classList.toggle('open');
-    }
-  }
+  if (articles) articles.classList.toggle('open');
 }
-// Favorites
 function toggleFavorite(id) {
   const card = document.querySelector(`[data-id="${id}"]`);
   const btn = card.querySelector('.fav-btn');
@@ -1212,7 +1196,14 @@ function updateFavPanel() {
 // Init
 document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
 const favs = JSON.parse(localStorage.getItem('favorites') || '{}');
-Object.entries(favs).forEach(([id, on])=>{ const card=document.querySelector(`[data-id="${id}"]`); if(card){ const btn=card.querySelector('.fav-btn'); btn.textContent='❤️'; btn.classList.add('active'); }});
+Object.entries(favs).forEach(([id, on]) => {
+  const card = document.querySelector(`[data-id="${id}"]`);
+  if (card) {
+    const btn = card.querySelector('.fav-btn');
+    btn.textContent = '❤️';
+    btn.classList.add('active');
+  }
+});
 </script>
 </div>
 </body>
