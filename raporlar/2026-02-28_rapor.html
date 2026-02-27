@@ -22,7 +22,7 @@ h1 { margin:0; font-size:1.8em; color:var(--text); font-weight:700; }
 .category-card h3 { margin:0; font-size:1.1em; color:var(--accent); font-weight:600; }
 .category-card.open { border-color:var(--accent); background:var(--bg); }
 .articles { display:none; margin-top:16px; }
-.category-card.open > .articles { display:block; }
+.category-card.open + .articles { display:block; }
 .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:16px; box-shadow:0 2px 6px var(--shadow); }
 .card h3 { margin:0 0 8px; font-size:1.15em; color:var(--text); line-height:1.3; }
 .card h3 a { color:var(--accent); text-decoration:none; word-break:break-word; overflow-wrap:anywhere; }
@@ -81,104 +81,216 @@ footer { text-align:center; margin-top:40px; color:var(--muted); font-size:0.9em
 <!-- Articles Container -->
 <div id="articles-container">
 <div class="articles" id="articles-OpenClaw">
-<article class="card" data-id="e3446234">
-<h3><a href="https://www.cryptika.com/openclaw-releases-2026-2-23-released-with-security-updates-and-new-ai-features/" target="_blank">OpenClaw Releases 2026.2.23 Released With Security Updates ...</a></h3>
+<article class="card" data-id="a5370af2">
+<h3><a href="https://www.reddit.com/r/AISEOInsider/comments/1rb03t4/openclaw_2026219_update_just_made_ai_automation/" target="_blank">OpenClaw 2026.2.19 Update Just Made AI Automation Way ... - Reddit</a></h3>
 <div class="meta">
 <span>📅 2026-02-28</span>
-<button class="fav-btn" onclick="toggleFavorite('e3446234')">🤍</button>
+<button class="fav-btn" onclick="toggleFavorite('a5370af2')">🤍</button>
 </div>
-<p class="summary">![Cryptika Cyber Security Dubai, UAE, Riyad, KSA, Amman, Jordan - كريبتيكا, متخصصة في امن المعلومات والأمن السيبراني دبي الرياض الاردن](//www.cryptika.com/wp-content/uploads/2017/06/Cryptika-Cyber-Security-White-Logo.png)
+<p class="summary">**OpenClaw 2026.2.19 Güncellemesi, AI Otomasyonu Daha Pratik Hale Getirdi**
 
-# OpenClaw Releases 2026.2.23 Released With Security Updates and New AI features
+OpenClaw 2026.2.19 güncellemesi yayınlandı ve günlük otomasyon kullanımında fark yaratır bir fark yaratır. Güncelleme, gerçekten fark edilebilecek iyileştiler üzerine odaklanarak bütün sistemin akışkanlığını artırmıştır. Hızlı yanıtlar, daha temiz iş akışları ve daha stabil bir sistem gibi somut farklar hemen fark edilir.</p>
+<details class="details"><summary>Devamını oku</summary><p># OpenClaw 2026.2.19 Update Just Made AI Automation Way More Practical
 
-In [Cybersecurity News - Original News Source is cybersecuritynews.com](https://www.cryptika.com/category/cybersecurity-news-original-news-source-is-cybersecuritynews-com/ "View all posts in: “Cy...</p>
-<details class="details"><summary>Devamını oku</summary><p>![Cryptika Cyber Security Dubai, UAE, Riyad, KSA, Amman, Jordan - كريبتيكا, متخصصة في امن المعلومات والأمن السيبراني دبي الرياض الاردن](//www.cryptika.com/wp-content/uploads/2017/06/Cryptika-Cyber-Security-White-Logo.png)
+The OpenClaw 2026.2.19 Update dropped and it honestly makes a huge difference in how people use automation day to day.
 
-# OpenClaw Releases 2026.2.23 Released With Security Updates and New AI features
+Everything runs smoother because the upgrade focuses on real improvements you actually feel.
 
-In [Cybersecurity News - Original News Source is cybersecuritynews.com](https://www.cryptika.com/category/cybersecurity-news-original-news-source-is-cybersecuritynews-com/ "View all posts in: “Cybersecurity News - Original News Source is cybersecuritynews.com”") by Blog WriterFebruary 24, 2026
+You start noticing faster responses, cleaner workflows, and a more stable system right away.
 
-OpenClaw, the open-source personal AI assistant with over 215,000 GitHub stars, has released version 2026.2.23, emphasizing robust security hardening alongside advanced AI integrations.
+Watch the video below:
 
-This update addresses multiple vulnerabilities and introduces features like Claude Opus 4.6 support, making it a timely boost for privacy-focused users deploying AI gateways locally across macOS, Windows, and Linux.
+Want to make money and save time with AI? Get AI Coaching, Support & Courses 
+👉 
 
-A key highlight is the addition of optional HTTP security headers, including Strict-Transport-Security for direct HTTPS deployments, complete with validation, tests, and documentation to mitigate man-in-the-middle risks.
+# Apple Watch Support Makes the OpenClaw 2026.2.19 Update Way Easier to Use
 
-Developers also hardened session maintenance via “openclaw sessions cleanup,” introducing disk-budget controls and safer transcript handling to prevent storage overflows and data leaks.
+The OpenClaw 2026.2.19 Update finally brings Apple Watch support and it changes how quickly you can trigger tasks.
 
-Notably, a breaking change shifts the browser SSRF policy to “trusted-network” mode by default, requiring explicit configuration for private network users can migrate legacy settings with “openclaw doctor –fix.”
+You lift your wrist, check the screen, and your AI assistant is already waiting.
 
-Several fixes target configuration and execution risks. Sensitive dynamic keys like env.\* are now redacted in config snapshots, preserving restore behavior while blocking exposure.
+Small interactions that used to take multiple steps now take just seconds.
 
-Obfuscated commands trigger explicit approval before execution, and ACP client permissions demand trusted tool IDs with scoped read approvals to thwart unauthorized file access.
+People who already use their watch for reminders, notifications, or fitness tracking will feel this instantly.
 
-Skills packaging rejects symlink escapes and XSS-vulnerable prompts in image galleries, while OTEL diagnostics redact API keys from logs before export.
+Automation becomes something that blends into your movement instead of something you need to stop and interact with.
 
-These measures collectively fortify OpenClaw against prompt injection, SSRF, stored XSS, and credential leaks in production environments.
+Once tasks start launching from your watch, the whole system feels more immediate.
 
-| Security Fix | Description | Impact |
-| --- | --- | --- |
-| SSRF Policy | Defaults to trusted-network; migrates legacy allowPrivateNetwork | Prevents unauthorized internal requests |
-| Config Redaction | Hides env.\* and skills.env.\* in snapshots | Stops sensitive key exposure |
-| Exec Security | Detects/blocks obfuscated commands | Mitigates injection attacks |
-| Skills XSS | Escapes user inputs in HTML output | Blocks stored cross-site scripting |
-| OTEL Redaction | Scrubs keys from diagnostics | Protects telemetry in observability |
+The OpenClaw 2026.2.19 Update helps everyday users integrate automation into real life instead of keeping it behind a screen.
 
-## **AI Enhancements and Fixes**
+# Device Approval Tools Make the OpenClaw 2026.2.19 Update Safer for Everyone
 
-On the AI front, Providers gain first-class Kilo Gateway support with kilocode/anthropic/claude-opus-4.6 as default, including auth, onboar</p></details>
+Security gets a major upgrade in this release with the new device approval system.
+
+Every device must be approved before it can connect, which means nothing unexpected slips into your automation environment.
+
+This is a big deal because many people use automation to handle sensitive tasks like emails, calendars, or documents.
+
+When you see exactly which devices are connected, your setup becomes easier to trust.
+
+This also helps reduce random errors or weird behavior that comes from old devices staying connected longer than they should.
+
+You control what stays in and what gets removed.
+
+The OpenClaw 2026.2.19 Update turns device management into something simple and safe without adding complexity.
+
+# Improved Monitoring Helps the OpenClaw 2026.2.19 Update Run Smoother
+
+This update includes a full migration to OTEL v2, which improves how OpenClaw understands what it is doing behind the scenes.
+
+The system now tracks performance with more clarity, and that makes troubleshooting way easier.
+
+You get better information about what slowed down, why it slowed down, and how often things are happening.
+
+People who build longer workflows or chain multiple tasks together will feel the difference because issues become easier to identify.
+
+Even if you are not technical, smoother behavior is noticeable because fewer things break unexpectedly.
+
+The OpenClaw 2026.2.19 Update turns system visibility into something that helps every user, not just developers.
+
+# Dashboard Alerts Keep the OpenClaw 2026.2.19 Update Fresh and Stable
+
+One small but extremely useful addition in this update is the new dashboard alert system for updates.
+
+The p</p></details>
 </article>
-<article class="card" data-id="0c034d1f">
-<h3><a href="https://assindo.com/news/openai-bought-openclaw-what-it-means.html" target="_blank">OpenAI Bought OpenClaw: What It Means for AI Agent Users - Assindo</a></h3>
+<article class="card" data-id="8e32d04f">
+<h3><a href="https://x.com/The_Cyber_News/status/2026201154359607723" target="_blank">Cyber Security News</a></h3>
 <div class="meta">
 <span>📅 2026-02-28</span>
-<button class="fav-btn" onclick="toggleFavorite('0c034d1f')">🤍</button>
+<button class="fav-btn" onclick="toggleFavorite('8e32d04f')">🤍</button>
 </div>
-<p class="summary">[← Back to News](index.html) 22 Şubat 2026  
-
-# “OpenAI OpenClaw'ı Aldı: AI Aracı Kullanıcıları İçin Ne Anlama Geçiyor?”
-
-OpenClaw'ı otomatikleştirme amaçlı kullanıyorsanız, muhtemelen bu haberleri fark etmişsindiriz: OpenAI, OpenClaw'ı satın aldı ve yaratıcısı Peter Steinberger şirkete katıldı. 15 Şubat 2026’da duyurulan bu anlaşma, AI aracı topluluğunda büyük bir sarsıntıya yol açtı. OpenClaw, 145 000’den fazla GitHub yıldızı ve 20 000 forki ile tarih boyunca en hızlı büyüyen açık‑kaynak AI aracı haline gelmişti.</p>
-<details class="details"><summary>Devamını oku</summary><p>[← Back to News](index.html) February 22, 2026
-
-# "OpenAI Bought OpenClaw: What It Means for AI Agent Users"
-
-If you've been using OpenClaw to automate your workflows, you probably saw the news: OpenAI acquired OpenClaw, and its creator Peter Steinberger is joining the company. The deal, announced on February 15, 2026, sent shockwaves through the AI agent community. With over 145,000 GitHub stars and 20,000 forks, OpenClaw had become the fastest-growing open-source AI agent in history. Now it belongs to one of the biggest companies in tech.
-
-So what does this actually mean for you? Should you be worried about your workflows breaking, your data ending up in OpenAI's hands, or the project losing its open-source DNA? Let's break it down.
-
-## How OpenClaw Went from Side Project to OpenAI Acquisition
-
-To understand why the OpenAI OpenClaw deal matters, you need to understand just how fast this project grew. Peter Steinberger released OpenClaw in November 2025 as what he described as a "playground project." The AI agent combined capabilities that previously existed in isolation: tool access, sandboxed code execution, persistent memory, skills, and integrations with messaging platforms like Telegram, WhatsApp, and Discord.
-
-By December 2025, the project had caught fire with developers and "vibe coders" who loved its ability to orchestrate complex workflows. Reading from Google Sheets, composing emails, posting to Slack, scheduling calendar events - all in a single automated sequence. It was the AI assistant that could actually do things in the real world, not just generate text.
-
-By early February 2026, OpenClaw had collected over 145,000 GitHub stars, making it one of the most popular open-source projects of its era. But the growth came with problems. A comprehensive security audit found 512 vulnerabilities, including 8 classified as critical. Of the 3,000 skills uploaded to ClawHub, 336 were outright malicious - a 10.8% infection rate that security researchers called alarming.
-
-Then, on February 14, Steinberger announced the deal. The next day, Sam Altman confirmed it publicly: "Peter Steinberger is joining OpenAI to drive the next generation of personal agents... We expect this will quickly become core to our product offerings."
-
-## What the OpenAI OpenClaw Deal Actually Changes
-
-Here's what we know about the terms and what's happening next:
-
-**The project moves to a foundation.** OpenClaw will be transferred to an independent open-source foundation. OpenAI will sponsor the foundation and likely have significant influence over the project's direction, but it won't be an OpenAI-branded product.
-
-**Steinberger joins OpenAI full-time.** The creator and primary architect of OpenClaw will now be building AI agents at OpenAI. Whatever vision he had for the project's future will now be channeled into OpenAI's commercial products.
-
-**OpenAI gets the talent, not the code.** This is technically an acqui-hire, not a code acquisition. OpenAI is paying for Steinb</p></details>
+<p class="summary">OpenClaw, 215.000’den fazla yıldız topladığı açık‑kaynaklı kişisel bir yapay zeka asistanıdır ve 2026.2.23 sürümünü, güvenlikle donatılmış bir çerçevede yayınladı.</p>
+<div class="details"><p>OpenClaw, the open-source personal AI assistant with over 215,000 GitHub stars, has released version 2026.2.23, emphasizing robust security hardening alongside</p></div>
 </article>
-<article class="card" data-id="0c5fd041">
-<h3><a href="https://wetried.it/openclaw-review/?srsltid=AfmBOoqMWMV4ekMLAH43jmCxKYxwUudq2KPy-Cacd-2ZGTqt8h5e6uu1" target="_blank">OpenClaw Review: Always-On AI Agent (2026) - WeTried</a></h3>
+<article class="card" data-id="f67c35db">
+<h3><a href="https://www.linkedin.com/pulse/openclaw-2026219-update-builds-smarter-faster-more-ai-julian-goldie-gbslc" target="_blank">OpenClaw 2026.2.19 Update Builds a Smarter, Faster ... - LinkedIn</a></h3>
 <div class="meta">
 <span>📅 2026-02-28</span>
-<button class="fav-btn" onclick="toggleFavorite('0c5fd041')">🤍</button>
+<button class="fav-btn" onclick="toggleFavorite('f67c35db')">🤍</button>
 </div>
-<p class="summary"># OpenClaw Review: Bir AI Aracı Kendi Bilgisayarına Bağırdım — Ne Oldu?
+<p class="summary">**LinkedIn, gizliliğinizi saygıyla değerlendirir.**  
+LinkedIn ve üçüncü taraflar, temel ve temel olmayan çerezleri, hizmetlerin sunulmasını, güvenliğini, analizi ve iyileştirilmesini, (iOS uygulamasında değil) ise size ilişkin ilanları — profesyonel ve iş ilanları da dahil — hem LinkedIn’de hem de dışında göstermek amacıyla kullanır. Detaylı bilgi için [Çerez Politikası](https://www.linkedin.com/legal/cookie-policy) sayfasına göz atabilirsiniz.  
+**Kabul** seçeneğiyle izni veriyorsunuz; **Reddet** seçeneğiyle ise gereksiz çerezleri kapatabilirsiniz.</p>
+<details class="details"><summary>Devamını oku</summary><p>## LinkedIn respects your privacy
 
-![We Tried It](https://emg4897m6z5.exactdn.com/wp-content/uploads/2025/12/we-tried-it-logo-637.jpg)  
-![... placeholder ...]  
+LinkedIn and 3rd parties use essential and non-essential cookies to provide, secure, analyze and improve our Services, and (except on the iOS app) to show you relevant ads (including **professional and job ads**) on and off LinkedIn. Learn more in our [Cookie Policy](https://www.linkedin.com/legal/cookie-policy).
 
-![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2070'%3E%3C/svg%3E)</p>
+Select Accept to consent or Reject to decline non-essential cookies for this use. You can update your choices at any time in your [settings](https://www.linkedin.com/mypreferences/g/guest-cookies).
+
+Agree & Join LinkedIn
+
+By clicking Continue to join or sign in, you agree to LinkedIn’s [User Agreement](/legal/user-agreement?trk=linkedin-tc_auth-button_user-agreement), [Privacy Policy](/legal/privacy-policy?trk=linkedin-tc_auth-button_privacy-policy), and [Cookie Policy](/legal/cookie-policy?trk=linkedin-tc_auth-button_cookie-policy).
+
+![]()
+
+## Sign in to view more content
+
+Create your free account or sign in to continue your search
+
+or
+
+New to LinkedIn? [Join now](https://www.linkedin.com/signup/cold-join?session_redirect=%2Fpulse%2Fopenclaw-2026219-update-builds-smarter-faster-more-ai-julian-goldie-gbslc&trk=pulse-article_contextual-sign-in-modal_join-link)
+
+By clicking Continue to join or sign in, you agree to LinkedIn’s [User Agreement](/legal/user-agreement?trk=linkedin-tc_auth-button_user-agreement), [Privacy Policy](/legal/privacy-policy?trk=linkedin-tc_auth-button_privacy-policy), and [Cookie Policy](/legal/cookie-policy?trk=linkedin-tc_auth-button_cookie-policy).
+
+![OpenClaw 2026.2.19 Update Builds a Smarter, Faster, More Accessible AI Experience](https://media.licdn.com/dms/image/v2/D5612AQHXCW2x-mGHKA/article-cover_image-shrink_720_1280/B56ZyBrLXKGwAI-/0/1771702106326?e=2147483647&v=beta&t=dNxExMxeLHPctcId01oXX76WgE7_HRuCoY1pLmvUqQE)
+
+# OpenClaw 2026.2.19 Update Builds a Smarter, Faster, More Accessible AI Experience
+
+![Julian Goldie]()
+
+### Julian Goldie
+
+The OpenClaw 2026.2.19 Update introduces improvements that make automation easier, safer, and more practical for people in every situation.
+
+Everything feels more refined because the update strengthens stability, increases speed, and smooths out the everyday tasks people rely on.
+
+You notice meaningful results immediately as workflows become more consistent and actions begin with less friction.
+
+Watch the video below:
+
+Want to make money and save time with AI? Get AI Coaching, Support & Courses 👉 [https://www.skool.com/ai-profit-lab-7462/about](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fwww%2Eskool%2Ecom%2Fai-profit-lab-7462%2Fabout&urlhash=oPuv&trk=article-ssr-frontend-pulse_little-text-block)
+
+### Apple Watch Support Makes the OpenClaw 2026.2.19 Update More Accessible for Everyone
+
+The OpenClaw 2026.2.19 Update introduces Apple Watch support that transforms how people interact with automation throughout the day.
+
+You tap your wrist, view your update prompt, and your assistant responds without hesitation.
+
+This instant work</p></details>
+</article>
+<article class="card" data-id="eaf534d7">
+<h3><a href="https://contabo.com/blog/openclaw-use-cases-for-business-in-2026/" target="_blank">OpenClaw Use Cases for Business in 2026 | Contabo Blog</a></h3>
+<div class="meta">
+<span>📅 2026-02-28</span>
+<button class="fav-btn" onclick="toggleFavorite('eaf534d7')">🤍</button>
+</div>
+<p class="summary">**[İçine Atla](#content "İçine Atla")**  
+
+## OpenClaw 2026 Yılında İşletmeler İçin Kullanım Senaryoları  
+
+*23 Şubat 2026 / [Christopher Carter](https://contabo.com/blog/author/christophercarter/ "Christopher Carter'in tüm gönderilerini görüntüle") / [Tutoriallar](https://contabo.com/blog/category/tutorials/ "Tutoriallara git")*  
+
+OpenClaw’in artık duymuş olduğunun muhtemel olduğunu varsayalım. Kendiniz barındıran bir yapay zeka aracı (self‑hosted AI agent) oluşturmak ve bunu düşük maliyetli bulut sanal özel sunucu (VPS) ya da barındırılmış metal sunucu (bare‑metal) hizmetleri üzerinden çalıştırmak isteyen bir işletme sahibiyseniz, OpenClaw size ideal bir çözüm sunar.  
+
+*(Metin devam etmektedir.)*</p>
+<details class="details"><summary>Devamını oku</summary><p>[Skip to content](#content "Skip to content") 
+
+Host Your Own AI Agent with [OpenClaw](https://contabo.com/en/openclaw-hosting/) - Free 1-Click Setup!
+
+Cloud VPS and Bare Metal Servers for Less
+
+# OpenClaw Use Cases for Business in 2026
+
+February 23, 2026 / [Christopher Carter](https://contabo.com/blog/author/christophercarter/ "View all posts by Christopher Carter") / [Tutorials](https://contabo.com/blog/category/tutorials/)
+
+You’ve probably heard about OpenClaw by now. It’s the self-hosted AI assistant that actually does things instead of just answering questions. it can read your email, run shell commands, browse websites, connect to APIs, draft documents, and much more.
+
+But “AI assistant that does things” is pretty abstract. What does that mean for your actual work?
+
+This guide breaks down practical OpenClaw use cases you can implement today. Email workflows. Business automation. Content creation. DevOps tasks. Private AI setups. These are more than just theoretical examples – they’re automations people are running right now to save hours every week.
+
+Think of these AI automation examples as starting points. You’ll adapt them to create your own personal workflows.
+
+## Email and Communication Workflows
+
+Email is where productivity goes to die. Hundreds of messages, endless threads, important stuff buried under newsletters – you know the feeling. OpenClaw use cases for email focus on surfacing what matters and automating the responses you’d rather not type yourself.
+
+### Summarize Emails and Reach Inbox Zero
+
+An AI email summarizer reads your inbox every morning and generates a prioritized briefing. OpenClaw connects to Gmail or Outlook, pulls unread messages, analyzes them, then sends you a summary via Telegram, Slack, or email.
+
+You wake up to something like: “3 urgent emails: Client X needs approval on the proposal by noon. Your hosting bill is overdue. Sarah responded to your question about the Q1 budget.” Below that, medium-priority items and the rest that can wait.
+
+An agent like this processes the urgent stuff immediately. Schedule everything else it for batch processing later. Instead of opening your inbox and getting distracted by 47 new messages, you handle the important stuff right away. This saves maybe 20-30 minutes every morning – time you used to spend sorting through noise.
+
+The OpenClaw workflow for this is straightforward. Schedule a trigger for 7 AM daily. Connect to your email API with read-only permissions (important – you don’t want the agent deleting things by accident). Filter messages from the last 24 hours that you haven’t read yet. Pass the email content to an LLM with a prompt that analyzes urgency and generates summaries.
+
+Setup takes maybe 30 minutes. After that, it runs automatically. Some people tweak their prompts over the first week or two to get the tone and prioritization exactly right, but the core workflow stays the same.
+
+### Transcribe Meetings and Extract Actions
+
+AI meeting transcription turns conversa</p></details>
+</article>
+<article class="card" data-id="7314bb09">
+<h3><a href="https://wetried.it/openclaw-review/?srsltid=AfmBOoqgVdKrAXYJOGdl4_6WLYrjro7y3phrj2Wv9NAlVvDIstiAtwJ5" target="_blank">OpenClaw Review: Always-On AI Agent (2026) - WeTried</a></h3>
+<div class="meta">
+<span>📅 2026-02-28</span>
+<button class="fav-btn" onclick="toggleFavorite('7314bb09')">🤍</button>
+</div>
+<p class="summary">**OpenClaw İncelemesi: Bir AI Aracı Kendi Bilgisayarına Bağırdım — Ne Oldu?**
+
+Bu makalede, bir yapay zeka aracını kendi bilgisayarına entegre edip denediğim bir deneyimi özetliyorum. Denemelerim sırasında ortaya çıkan önemli noktalar ve sonuçlar, aşağıdaki başlıklar altında ele alınmıştır:
+
+- **Giriş ve Amacı**: Projeye dair temel düşünceler ve hedefler.  
+- **Uygulama Süreci**: Aracın kurulumu, yapılandırması ve test ortamının hazırlanması.  
+- **Performans Değerlendirmesi**: Hız, doğruluk ve kaynak kullanımında gözlemlenen davranışlar.  
+- **Kullanıcı Deneyimi**: Aracın etkileşimi ve kullanım kolaylığı.  
+- **Sonuçlar ve Öneriler**: Deneyimden elde edilen dersler ve gelecek adımlar.
+
+Bu özet, metnin özne ve amaçını koruyarak, gereksiz tekrarlardan uzak tutularak profesyonel ve anlaşılır bir Türkçe sunumu sağlar. Görseller ve ekstra görsel öğeler metnin içeriği değil; onlar yalnızca görsel destek amacıyla eklenmiştir.</p>
 <details class="details"><summary>Devamını oku</summary><p>![](https://ct.pinterest.com/v3/?event=init&tid=2613404303285&pd[em]=&noscript=1)
 ![We Tried It](https://emg4897m6z5.exactdn.com/wp-content/uploads/2025/12/we-tried-it-logo-637.jpg)
 ![](https://emg4897m6z5.exactdn.com/wp-content/uploads/2026/02/hf_20260224_034230_70694e01-6f78-4c04-b9a7-db34f47b5dfe.jpeg)
@@ -218,373 +330,6 @@ That’s either the future of content creation or a sign I’ve gone too far dow
 
 OpenClaw is an always-on AI agent framework. Think of it</p></details>
 </article>
-<article class="card" data-id="eaf534d7">
-<h3><a href="https://contabo.com/blog/openclaw-use-cases-for-business-in-2026/" target="_blank">OpenClaw Use Cases for Business in 2026 | Contabo Blog</a></h3>
-<div class="meta">
-<span>📅 2026-02-28</span>
-<button class="fav-btn" onclick="toggleFavorite('eaf534d7')">🤍</button>
-</div>
-<p class="summary">Host Your Own AI Agent with [OpenClaw](https://contabo.com/en/openclaw-hosting/) - Free 1-Click Setup! Host Your Own AI Agent with [OpenClaw](https://contabo.com/en/openclaw-hosting/) - Free 1-Click Setup! ![](https://contabo.com/blog/wp-content/uploads/flags/us.svg)
-![](https://contabo.com/blog/wp-content/plugins/sitepress-multilingual-cms/res/flags/es.svg)
-![](https://contabo.com/blog/wp-content/plugins/sitepress-multilingual-cms/res/flags/de.svg)
-
-Help
-
-Login
-
-Sign Up
-
-![](https://contabo.com...</p>
-<details class="details"><summary>Devamını oku</summary><p>Host Your Own AI Agent with [OpenClaw](https://contabo.com/en/openclaw-hosting/) - Free 1-Click Setup!
-
-Host Your Own AI Agent with [OpenClaw](https://contabo.com/en/openclaw-hosting/) - Free 1-Click Setup!
-
-![](https://contabo.com/blog/wp-content/uploads/flags/us.svg)
-![](https://contabo.com/blog/wp-content/plugins/sitepress-multilingual-cms/res/flags/es.svg)
-![](https://contabo.com/blog/wp-content/plugins/sitepress-multilingual-cms/res/flags/de.svg)
-
-Help
-
-Login
-
-Sign Up
-
-![](https://contabo.com/blog/wp-content/uploads/2023/04/blog.svg)
-
-VPS
-
-Cloud VPS
-
-Virtual Private Servers with fast
-NVMe
-
-Cloud VDS
-
-Virtual Dedicated Servers with
-full separation
-
-Storage VPS
-
-Large SSD Storage
-
-Windows VPS
-
-APPS & PANELS
-
-New! n8n VPS
-
-New! Nextcloud VPS
-
-New! Wireguard
-
-Plesk VPS
-
-cPanel VPS
-
-FEATURES
-
-Auto Backup
-
-Private Networking
-
-Custom Images
-
-Contabo API
-
-Contabo CLI
-
-Cloud Init
-
-Dedicated Server
-
-Dedicated Server
-
-Bare Metal Servers with Raw
-Computing Power
-
-Server Deals
-
-Discounted Dedicated Servers
-
-Cloud VDS
-
-Virtual Dedicated Servers with
-full separation
-
-Apps & Panels
-
-New! n8n
-
-Automate everything. Host it
-yourself.
-
-New! Nextcloud
-
-Collaboration. Storage. Freedom.
-On your server.
-
-New! Wireguard
-
-Privacy first. Speed included.
-
-DeepSeek Hosting
-
-Own AI. Full Control.
-
-Plesk
-
-Webhosting made simple. With
-Plesk.
-
-cPanel
-
-All your hosting tools. One
-control panel.
-
-Crypto Solutions
-
-Blockchain power. Private and
-reliable.
-
-More
-
-Object Storage
-
-Object Storage made simple.
-
-Domains
-
-Your name. Your domain.
-
-GPU Solutions
-
-Power for KI, Rendering, Compute.
-
-CDN Hosting
-
-Slow loads? Add CDN. Speed up.
-
-Pricing
-
-Company
-
-About us
-
-This is Contabo.
-
-Location Overview
-
-Real people.Real answers.
-
-Join our Team
-
-Work with us. Grow with us.
-
-Support Experience
-
-Real people.Real answers.
-
-ALL REGIONS
-
-European Union
-
-United Kingdom
-
-United States
-
-Singapore
-
-Japan
-
-India
-
-Australia
-
-SUPPORT EXPERIENCE
-
-Contabo HelpDesk
-
-Contact Support
-
-Contact Sales Assistance
-
-Server Status
-
-Order Status
-
-Tutorials / Blog
-
-Abuse
-
-VPS
-
-Cloud VPS
-
-Virtual Private Servers with
-fast NVMe
-
-Cloud VDS
-
-Virtual Dedicated Servers with
-full separation
-
-Storage VPS
-
-Large SSD Storage
-
-Windows VPS
-
-APPS & PANELS
-
-New! n8n VPS
-
-New! Nextcloud VPS
-
-New! Wireguard
-
-Plesk VPS
-
-cPanel VPS
-
-FEATURES
-
-Auto Backup
-
-Private Networking
-
-Custom Images
-
-Contabo API
-
-Contabo CLI
-
-Cloud Init
-
-Dedicated Server
-
-Dedicated Server
-
-Bare Metal Servers with Raw
-Computing Power
-
-Server Deals
-
-Discounted Dedicated Servers
-
-Cloud VDS
-
-Virtual Dedicated Servers with
-full separation
-
-Apps & Panels
-
-New! n8n
-
-Automate everything. Host it
-yourself.
-
-New! Nextcloud
-
-Collaboration. Storage.
-Freedom. On your server.
-
-New! Wireguard
-
-Privacy first. Speed included.
-
-DeepSeek Hosting
-
-Own AI. Full Control.
-
-Plesk
-
-Webhosting made simple. With
-Plesk.
-
-cPanel
-
-All your hosting tools. One
-control panel.
-
-Crypto Solutions
-
-Blockchain power. Private and
-reliable.
-
-More
-
-Object Storage
-
-Object Storage made simple.
-
-Dom</p></details>
-</article>
-<article class="card" data-id="b465ff9c">
-<h3><a href="https://www.acronis.com/en/tru/posts/openclaw-agentic-ai-in-the-wild-architecture-adoption-and-emerging-security-risks/" target="_blank">OpenClaw: Agentic AI in the wild — Architecture, adoption ... - Acronis</a></h3>
-<div class="meta">
-<span>📅 2026-02-28</span>
-<button class="fav-btn" onclick="toggleFavorite('b465ff9c')">🤍</button>
-</div>
-<p class="summary">* [Home](/en/tru/)[About us](/en/tru/about/)[Articles](/en/tru/posts/)[Threat catalog](/en/tru/threat-catalog/)[Acronis.com](https://www.acronis.com/)
-
-[Home](/en/tru/)[About us](/en/tru/about/)[Articles](/en/tru/posts/)[Threat catalog](/en/tru/threat-catalog/)[Acronis.com](https://www.acronis.com/)
-
-* [Home](/en/tru/)
-* [Articles](/en/tru/posts/)
-* [Acronis Threat Research Unit](/en/blog/authors/acronis-threat-research-unit/)
-
-February 23, 2026
-
-# OpenClaw: Agentic AI in the wild — Architecture...</p>
-<details class="details"><summary>Devamını oku</summary><p>* [Home](/en/tru/)[About us](/en/tru/about/)[Articles](/en/tru/posts/)[Threat catalog](/en/tru/threat-catalog/)[Acronis.com](https://www.acronis.com/)
-
-[Home](/en/tru/)[About us](/en/tru/about/)[Articles](/en/tru/posts/)[Threat catalog](/en/tru/threat-catalog/)[Acronis.com](https://www.acronis.com/)
-
-* [Home](/en/tru/)
-* [Articles](/en/tru/posts/)
-* [Acronis Threat Research Unit](/en/blog/authors/acronis-threat-research-unit/)
-
-February 23, 2026
-
-# OpenClaw: Agentic AI in the wild — Architecture, adoption and emerging security risks
-
-Over the past few weeks, OpenClaw has rapidly evolved from a niche open‑source project into one of the most widely discussed examples of agentic AI in practice. This combination of intelligence, autonomy and integration is precisely why OpenClaw has captured attention across developer and security communities. It is also why it has become a focal point for serious security concerns.
-
-Author: **Acronis Threat Research Unit**
-
-On this page
-
-What OpenClaw is and how it works
-
-Why OpenClaw is different from typical AI tools
-
-How OpenClaw’s functionality maps to security risks
-
-Practical risk-reduction guidance
-
-What to watch next
-
-Conclusion
-
-Share
-
-Share
-
-* [twitter](https://x.com/share?text=&url=)
-* [facebook](https://www.facebook.com/sharer.php?u=)
-* [linkedin](http://www.linkedin.com/shareArticle?mini=true&url=&title=)
-* [reddit](https://www.reddit.com/submit?url=&title=)
-
-Over the past few weeks, [OpenClaw](https://openclaw.ai/) has rapidly evolved from a niche open‑source project into one of the most widely discussed examples of agentic AI in practice. The idea is simple and compelling: Instead of asking an AI questions, you delegate tasks. OpenClaw can read messages, send emails, manage calendars, automate workflows and act across real systems — all through familiar chat interfaces.
-
-This combination of intelligence, autonomy and integration is precisely why OpenClaw has captured attention across developer and security communities. It is also why it has become a focal point for serious security concerns. Unlike traditional chatbots, OpenClaw operates as a privileged agent with access to local systems, credentials and external services. When these systems are misconfigured, impersonated or extended through untrusted components, the resulting security impact can be substantial.
-
-## What OpenClaw is and how it works
-
-OpenClaw is an open-source personal AI assistant designed to run locally on a user’s machine. It presents itself primarily through messaging platforms such as WhatsApp, Telegram, Slack, Discord or iMessage, and optionally through a local “Control UI” (also referred to as a canvas or dashboard). From the user’s perspective, OpenClaw feels like a conversational assistant. Under the hood, it is much closer to a local automation platform with an AI‑driven control layer.
-
-At the center of the system is the Gateway, a locally running service that brokers communication between chat interfaces, the AI model and </p></details>
-</article>
 </div>
 <div class="articles" id="articles-VibeCoding">
 <article class="card" data-id="7c085c70">
@@ -593,8 +338,8 @@ At the center of the system is the Gateway, a locally running service that broke
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('7c085c70')">🤍</button>
 </div>
-<p class="summary">**Codeium** – 70 + programlama dilini destekleyen ücretsiz bir AI yardımcı.  
-**7. AWS CodeWhisperer** – Güvenli ve bulutoptimizeli kod geliştirmesi için bir AI üreteci.</p>
+<p class="summary">**Codeium – 70’den fazla programlama dilini destekleyen ücretsiz bir AI yardımcı.**  
+**7. AWS CodeWhisperer – Güvenli ve bulut‑optimize kod geliştirme için bir AI üreten.**</p>
 <div class="details"><p>Codeium – Free AI assistant supporting 70+ programming languages. 7. AWS CodeWhisperer – AI generator for secure, cloud- optimized code development. 8. Cursor –</p></div>
 </article>
 <article class="card" data-id="dd2fb82a">
@@ -603,14 +348,12 @@ At the center of the system is the Gateway, a locally running service that broke
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('dd2fb82a')">🤍</button>
 </div>
-<p class="summary">**[far fa-envelope] info@krishangtechnolab.com**  
-**[fas fa-phone-alt] +91 9510022401 (Satış)**  
-**[fab fa-skype] krishangtechnolab**  
-**[Ücretsiz Alıntı Al]** – https://www.krishangtechnolab.com/request-quote/  
+<p class="summary">**İletişim**  
+[far fa‑envelope] info@krishangtechnolab.com | [fas fa‑phone‑alt] +91 9510022401 (Satış) | [fab fa‑skype] krishangtechnolab | [Get a Free Quote](https://www.krishangtechnolab.com/request-quote/) → **Ücretsiz Alıntı Al**
 
-* **[Yetenekler]** – https://www.krishangtechnolab.com/services/  
-  + **[Özel Web Uygulama Geliştirme (CMS Geliştirme)]** – https://www.krishangtechnolab.com/custom-web-application-development/  
-  - **[HubSpot]** – https://www.krishangtechnolab.com/hub</p>
+**Yetenekler**  
+- **CMS Geliştirme** → https://www.krishangtechnolab.com/custom-web-application-development/  
+- **HubSpot** → https://www.krishangtechnolab.com/hub...   (başka detaylar için ilgili sayfaya yönlendirilir)</p>
 <details class="details"><summary>Devamını oku</summary><p>[far fa-envelope info@krishangtechnolab.com](mailto:info@krishangtechnolab.com) [fas fa-phone-alt +91 9510022401 (Sales)](tel:+919510022401) [fab fa-skype krishangtechnolab](https://teams.live.com/l/invite/FEA_Y7SGv1AIXQADQQ) [Get a Free Quote](https://www.krishangtechnolab.com/request-quote/)
 
 * [Capabilities](https://www.krishangtechnolab.com/services/)
@@ -658,17 +401,20 @@ At the center of the system is the Gateway, a locally running service that broke
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('a4482f2a')">🤍</button>
 </div>
-<p class="summary">![avatar](https://s3.sitepoint.com/images/avatars/default-50x50.jpg)
+<p class="summary"># Vibe Kodlamanın Uzman Geliştiricisi Olmaya Yönelik Komple Kılavuzu: Skeptiklerden 10 Katı Mühendislere  
 
-# Vibe Kodlamaya Yönelik Tam Geliştiricinin Kılavuzu: Skeptiklerden 10 Katı Mühendisye
+![SitePoint Team](https://uploads.sitepoint.com/wp-content/uploads/2020/03/1584945800Group-5.png)  
 
-![SitePoint Team](https://uploads.sitepoint.com/wp-content/uploads/2020/03/1584945800Group-5.png)
+**Bu makaleyi paylaş**  
 
-Paylaşın
+![The Complete Developer's Guide to Vibe Coding: From Skeptic to 10x Engineer](https://uploads.sitepoint.com/wp-content/uploads/large_data_366ba2af0b.png)  
 
-![Vibe Kodlamaya Yönelik Tam Geliştiricinin Kılavuzu: Skeptiklerden 10 Katı Mühendisye](https://uploads.sitepoint.com/wp-content/uploads/large_data_366ba2af0b.png)
+7 Günlük Ücretsiz Deneyi. Her Zaman İptal Edilebilir.  
+Vibe kodlaması, kökeninden çok daha ileriye taşımıştır ve bugün geliştiricilerin verimliliğini artırmak için güçlü bir araç haline gelmiştir.  
 
-7 Günlük Ücretsiz Deneeme. Her Zaman İptal Edilebilir. Vibe kodlaması, kökeninden çok ileride...</p>
+---  
+
+*Bu kılavuz, vibe kodlamaya yeni başlayanlar ile bu konuda deneyikli geliştiriciler için de rehber niteliğinde hazırlanmıştır. Vibe kodlamanın temellerini, en yaygın kullanılan araçlarını ve en önemlisi, verimliliğinizi %10 katırtan artırabileceğiniz stratejileri adım adım öğreneceksiniz.*</p>
 <details class="details"><summary>Devamını oku</summary><p>![avatar](https://s3.sitepoint.com/images/avatars/default-50x50.jpg)
 
 # The Complete Developer's Guide to Vibe Coding: From Skeptic to 10x Engineer
@@ -718,17 +464,23 @@ Imagine a staff engineer designing a new microservice. She spends ten minutes wr
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('88c0ba11')">🤍</button>
 </div>
-<p class="summary">**Vibe Coding for the Enterprise: 2026 Strateji Kılavuzu – Uzmanlık Odaklı Yazılım Geliştirme**
+<p class="summary">**Vibe Coding for Enterprise: 2026 Strateji Kılavuzu – Vibe‑Tabanlı Yazılım Geliştirme**
 
-Mohamed Ali | 22 Şubat 2026  
+*Mohamed Ali | 22 Şubat 2026*
 
-Yazılım mühendisliği, el ile söz dizimi yazmaktan yüksek seviyeli mimari yönlendirmeye geçmektedir. Andrej Karpathy tarafından popülerleştirilen **vibe coding**, yalnızca bir geliştirici trendi olmaktan öteye geçmiş, profesyonel yönetişim kurallarını düşünmeden geliştirme hızını 10 katına çıkarmak isteyen girişimlerde ve kuruluşlarda bir legitim strateji haline gelmiştir. 2026 yılına doğru, “Vibe Coding” ifadesi, GitHub’da bir gürültü kaynağı iken, serius yazılım geliştirme süreçlerine entegre bir yaklaşıma dönüşmüştür.  
+Yazılım mühendisliği, el ile söz dizimi yazmaktan yüksek‑seviyeli mimari yönlendirmeye dönüşüyor. Andrej Karpathy tarafından popülerleştirilen “vibe coding”, artık geliştirme hızını %10‑a‑10 kat artıran, aynı zamanda profesyonel yönetişim kurallarını ihlal etmeyen bir kurumsal strateji haline geliyor. 2026 yılına doğru, “Vibe Coding” ifadesi GitHub’ta bir trend olmaktan çıkıp, kurumsal yazılım geliştirmede somut bir yöntemoloji haline geldi.
 
-Bu kılavuz, 2026 yılının ortasına doğru uzmanlık odaklı, ölçeklenebilir ve güvenilir bir “vibe coding” ekosistemine geçişin nasıl planlandırılacağını, gereken araçları ve en iyi uygulamaları tanımlamak için hazırlanmıştır.  
+Bu yaklaşım, geliştiricilerin doğal dil ve duygusal akışları kodu üretimine dönüştürmesine olanak tanırken, kodun kalitesini, güvenilirliğini ve sürdürülebilirliğini sağlamak için gerekli denetim mekanizmalarını da içeren bir çerçeve sunar. Vibe‑tabanlı geliştirme, otomatik kod üretimi, büyük dil modelleri (LLM) ve geliştiriciler arasındaki etkileşim üzerinden çalışır; bu da insan mükemmellikleriyle makine öğrenimi yeteneklerini birleştirir.
 
----  
+Kurumsal düzeyde bu modelin benimsenmesi, aşağıdaki adımlarla mümkün olur:
 
-*Metnin geri kalan bölümü devam etmektedir; çeviri bu noktada sona ermiştir.*</p>
+1. **Stratejik Yol Haritası Oluşturma** – Vibe coding için belirli senaryolar ve hedefler tanımlanır.  
+2. **Geliştirme Çerçevesi Seçimi** – Mevcut LLM‑tabanlı araçlar, kod generasyonu için uygun platformlar ve entegrasyonlar seçilir.  
+3. **Kalite ve Güvenlik Kontrolleri** – Oto‑test, kod incelemesi ve güvenlik analizi gibi otomasyonlu süreçlerle kalite sağaltılır.  
+4. **Eğitim ve Kültür Değişimi** – Geliştiriciler, “vibe” odaklı düşünmeyi, doğal dil kullanımını ve geri bildirim mekanlarını öğrenir.  
+5. ** Ölçüm ve İzleme** – Hız, hata oranı, sürdürülebilirlik gibi KPI’lar izlenir ve süreçler iyileştirilir.
+
+2026’da, vibe coding sadece bir “trend” olmaktan çıkıp, yazılım geliştirmenin temel bir parçası haline geldi. Bu dönüşüm, geliştiricilerin daha fazla imagination ve daha az rutiner kodlama harcamasına olanak tanırken, aynı zamanda kurumsal standartlar ve denetim süreçlerinin de entegrasyonunu gerektirir. Doğru strateji, araçlar ve organizasyonal desteklerle, vibe coding, yazılım geliştirme sürecinde %10‑a‑10 artan verimlilik ve yenilik sağlayarak endüstriyi şekillendirecektir.</p>
 <details class="details"><summary>Devamını oku</summary><p># Vibe Coding for Enterprise: The 2026 Strategy Guide to Agentic Software Development
 
 By Mohamed Ali | February 22, 2026
@@ -761,19 +513,16 @@ Beyond the code editor, our flagship tool, **[TheBar](https://linesncircles.com)
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('d97862c0')">🤍</button>
 </div>
-<p class="summary">**2026 Yılı Yapay Zekâ ve Vibe Kodlama Öğrenmek İçin Top 7 Udemy Kursu | Soma | Javarevisited | Şubat 2026 | Medium**  
-===================================  
+<p class="summary">**2026 yılında Yapay Zekâ ve Vibe Kodlama Öğrenmek İçin 7 En İyi Udemy Kursu | Soma | Javarevisited | Şubat 2026 | Medium**  
+===============  
 
-**Site Haritası**  
-[https://medium.com/sitemap/sitemap.xml](https://medium.com/sitemap/sitemap.xml)  
+[Sitemap](https://medium.com/sitemap/sitemap.xml)  
 
-**Uygulamada Aç**  
-[https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&source=post_page---top_nav_layout_nav-----------------------------------------](https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&source=post_page---top_nav_layout_nav-----------------------------------------)  
+[Uygulamada Aç](https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&source=post_page---top_nav_layout_nav-----------------------------------------)  
 
 **Kayıt Ol**  
 
-**Giriş Yap**  
-[https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2Fjavarevisited%2Ftop-7-udemy-courses-...](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2Fjavarevisited%2Ftop-7-udemy-courses-...)</p>
+[Giriş Yap](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2Fjavarevisited%2Ftop-7-udemy-courses-...)</p>
 <details class="details"><summary>Devamını oku</summary><p>Top 7 Udemy Courses to Learn AI and Vibe Coding in 2026 | by Soma | Javarevisited | Feb, 2026 | Medium
 ===============
 
@@ -839,9 +588,9 @@ Sent as a[Newsletter](https://medium.com/javarevisited/newsletter?source=post_pa
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('cffe8b4b')">🤍</button>
 </div>
-<p class="summary">Google, “Nano Banana 2” adlı bir görüntü‑yaratma yapay zekası sürümünü sürüm 3.1 Flash Image olarak tanıttı; bu sürüm daha hızlı ve daha doğru görüntü üretimini mümkün kılar.
+<p class="summary">**Google, “Nano Banana 2” adlı Görüntü Üretim AI’ini Çıkarır – Daha Hızlı ve Daha Hassas Görüntü Üretimi Sağlar**
 
-Google, **Nano Banana 2 (Gemini 3.1 Flash Image)** adlı bir görüntü‑yaratma yapay zekasını yayınladı. Nano Banana 2, Nano Banana Pro (Gemini 3 Pro Image) gelişmiş özelliklerini daha geniş bir kullanıcı kitlesine sunmak için tasarlanmışken, Nano Banana (Gemini 2.5 Flash Image) gibi hızlı düzenleme ve iterasyon imkânı da sağlar. Nano Bana…</p>
+Google, **Nano Banana 2 (Gemini 3.1 Flash Image)** adlı bir görüntü üretim yapay zekası sürümünü duyurmuştur. Nano Banana 2, Nano Banana Pro (Gemini 3 Pro Image)’in ileri düzey özelliklerini daha geniş bir kullanıcı kitlesine sunarken, Nano Banana (Gemini 2.5 Flash Image) gibi hızlı düzenleme ve tekrar sürecine de izin vermektedir. **Nano Bana…**</p>
 <details class="details"><summary>Devamını oku</summary><p># Google releases image generation AI 'Nano Banana 2,' enabling faster and more accurate image generation
 
 ![](https://i.gzn.jp/img/2026/02/27/google-gemini-nano-banana-2/00_m.jpg)
@@ -878,26 +627,26 @@ For developers and businesses, it is available in preview in **[AI Studio](https
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('41c5b90e')">🤍</button>
 </div>
-<p class="summary">GitHub - VoltAgent/awesome-openclaw-skills: OpenClaw Skills’in harika bir topluluğu. Daha önce **Moltbot** olarak bilinirdi, kökeni **Clawdbot**’tür. ===============
+<p class="summary">**GitHub – VoltAgent/awesome-openclaw-skills**: OpenClaw Yeteneiklerinin harika bir topluluğu. Daha önce **Moltbot** olarak bilinirdi, kökeni **Clawdbot**'tür. ===============
 
-[İçine atla](https://github.com/VoltAgent/awesome-openclaw-skills#start-of-content)  
-Yürütme Menüsü  
+[İçerik Toline Atla](https://github.com/VoltAgent/awesome-openclaw-skills#start-of-content)  
+**Gezinme Menüsü**  
 ---------------
 
-Yürütmeyi değiştir  
+**Gezinmeyi Toggelle**
 
-[](https://github.com/)  
+[](https://github.com/)
 
-[Giriş Yap](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FVoltAgent%2Fawesome-openclaw-skills)  
+[**Giriş Yap**](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FVoltAgent%2Fawesome-openclaw-skills)
 
-Görünüm Ayarları  
+**Görünüm Ayarları**
 
 *  
-Platform  
+**Platform**
 
- *  
-AI KOD OLUŞTURMA  
- * [GitHub Copilo...</p>
+*  
+**AI KOD OLUŞTURMA**  
+*   [GitHub Copilot]()   (orijinal link korunur)</p>
 <details class="details"><summary>Devamını oku</summary><p>GitHub - VoltAgent/awesome-openclaw-skills: The awesome collection of OpenClaw Skills. Formerly known as Moltbot, originally Clawdbot.
 ===============
 
@@ -989,7 +738,9 @@ EXPLORE BY TOPIC
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('68d54033')">🤍</button>
 </div>
-<p class="summary">Bizi burada bulduğunuz için çok memnuniyetikiz. Pazartesi ile Cuma arasında, haberleri takip etmeye ve oyunuzu yükseltmeye yardımcı olacak en güncel TNS içeriklerini e‑posta yoluyla size ileteceğiz. Kabul e‑postanı kontrol ederek tercihlerinizi ayarlayabilir ve ek gruplara da katılabilirsiniz.</p>
+<p class="summary">We’re so glad you’re here. You can expect all the best TNS content to arrive
+Monday through Friday to keep you on top of the news and at the top of your game. Check your inbox for a confirmation email where you can adjust your preferences
+and even join additional groups.</p>
 <details class="details"><summary>Devamını oku</summary><p>We’re so glad you’re here. You can expect all the best TNS content to arrive
 Monday through Friday to keep you on top of the news and at the top of your game.
 
@@ -1043,15 +794,17 @@ Like Nano Banana Pro, it can take multiple images as input and combine them into
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('cb378f93')">🤍</button>
 </div>
-<p class="summary">**Apiyi.com Blog**  
-**En İyi AI API Yönlendirme Hizmetleri**
+<p class="summary">![Apiyi.com Blog](https://help.apiyi.com/wp-content/uploads/2025/02/cropped-apiyi-logo-250207.png)
+
+Apiyi.com Blog
+
+Best AI API Router Services
 
 ![Apiyi.com Blog](https://help.apiyi.com/wp-content/uploads/2025/02/cropped-apiyi-logo-250207.png)
 
-# ClawHub.ai'yi Çözümlemek: 220 k Yıldızlık OpenClaw'in Resmi Beceri Mağazası, 3000+ Beceriyle AI Aracınızı Nasıl Genişletebilirsiniz
+# Decoding ClawHub.ai: The official skill store of 220k-star OpenClaw, how 3000+ Skills expand your AI Agent
 
-**APIYI yazarı paylaşıyor:**  
-Eğer OpenClaw şu anda en sıcak açık‑kaynak AI aracı (220 k’den fazla GitHub yıldızıyla) ise, **ClawHub.ai** onun “App Store”'ıdır. Bu mağaza, 3000’den fazla beceri sunarak AI‑ağentlerinizi genişletmenizi sağlar.</p>
+APIYI author shares: If OpenClaw is currently the hottest open-source AI Agent (with over 220k GitHub stars), then **ClawHub.ai** is its "App Sto...</p>
 <details class="details"><summary>Devamını oku</summary><p>![Apiyi.com Blog](https://help.apiyi.com/wp-content/uploads/2025/02/cropped-apiyi-logo-250207.png)
 
 Apiyi.com Blog
@@ -1143,14 +896,13 @@ So what makes the second banana so much better than the first? Here's what's new
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('e3d2b11d')">🤍</button>
 </div>
-<p class="summary">**Google Antigravity AI Geliştirme Platformu Başlatıldı**
+<p class="summary"># Google Antigravity AI Development Platform Launched
 
-Bu başlık, aşağıdaki LinkedIn gönderisine AI tarafından özetlenmiştir.  
-[Nithyashree SB](https://in.linkedin.com/in/nithyashree-sb?trk=public_post_feed-actor-name)
+This title was summarized by AI from the post below. [Nithyashree SB](https://in.linkedin.com/in/nithyashree-sb?trk=public_post_feed-actor-name)
 
-* [Bu gönderiyi rapor et](https://uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fposts%2Fnithyashree-sb_snsinstitutions-snsdesignthinkers-designthinking-activity-7431647864335867904-YVy7&trk=public_post_ellipsis-menu-semaphore-sign-in-redirect&guestReportContentType=POST&_f=guest-reporting)
+* [Report this post](/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fposts%2Fnithyashree-sb_snsinstitutions-snsdesignthinkers-designthinking-activity-7431647864335867904-YVy7&trk=public_post_ellipsis-menu-semaphore-sign-in-redirect&guestReportContentType=POST&_f=guest-reporting)
 
-GOOGLE… (daha fazla bilgi için orijinal gönderiye referans verin).</p>
+GOOGL...</p>
 <details class="details"><summary>Devamını oku</summary><p># Google Antigravity AI Development Platform Launched
 
 This title was summarized by AI from the post below.
@@ -1173,20 +925,18 @@ GOOGLE ANTIGRAVITY Google Antigravity was launched in November 2025, along with 
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('09cf3ddb')">🤍</button>
 </div>
-<p class="summary">[Ana Sayfa](/)
-[Blog](/blog)[Glossar](/glossaries)[Hakkımızda](/about)
+<p class="summary">[Home](/)
+[Blog](/blog)[Glossary](/glossaries)[About](/about)
 
-[AI Kodlama Aracları](/blog/kategori/ai-kodlama-araçları)
+[AI Coding Tools](/blog/category/ai-coding-tools)
 
-# Google Antigravity Review: AI Kodlama IDE'sinin Tam El Halkası Testi
+# Google Antigravity Review: Full Hands-On Test of the AI Coding IDE
 
-Himanshu Tyagi tarafından
+ByHimanshu Tyagi
 
-21 Kasım 2025 tarihinde güncellendi
+Last updated on Nov 21, 2025
 
-Güvenilirlik amacıyla hazırladığımız kılavuzlar, doğrudan deneyimle elde edilen bilgilere dayanır. Her makale, doğruluk için gözden geçirilir ve güncel bilgilere uygun şekilde düzenlenir. [Bakanımızın Editorial Politikası](/editorial-policy) hakkında daha fazla bilgi edinin.
-
-[Yapay Zekâ ile Özetle]:
+Our guides are based on hands-on testing and verified sources. Each article is reviewed for accuracy and updated regularly to ensure current, reliable information.[Read our editorial policy](/editorial-policy). Summarize with AI:
 
 [ChatGPT](https://chatgpt.com/?prompt...</p>
 <details class="details"><summary>Devamını oku</summary><p>[Home](/)
@@ -1230,16 +980,16 @@ Google emphasizes four guiding principles—**trust**, **autonomy**, **feedba
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('a96c14d3')">🤍</button>
 </div>
-<p class="summary"># YENİ Antigravity AI Studio Yayıncılığı Google, AI Kod Geliştirmeyi Değiştiriyor! ## WorldofAI  
-197 000 abone  
-132 beğeni  
+<p class="summary"># NEW Antigravity AI Studio Release From Google Changes AI Code Development! ## WorldofAI
+197000 subscribers
+132 likes
 
-### Açıklama  
-2 970 görüntülenme  
-Yayın tarihi: 23 Şubat 2026  
-Bugün Zapier çalışma akışını deneyin, ne kadar zaman kazandığını görebilirsiniz — linke tıklayın, otomatikleştirmeye başlayın ve gününüzü kolaylaştırın! https://bit.ly/4kwwWhj  
+### Description
+2970 views
+Posted: 23 Feb 2026
+Try your own Zapier workflow today and see how much time you can save — click the link, start automating, and make your day easier! https://bit.ly/4kwwWhj 
 
-Google yeni Antigravity AI Studio güncellemesini yayınladı ve AI kod geliştirme sürecini kökten değiştirdi.</p>
+Google just dropped the new Antigravity AI Studio update, and it’s transforming the way we develop AI code!</p>
 <details class="details"><summary>Devamını oku</summary><p># NEW Antigravity AI Studio Release From Google Changes AI Code Development!
 ## WorldofAI
 197000 subscribers
@@ -1301,13 +1051,13 @@ Seems like the Google team does not rest cuz they're seeing some signals of a ne
 </div>
 <p class="summary">![DEV Community](https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png)
 
-## DEV Topluluğu
+## DEV Community
 
-# Google Bulut Canlı: Antigravity ile Başlangıç
+# Google Cloud Live: Getting started with Antigravity
 
-Teriminalin ötesine geçerek Antigravity Düzenleyici ve Ajan Yöneticisi'ni keşfedeceğiz. Gemini Flash ile uygulamalar oluşturmak ve sadece bir işaretle ve tıklayarak UI değişikliklerini yapmayı göstereceğiz. [Google'da daha fazla görüntü](https://dev.to/googleai)
+We're moving beyond the terminal to explore the Antigravity Editor and Agent Manager. We'll show you how to generate apps with Gemini Flash and make UI modifications just by pointing and clicking. [See more from Google](https://dev.to/googleai)
 
-![Google AI Görseli](htt...)</p>
+![Google AI image](htt...</p>
 <details class="details"><summary>Devamını oku</summary><p>![DEV Community](https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png)
 
 ## DEV Community
@@ -1361,20 +1111,19 @@ We're a place where coders share, stay up-to-date and grow their careers.
 <span>📅 2026-02-28</span>
 <button class="fav-btn" onclick="toggleFavorite('c09ce00d')">🤍</button>
 </div>
-<p class="summary">**İçeri Atla**  
+<p class="summary">[Skip to content](#main) 
 
-- [İndownload](https://gizmodo.com/download/)  
-- [Geliştirme](https://gizmodo.com/download/category/development)  
-- Google Antigravity  
+* [Download](https://gizmodo.com/download/)
+* [Development](https://gizmodo.com/download/category/development)
+* Google Antigravity
 
-# Google Antigravity  
+# Google Antigravity
 
-**Google tarafından**  
+By Google
 
-Antigravity, kodlamayı basitleştirmek, verimliliği artırmak ve her seviyede geliştiricilere daha sorunsuz proje yürütme imkânı sunmak amacıyla tasarlanmış bir zeka ve otomasyon odaklı platformdur.  
-[Windows için indir](https://gizmodo.com/download/google-antigravity-72180-download)  
+Boost your development speed with Antigravity—an intelligent, automation-driven platform designed to simplify coding, enhance productivity, and support smoother project execution for developers at every level. [Download for Windows](https://gizmodo.com/download/google-antigravity-72180-download)
 
-- [Pencere...]</p>
+* [Window...</p>
 <details class="details"><summary>Devamını oku</summary><p>[Skip to content](#main) 
 
 * [Download](https://gizmodo.com/download/)
@@ -1484,4 +1233,4 @@ Object.entries(favs).forEach(([id, on])=>{ const card=document.querySelector(`[d
 </script>
 </div>
 </body>
-</html><!-- rebuild triggered -->
+</html>
