@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1772119169680
+    },
+    "ontology": {
+      "version": "0.1.2",
+      "installedAt": 1772126354621
+    },
+    "openai-image-gen": {
+      "version": "1.0.1",
+      "installedAt": 1772218264728
+    },
+    "nano-pdf": {
+      "version": "1.0.0",
+      "installedAt": 1772218274138
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1772218341132
+    },
+    "answeroverflow": {
+      "version": "1.0.2",
+      "installedAt": 1772220807587
+    }
+  }
+}

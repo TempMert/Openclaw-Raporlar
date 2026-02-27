@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>OpenClaw Twitter Otomasyonları - Top 5</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; }
+  h1 { color: #f4793b; border-bottom: 3px solid #f4793b; padding-bottom: 10px; }
+  h2 { color: #7c4a1e; margin-top: 2em; }
+  ul { margin-left: 20px; }
+  strong { color: #d97706; }
+  .meta { color: #666; font-size: 0.9em; margin-bottom: 30px; }
+  .section { margin-bottom: 40px; }
+</style>
+</head>
+<body>
+<h1>OpenClaw İçin Twitter Otomasyonları - Top 5</h1>
+<div class="meta">
+  <p><strong>Hazırlayan:</strong> Claw (OpenClaw Assistant)</p>
+  <p><strong>Tarih:</strong> 26 Şubat 2025</p>
+  <p><strong>Periyot:</strong> 3 günde bir</p>
+  <p><strong>Dil:</strong> Türkçe</p>
+</div>
+
+<div class="section">
+<h2>1. OpenClaw + Twitter: Günlük Trend Takibi</h2>
+<p><strong>Açıklama:</strong><br>
+OpenClaw, Twitter Stream API'si ile mention, hashtag ve trendleri takip eder, otomatik yanıt/bildirim oluşturur.</p>
+<p><strong>Nasıl Yapılır:</strong></p>
+<ul>
+<li>Twitter API v2 (filtered stream) kullan</li>
+<li>Keywords: "OpenClaw", "Claw bot", "AI assistant"</li>
+<li>Gelen tweet'leri filter'la → ontology'de <code>Message</code> entity'si oluştur</li>
+<li><code>twitter-reply</code> skill'i ile yanıt</li>
+<li>Telegram bildirimi (<code>message</code> skill)</li>
+</ul>
+<p><strong>Skill'ler:</strong><br>
+<code>twitter-stream</code> (custom), <code>ontology</code>, <code>message</code></p>
+<p><strong>Fayda:</strong><br>
+Marka takibi, müşteri hizmetleri</p>
+</div>
+
+<div class="section">
+<h2>2. Vibe Coding: AI ile Akış İçinde Kodlama</h2>
+<p><strong>Açıklama:</strong><br>
+AI asistanı ile anlık kod yazma, test, debug. Git değişikliklerini takip edip auto-review oluşturur.</p>
+<p><strong>Nasıl Yapılır:</strong></p>
+<ul>
+<li>GitHub webhook → OpenClaw bildirimi</li>
+<li><code>github</code> skill'i ile PR/commit detaylarını al</li>
+<li>NVIDIA Nemotron veya Qwen modeli ile kod incelemesi</li>
+<li><code>ontology</code>'de <code>Task</code> ve <code>Project</code> ilişkilendir</li>
+<li><code>nano-pdf</code> ile review PDF çıktısı</li>
+</ul>
+<p><strong>Skill'ler:</strong><br>
+<code>github</code>, <code>openrouter</code> (multi-model), <code>ontology</code>, <code>nano-pdf</code></p>
+<p><strong>Fayda:</strong><br>
+Otomatik kod review, zaman kazanım</p>
+</div>
+
+<div class="section">
+<h2>3. Google Antigravity: API Kullanım Optimizasyonu</h2>
+<p><strong>Açıklama:</strong><br>
+Birden fazla Google API'yi (Drive, Sheets, Gmail) tek bir optimized workflow haline getirme.</p>
+<p><strong>Nasıl Yapılır:</strong></p>
+<ul>
+<li><code>gog</code> skill'i ile API kullanımını logla</li>
+<li>Gereksiz çağrıları tespit et (rate limit)</li>
+<li>Batch endpoint'lerini kullan</li>
+<li><code>ontology</code>'de <code>Account</code> ve <code>Credential</code> takibi</li>
+</ul>
+<p><strong>Skill'ler:</strong><br>
+<code>gog</code>, <code>ontology</code>, <code>tavily</code></p>
+<p><strong>Fayda:</strong><br>
+API quota tasarrufu, hız, maliyet düşüşü</p>
+</div>
+
+<div class="section">
+<h2>4. OpenRouter Multi-Model Analiz</h2>
+<p><strong>Açıklama:</strong><br>
+OpenRouter'da çoklu LLM modelleri (Qwen, Nemotron, Llama) kullanarak en uygun modeli seçmek.</p>
+<p><strong>Nasıl Yapılır:</strong></p>
+<ul>
+<li>Input → text classification (model seçici)</li>
+<li><code>openrouter</code> skill'i ile seçilen modeli çağır</li>
+<li>Ensemble: sonuçları karşılaştır → en iyisi</li>
+<li><code>ontology</code>'de <code>Task</code> ve <code>Document</code> sakla</li>
+</ul>
+<p><strong>Skill'ler:</strong><br>
+<code>openrouter</code>, <code>ontology</code>, <code>nano-pdf</code></p>
+<p><strong>Fayda:</strong><br>
+Kalite artışı, cost optimization, Türkçe performansı</p>
+</div>
+
+<div class="section">
+<h2>5. Webhook Tabanlı Otomasyonlar</h2>
+<p><strong>Açıklama:</strong><br>
+Farklı servislerden (GitHub, Stripe, RSS) webhook'ları dinleyip, OpenClaw iş akışları tetiklemek.</p>
+<p><strong>Nasıl Yapılır:</strong></p>
+<ul>
+<li>HTTP server (<code>express</code> skill veya custom)</li>
+<li>Webhook signature doğrulama</li>
+<li><code>ontology</code>'de <code>Event</code> entity'si oluştur</li>
+<li>Condition → action (örn. PR açıldığında Telegram bildirimi)</li>
+</ul>
+<p><strong>Skill'ler:</strong><br>
+<code>express</code> (web server), <code>ontology</code>, <code>message</code></p>
+<p><strong>Fayda:</strong><br>
+Event-driven otomasyon, entegrasyon çeşitliliği</p>
+</div>
+
+<div class="section">
+<p><strong>Sonraki Adımlar:</strong><br>
+Bu 5 otomasyon implemente edilecek. Her 3 günde bir güncelleme raporu.</p>
+</div>
+</body>
+</html>
+```
