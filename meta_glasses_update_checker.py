@@ -378,49 +378,60 @@ footer {{
     return report_path
 
 def push_and_verify(report_path):
-    """Push HTML to GitHub Pages and verify it's accessible."""
-    try:
-        subprocess.run(["git","add",report_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        subprocess.run(["git","commit","-m",f"Add Meta Glasses report {os.path.basename(report_path)}"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        subprocess.run(["git","push","raporlar","main"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print("✅ Pushed to GitHub")
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Git push failed: {e}")
-        return None
-    
-    # Construct public URL (Pages serves /raporlar/ as root)
+    """Push HTML to GitHub Pages using delete-then-recreate to bust cache."""
     filename = os.path.basename(report_path)
     public_url = f"https://tempmert.github.io/Openclaw-Raporlar/raporlar/meta_glasses/{filename}"
-    
-    # Wait for build and verify (retry up to 3 times)
-    max_attempts = 3
-    for attempt in range(1, max_attempts+1):
-        time.sleep(30)  # allow GitHub Pages build
-        try:
-            r = requests.head(public_url, timeout=10, allow_redirects=True)
-            if r.status_code == 200:
-                print(f"✅ Link verified (HTTP 200): {public_url}")
-                return public_url
-            else:
-                print(f"⚠️ Attempt {attempt}: HTTP {r.status_code}")
-        except Exception as e:
-            print(f"⚠️ Check error: {e}")
-    
-    # Trigger rebuild if still failing
-    print("🔄 Triggering rebuild with empty commit...")
+
     try:
-        subprocess.run(["git","commit","--allow-empty","-m","trigger rebuild"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Step 1: Remove old file if tracked (cache bust)
+        try:
+            subprocess.run(["git","rm","-f",report_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(["git","commit","-m",f"Remove old report {filename} (cache bust)"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(["git","push","raporlar","main"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print(f"🗑️ Removed old {filename} from git (cache bust)")
+            time.sleep(5)  # brief wait for GitHub to process deletion
+        except subprocess.CalledProcessError:
+            pass  # file may not be tracked yet, continue
+
+        # Step 2: Add new file and push
+        subprocess.run(["git","add",report_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(["git","commit","-m",f"Add/update Meta Glasses report {filename}"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         subprocess.run(["git","push","raporlar","main"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(30)
-        r = requests.head(public_url, timeout=10)
-        if r.status_code == 200:
-            print(f"✅ Verified after rebuild: {public_url}")
-            return public_url
-    except Exception as e:
-        print(f"❌ Rebuild failed: {e}")
-    
-    print(f"❌ Link verification failed for {public_url}")
-    return None
+        print("✅ Pushed to GitHub (fresh deploy)")
+
+        # Step 3: Verify with retries
+        max_attempts = 3
+        for attempt in range(1, max_attempts+1):
+            time.sleep(30)  # allow build
+            try:
+                r = requests.head(public_url, timeout=10, allow_redirects=True)
+                if r.status_code == 200:
+                    print(f"✅ Link verified (HTTP 200): {public_url}")
+                    return public_url
+                else:
+                    print(f"⚠️ Attempt {attempt}: HTTP {r.status_code}")
+            except Exception as e:
+                print(f"⚠️ Check error: {e}")
+
+        # If still failing, try empty commit to trigger rebuild
+        print("🔄 Triggering rebuild with empty commit...")
+        try:
+            subprocess.run(["git","commit","--allow-empty","-m","trigger rebuild"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(["git","push","raporlar","main"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            time.sleep(30)
+            r = requests.head(public_url, timeout=10)
+            if r.status_code == 200:
+                print(f"✅ Verified after rebuild: {public_url}")
+                return public_url
+        except Exception as e:
+            print(f"❌ Rebuild failed: {e}")
+
+        print(f"❌ Link verification failed for {public_url}")
+        return None
+
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git operation failed: {e}")
+        return None
 
 def send_telegram_report(public_url, has_updates):
     TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")

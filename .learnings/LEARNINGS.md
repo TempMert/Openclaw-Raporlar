@@ -13,6 +13,18 @@
 - **Exception:** Emergency safety fixes (imminent data loss, security breach) – act first, inform immediately after.
 - **Enforcement:** If unsure whether an action requires consent, err on the side of asking.
 
+### 2026-02-28: GitHub Pages Cache Busting – Always Fresh Deploy (CRITICAL)
+- **Problem:** GitHub Pages caches HTML files aggressively (up to hours). Updating a file may not reflect immediately, causing users to see stale content.
+- **Solution:** For every report update, use **delete-then-recreate** workflow:
+  1. Delete the old HTML file from git: `git rm path/to/report.html`
+  2. Commit & push: `git commit -m "Remove old report" && git push`
+  3. Regenerate the report fresh (new file created)
+  4. Push again: `git add new_report.html && git commit -m "Add updated report" && git push`
+- **Why this works:** Removing the file forces GitHub Pages to invalidate the cache entry. When the new file is added, it's treated as a brand new resource, bypassing CDN cache.
+- **Automation:** All OpenClaw report generators (`meta_glasses_update_checker.py`, daily_report.sh, etc.) must implement this delete-then-recreate pattern for every update.
+- **Verification:** After push, check `curl -I <url>` – the `Last-Modified` header should be recent (within last minute). If not, repeat the delete-recreate cycle.
+- **User instruction:** When sharing links, always verify with `curl -I` to ensure the latest version is served. If not, trigger rebuild.
+
 ### 2026-02-28: ULTRA-CRITICAL API KEY SECURITY POLICY
 - **ABSOLUTELY FORBIDDEN:** Never hardcode or commit API keys (OpenRouter, Tavily, GitHub, Telegram, Google) to ANY repository (public or private).
 - **Storage:** API keys ONLY in environment variables (`~/.bashrc`, OpenClaw config). No default fallback values in code.
