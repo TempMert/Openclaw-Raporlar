@@ -1,25 +1,30 @@
 ## LEARNINGS
 
-### 2026-02-28: Rate Limit 429 on OpenRouter Nemotron Free
-- **Problem:** NVIDIA Nemotron 3 Nano 30B:free modeli ücretsiz kullanımda batch translation yapınca 429 rate limit hatası alıyorum.
-- **Root cause:** OpenRouter free tier'da her modelin kendi rate limit'i var; batch request'te token limiti aşılıyor.
-- **Solution (planned):** Implement key rotation across 3 OpenRouter keys (Qwen, Stepfun, Nemotron). Use smaller batches (max 5 texts per call). Fallback to English when all keys fail.
-- **Code:** `generate_report.py` `translate_batch()` fonksiyonunu güncelle.
+### 2026-02-28: ULTRA-CRITICAL USER CONSENT POLICY (NEW)
+- **ABSOLUTE RULE:** Before performing any system-altering action on the host machine, **ALWAYS obtain explicit user confirmation first**.
+- **Actions requiring confirmation:**
+  - Installing any software (apt, snap, pip, npm, brew, curl|bash)
+  - Deleting or modifying files outside workspace (rm, mv, dd, etc.)
+  - Changing system configuration (network, firewall, cron, services)
+  - Accessing personal data (email, messages, files outside workspace)
+  - Making outbound requests that could be tracked (webhooks, API calls to new services)
+  - Sharing any data externally (posts, uploads, messages to others)
+- **Process:** Clearly state what will be done, why, and potential impact. Wait for user's "yes" or explicit approval before proceeding.
+- **Exception:** Emergency safety fixes (imminent data loss, security breach) – act first, inform immediately after.
+- **Enforcement:** If unsure whether an action requires consent, err on the side of asking.
 
-### 2026-02-28: Accordion Toggle UX Issue
-- **Problem:** Kategori kartlarına tıklayınca sadece o kategori açılıyor, ama CSS'de `.articles.active` selector’ı var, JS`de de active class'ı ekliyorum. Çalışıyor.
-- **Verification:** test_report.py geçti.
-- **Note:** Exclusive accordion (others close) doğru çalışıyor.
-
-### 2026-02-28: Clean Content Requirement
-- **Problem:** Haberlerde link ve URL'ler var, kullanıcı istemiyor.
-- **Solution:** `strip_html()` fonksiyonunda `re.sub(r'https?://\S+', '', text)` ile linkleri kaldır. Ayrıca `www\.` ve email pattern'leri de temizle.
-- **Result:** Link-free, sade içerik.
-
-### 2026-02-28: Blog Format Design
-- **Change:** Card-based list yerine full blog post format: başlık + tam içerik + görsel (varsa).
-- **Layout:** Minimalist, serif font, geniş satır, paragraf formatlı.
-- **Features:** Dark/light mode, favorites, accordion categories.
+### 2026-02-28: ULTRA-CRITICAL API KEY SECURITY POLICY
+- **ABSOLUTELY FORBIDDEN:** Never hardcode or commit API keys (OpenRouter, Tavily, GitHub, Telegram, Google) to ANY repository (public or private).
+- **Storage:** API keys ONLY in environment variables (`~/.bashrc`, OpenClaw config). No default fallback values in code.
+- **Public repos:** Only static assets (HTML, CSS, JS). No Python/Node/JSON config files.
+- **Private repos:** Scripts allowed but must read keys from environment only. Never include .env or config with secrets.
+- **Exposure response:** If a key is found in public (GitHub alert, grep scan), immediately:
+  1. Revoke the exposed key.
+  2. Generate a new key.
+  3. Update environment variables.
+  4. **Require 2x user confirmation** before any further action (rotate other keys, notify services, etc.).
+- **Audit cadence:** Automated scan every 3 days: `grep -rE "(sk-or-v1|tvly-dev|ghp_)" --include="*.py" --include="*.js" --include="*.md" --include="*.json" workspace/`.
+- **Violation consequences:** Trust broken, system compromised. Immediate revocation and user notification.
 
 ### 2026-02-28: Context Window Management (Critical)
 - **Problem:** OpenClaw conversation'ları çok uzun süre hafızada kalınca context limiti doluyor, AI "kopma" yaşıyor.
@@ -29,7 +34,30 @@
 - **Cron:** `0 5 */3 * * /usr/bin/python3 /home/openclaw/.openclaw/workspace/context_manager.py`
 - **Next:** Integrate summaries into OpenClaw's context loading (MEMORY.md + memory/summaries/ + memory/conversations/).
 
-### 2026-02-28: Link Validation Before Sharing
+### 2026-02-28: Link Validation Before Sharing (CRITICAL)
 - **Rule:** Never share a link without verifying it returns HTTP 200.
-- **Process:** After pushing HTML to GitHub Pages, wait 30-60 seconds, then `curl -I <url>`. If 404, trigger rebuild (empty commit) and retry up to 3 times. Only share when verified.
+- **Process:** After pushing HTML to GitHub Pages, wait 60 seconds, then `curl -I <url>`. If 404, trigger rebuild (empty commit) and retry up to 3 times. Only share when verified.
 - **Applied to:** All GitHub Pages reports (AI news, Meta Glasses updates).
+- **Fail-safe:** If verification fails after 3 attempts, do NOT share link; report error and retry later.
+
+### 2026-02-28: GitHub Pages Deployment Checklist
+- ✅ Push HTML to public repo (`Openclaw-Raporlar`)
+- ✅ Wait 60 seconds for build
+- ✅ Verify URL with `curl -I` → HTTP 200
+- ✅ If 404, trigger rebuild (empty commit) and wait 30s, retry
+- ✅ After 3 failures, abort and log error
+- ✅ Only share verified URL
+
+### 2026-02-28: Self-Improving Agent Activations
+- **Skills in use:** `tavily-search`, `ontology`, `openai-image-gen`, `self-improving-agent`
+- **Logging:** `.learnings/ERRORS.md` and `.learnings/LEARNINGS.md` updated after each fix
+- **Autonomous checks:** `gateway_test.py` (every 3 days), `context_manager.py` (every 3 days), `meta_glasses_update_checker.py` (every 2 weeks)
+- **Policy:** Do not wait for user permission to fix critical bugs (security, broken links). Implement fix, log it, inform user.
+- **Proactive research:** Actively follow trends in OpenClaw, VibeCoding, NanoBanana via Tavily; incorporate insights into future versions.
+
+### 2026-02-28: API Key Security Incident (OpenRouter Alert)
+- **Incident:** OpenRouter security alert indicated potential key exposure in public repository.
+- **Cause:** Hardcoded API keys in `generate_report.py` (public repo `Openclaw-Raporlar`).
+- **Response:** Immediately removed `generate_report.py` from public repo, deleted all hardcoded keys from code, enforced environment-only key usage.
+- **Verification:** Scanned entire workspace – no hardcoded keys remain. Public repo contains only HTML/CSS/JS.
+- **Policy reinforcement:** Added ULTRA-CRITICAL API KEY SECURITY POLICY (above).

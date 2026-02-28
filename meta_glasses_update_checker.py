@@ -94,77 +94,235 @@ def extract_version_from_results(blog_results):
         return Counter(versions).most_common(1)[0][0]
     return "Bilinmiyor"
 
-def generate_report(meta_changed, newsroom_flag, reddit_flag, blog_results):
+def extract_version_from_results(blog_results):
+    """Extract version number from blog titles/snippets (e.g., v22.0, version 3.0)."""
+    import re
+    versions = []
+    pattern = r'(v[\d\.]+|version\s+[\d\.]+)'
+    for res in blog_results:
+        text = (res.get("title", "") + " " + res.get("content", "")).lower()
+        matches = re.findall(pattern, text, re.IGNORECASE)
+        versions.extend(matches)
+    if versions:
+        from collections import Counter
+        return Counter(versions).most_common(1)[0][0]
+    return "Bilinmiyor"
+
+def generate_blog_summary(meta_changed, newsroom_flag, reddit_flag, blog_results, version_info=None):
+    """Güncellemeler hakkında blog yazısı formatında özet oluştur."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    summary = []
+    
+    # Giriş
+    summary.append(f"<p><em>Bu rapor Rayban Meta Glasses'in güncel durumunu ve son güncellemeleri analiz ediyor. Tüm veriler otomatik olarak toplanmış ve {today} tarihinde oluşturulmuştur.</em></p>")
+    
+    if any([meta_changed, newsroom_flag, reddit_flag, blog_results]):
+        summary.append("<h2>📌 Son Güncellemeler</h2>")
+        
+        if meta_changed:
+            summary.append("<p>🔍 <strong>Meta'nın resmi Help Sayfası</strong> güncellenmiş görünüyor. Bu, kullanıcıların en güncel kullanım bilgilerine ulaşabileceği anlamına geliyor. Değişiklikler muhtemelen yeni AI özellikleri, kullanım ipuçları veya sorun gidermelerini içeriyor.</p>")
+        
+        if newsroom_flag:
+            summary.append("<p>📢 <strong>Meta Newsroom</strong>'da AI Glasses ile ilgili yeni içerikler paylaşıldı. Resmi duyurular, blog yazıları veya medya bültenleri bu kapsamda olabilir.</p>")
+        
+        if reddit_flag:
+            summary.append("<p>💬 <strong>Reddit r/MetaGlasses</strong> topluluğunda güncelleme ile ilgili aktivite tespit edildi. Kullanıcılar yeni özellikleri deniyor, geri bildirim paylaşıyor veya sorunları konuşuyor.</p>")
+        
+        if blog_results:
+            summary.append(f"<p>📰 Teknoloji bloglarında <strong>{len(blog_results)} yeni haber</strong> bulundu. Bu haberler genellikle kıdemli teknoloji yazarları tarafından detaylı analizler içeriyor.</p>")
+        
+        if version_info and version_info != "Bilinmiyor":
+            summary.append(f"<p>🏷️ Tahmini sürüm bilgisi: <code>{version_info}</code></p>")
+    else:
+        summary.append("<h2>✅ Hiç Güncelleme Yok</h2>")
+        summary.append("<p>Şu an Meta Glasses üzerinde herhangi bir resmi güncelleme tespit edilmedi. Mevcut sürümde devam edebilirsiniz.</p>")
+    
+    return "\n".join(summary)
+
+def generate_report(meta_changed, newsroom_flag, reddit_flag, blog_results, version_info=None):
     today = datetime.now().strftime("%Y-%m-%d")
     report_path = f"{REPORT_DIR}/meta_glasses_{today}.html"
     
+    # Extract version from blog results if available
+    if not version_info and blog_results:
+        version_info = extract_version_from_results(blog_results)
+    
+    # Overall status
+    overall_status = "🚨 GÜNCELLEME VAR" if any([meta_changed, newsroom_flag, reddit_flag, blog_results]) else "✅ Değişiklik Yok"
+    
+    # Blog yazısı özeti
+    blog_summary = generate_blog_summary(meta_changed, newsroom_flag, reddit_flag, blog_results, version_info)
+    
+    # Kontrol sonuçları listesi
+    kontrol = [
+        ("Meta Resmi Help Sayfası", meta_changed, "DEĞİŞİKLİK VAR" if meta_changed else "Değişiklik yok", META_HELP_URL),
+        ("Meta Newsroom", newsroom_flag, "YENİ İÇERİK" if newsroom_flag else "Değişiklik yok", "https://about.fb.com/news/"),
+        ("Reddit r/MetaGlasses", reddit_flag, "AKTİVİTE VAR" if reddit_flag else "Aktivite yok", "https://www.reddit.com/r/MetaGlasses/"),
+        ("Teknoloji Blogları", len(blog_results) > 0, f"{len(blog_results)} haber", None)
+    ]
+    
+    # HTML şablonu – Blog tarzı, sade, okunaklı
     html = f'''<!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayban Meta Glasses Güncelleme Raporu – {today}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-body {{ font-family:Arial,sans-serif; margin:40px; line-height:1.6; }}
-h1 {{ color:#2c3e50; }}
-.section {{ margin:24px 0; padding:16px; background:#f8f9fa; border-radius:8px; }}
-.findings {{ color:#e74c3c; font-weight:bold; }}
-.no-change {{ color:#27ae60; }}
-ul {{ padding-left:20px; }}
+:root {{
+    --text: #1a1a1a;
+    --text-light: #555;
+    --accent: #2563eb;
+    --bg: #ffffff;
+    --muted: #f3f4f6;
+    --border: #e5e7eb;
+    --success: #059669;
+    --danger: #dc2626;
+}}
+body {{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 20px;
+}}
+header {{
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}}
+h1 {{
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--text);
+}}
+h2 {{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2em 0 0.5em 0;
+    color: var(--text);
+}}
+p, li {{
+    font-size: 1.05rem;
+}}
+.meta {{
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}}
+.badge {{
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 8px;
+}}
+.badge.update {{ background: #fee2e2; color: var(--danger); }}
+.badge.no-change {{ background: #dcfce7; color: var(--success); }}
+.badge.count {{ background: var(--muted); color: var(--text-light); }}
+ul.checklist {{
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+}}
+ul.checklist li {{
+    padding: 12px 16px;
+    background: var(--muted);
+    margin: 8px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid transparent;
+}}
+ul.checklist li.status-update {{ border-left-color: var(--danger); background: #fef2f2; }}
+ul.checklist li.status-no-change {{ border-left-color: var(--success); background: #ecfdf5; }}
+a {{ color: var(--accent); text-decoration: none; }}
+a:hover {{ text-decoration: underline; }}
+code {{
+    background: var(--muted);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}}
+footer {{
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+}}
+.em {{
+    font-style: italic;
+    color: var(--text-light);
+}}
 </style>
 </head>
 <body>
-<h1>🕶️ Rayban Meta Glasses – Güncelleme Kontrol Raporu</h1>
-<p><strong>Tarih:</strong> {today}</p>
+<header>
+    <h1>🕶️ Rayban Meta Glasses Güncelleme Raporu</h1>
+    <p class="meta">Oluşturulma: {today} • OpenClaw Otomatik Kontrol</p>
+    <p style="font-size: 1.2rem; margin-top: 12px;">
+        <strong>Genel Durum:</strong> <span style="color: {'var(--danger)' if overall_status.startswith('🚨') else 'var(--success)'};">{overall_status}</span>
+    </p>
+</header>
 
-<div class="section">
+{blog_summary}
+
+<section>
 <h2>📊 Kontrol Sonuçları</h2>
-<ul>
-<li>Meta Resmi Help Sayfası: {"<span class='findings'>DEĞİŞİKLİK TESPİT EDİLDİ</span>" if meta_changed else "<span class='no-change'>Değişiklik yok</span>"}</li>
-<li>Meta Newsroom: {"<span class='findings'>Yeni içerik var</span>" if newsroom_flag else "<span class='no-change'>Yeni içerik yok</span>"}</li>
-<li>Reddit r/MetaGlasses: {"<span class='findings'> Aktivite tespit edildi</span>" if reddit_flag else "<span class='no-change'> Aktivite yok</span>"}</li>
-<li>Tech Blog Araması: {len(blog_results)} sonuç</li>
+<ul class="checklist">
+<li class="status-{'update' if meta_changed else 'no-change'}">
+    <span>
+        <strong>Meta Resmi Help Sayfası</strong><br>
+        <small class="em">Meta'nın resmi AI Glances rehber sayfası</small>
+    </span>
+    <span class="badge {'update' if meta_changed else 'no-change'}">{kontrol[0][2]}</span>
+</li>
+<li class="status-{'update' if newsroom_flag else 'no-change'}">
+    <span>
+        <strong>Meta Newsroom</strong><br>
+        <small class="em">Meta'nın resmi blog yayınları</small>
+    </span>
+    <span class="badge {'update' if newsroom_flag else 'no-change'}">{kontrol[1][2]}</span>
+</li>
+<li class="status-{'update' if reddit_flag else 'no-change'}">
+    <span>
+        <strong>Reddit r/MetaGlasses</strong><br>
+        <small class="em">Kullanıcı topluluğu tartışmaları</small>
+    </span>
+    <span class="badge {'update' if reddit_flag else 'no-change'}">{kontrol[2][2]}</span>
+</li>
+<li>
+    <span>
+        <strong>Teknoloji Blogları</strong><br>
+        <small class="em">Teknik analiz ve haberler</small>
+    </span>
+    <span class="badge {'update' if blog_results else 'no-change'}">{len(blog_results)} haber</span>
+</li>
 </ul>
-</div>
-'''
-    
-    if meta_changed:
-        html += '''<div class="section">
-<h2>📌 Meta Resmi Sayfasında Değişiklik</h2>
-<p>Resmi help sayfası güncellenmiş gibi görünüyor. Detayları inceleyin:</p>
-<p><a href="''' + META_HELP_URL + '''" target="_blank">Meta Help – AI Glasses</a></p>
-</div>'''
-    
-    if newsroom_flag:
-        html += '''<div class="section">
-<h2>📢 Meta Newsroom'da İçerik Güncellemesi</h2>
-<p>Meta'nın resmi blogunda AI Glasses ile ilgili yeni içerikler var.</p>
-</div>'''
-    
-    if reddit_flag:
-        html += '''<div class="section">
-<h2>💬 Reddit'te Konuşma Aktivitasi</h2>
-<p>r/MetaGlasses'te güncelleme ile ilgili gönderiler/haberler var.</p>
-</div>'''
-    
-    if blog_results:
-        html += '''<div class="section">
-<h2>🔍 Teknoloji Bloglarındaki Haberler</h2>
-<ul>'''
-        for res in blog_results[:5]:
-            title = res.get("title", "Başlık yok")
-            url = res.get("url", "#")
-            html += f'<li><a href="{url}" target="_blank">{title}</a></li>\n'
-        html += '''</ul>
-</div>'''
-    
-    if not any([meta_changed, newsroom_flag, reddit_flag, blog_results]):
-        html += '''<div class="section">
-<p class="no-change">✅ Hiçbir güncelleme tespit edilmedi. Mevcut sürümde devam edin.</p>
-</div>'''
-    
-    html += '''<hr>
+</section>
+
+{f'''<section>
+<h2>🔍 Güncellenmiş Kaynaklar</h2>
+<ul>''' if blog_results else ''}
+{chr(10).join([f'<li><a href="{r.get("url")}" target="_blank">{r.get("title", "Başlık yok")}</a></li>' for r in blog_results[:5]]) if blog_results else ''}
+{f'''</ul>
+</section>''' if blog_results else ''}
+
 <footer>
-<small>Bu rapor OpenClaw tarafından otomatik olarak üretilmiştir. • meta_glasses_update_checker</small>
+Bu rapor <a href="https://github.com/TempMert/Openclaw-Raporlar" target="_blank">OpenClaw</a> tarafından otomatik olarak üretilmiştir.<br>
+meta_glasses_update_checker • {today}
 </footer>
 </body>
 </html>'''
@@ -173,6 +331,14 @@ ul {{ padding-left:20px; }}
         f.write(html)
     
     print(f"✅ Rapor oluşturuldu: {report_path}")
+    
+    # VS Code'da otomatik aç
+    try:
+        subprocess.run(["code", report_path], check=False)
+        print(f"💡 Rapor VS Code'da açıldı")
+    except FileNotFoundError:
+        print(f"💡 VS Code kurulu değil – dosya: {report_path}")
+    
     return report_path
 
 def push_and_verify(report_path):
