@@ -1,0 +1,46 @@
+name: weather-alert-skill
+description: Istanbul ve diğer şehirlerde hava durumu uyarıları
+version: 1.0.0
+license: MIT
+author: Mertko
+
+commands:
+  - name: forecast
+    description: Şehir için hava durumu tahmini
+    input:
+      city: string (default: Istanbul)
+      days: number (default: 3)
+    output: weather_report
+    examples:
+      - input: { city: "Izmir", days: 5 }
+        output: "İzmir'de 5 günlük hava durumu..."
+
+  - name: rain-alert
+    description: Yağmur uyarısı
+    input:
+      city: string
+    output: boolean (true: yağmur var)
+    triggers:
+      - when: precipitation_probability > 60%
+        message: "{city} için yağmur ihtimali %60+, şemsiyenizi alın!"
+
+models:
+  - provider: openrouter
+    model: stepfun/step-3.5-flash:free
+    role: primary
+  - provider: openrouter
+    model: nvidia/nemotron-3-nano-30b-a3b:free
+    role: fallback
+
+context:
+  window: 4000
+  retention: "7d"
+  summarize_hook: auto
+
+hooks:
+  - on_message: context_monitor
+  - on_command: log_command
+
+tests:
+  - test_forecast.py
+  - test_rain_alert.py

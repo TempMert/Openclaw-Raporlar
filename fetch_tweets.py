@@ -20,7 +20,8 @@ def search_tavily(query, max_results=5):
                 "search_depth": "basic",
                 "max_results": max_results,
                 "time_range": "week",
-                "include_images": False
+                "include_images": False,
+                "include_raw_content": True
             }).encode()
             req = urllib.request.Request(
                 url,
@@ -40,11 +41,12 @@ def search_tavily(query, max_results=5):
             return {"success": False, "error": str(e)}
     return {"success": False, "error": "All keys exhausted"}
 
-# Search queries (one per topic to speed up)
+# Search queries (multiple per topic for better coverage)
 queries = {
-    "OpenClaw": "OpenClaw AI assistant latest features",
-    "VibeCoding": "vibe coding AI pair programming tools",
-    "NanoBanana": "NanoBanana OpenClaw skill features"
+    "OpenClaw": "OpenClaw AI assistant latest features 2026",
+    "VibeCoding": "vibe coding AI pair programming tools 2026",
+    "NanoBanana": "NanoBanana OpenClaw skill features 2026",
+    "Antigravity": "Antigravity AI coding editor platform 2026"
 }
 
 collected = {}

@@ -24,6 +24,10 @@
     "answeroverflow": {
       "version": "1.0.2",
       "installedAt": 1772220807587
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1772228522664
     }
   }
 }
