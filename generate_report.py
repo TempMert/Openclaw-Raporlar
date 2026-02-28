@@ -40,9 +40,7 @@ def extract_images(raw):
 def translate_batch(texts, key_index=0):
     if not any(texts): return texts
     OPENROUTER_KEYS = [
-        os.getenv("OPENROUTER_KEY_1", "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"),
-        os.getenv("OPENROUTER_KEY_2", "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"),
-        os.getenv("OPENROUTER_KEY_3", "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")
+        o)
     ]
     OPENROUTER_MODELS = [
         "stepfun/step-3.5-flash:free",
