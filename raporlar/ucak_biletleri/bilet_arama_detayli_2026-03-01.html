@@ -1,0 +1,3311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uçuş Bilet Arama Sonuçları - 2026-03-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0f172a;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --price-priority: #10b981;
+    --price-normal: #2563eb;
+    --price-high: #dc2626;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 16px;
+}
+header h1 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+}
+header p {
+    opacity: 0.9;
+    margin: 5px 0;
+}
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.stat {
+    text-align: center;
+}
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+.price-priority { color: var(--price-priority); }
+.price-normal { color: var(--price-normal); }
+.price-high { color: var(--price-high); }
+.alert {
+    background: #fef2f2;
+    color: var(--danger);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid var(--danger);
+}
+.filters {
+    background: #e0f2fe;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+@media (max-width: 600px) {
+    .flight-card { padding: 15px !important; }
+    header h1 { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>🛫 Uçuş Bilet Arama Sonuçları</h1>
+    <p>2026-03-01 • Amadeus API • İstanbul → Osaka/Tokyo</p>
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">79</div>
+            <div class="stat-label">Toplam Bilet</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">30k TL Altı (Öncelikli)</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">79</div>
+            <div class="stat-label">44k TL Altı</div>
+        </div>
+    </div>
+</header>
+
+<div class="filters">
+<strong>🔍 Arama Kriterleri:</strong><br>
+• Gidiş: 22-24 Mayıs 2026 • Dönüş: 5-7 Haziran 2026<br>
+• Rotalar: IST → Osaka (KIX) / Tokyo (NRT)<br>
+• Aktarma: Maksimum 6 saat • 2 yetişkin<br>
+• Hedef: 30.000 TL altı (öncelik), yoksa 44.000 TL altı
+</div>
+
+<div class="alert">
+⚠️ <strong>Not:</strong> Bu sonuçlar Amadeus test API'sinden alınmıştır. Gerçek bilet fiyatları ve seferler değişken olabilir. Lütfen doğrulamak için havayolu websitesine gidin.
+</div>
+
+<h2 style="text-align: center; margin: 30px 0;">📋 Tüm Uygun Biletler (Fiyata Göre Sıralı)</h2>
+
+<div class="cards-container">
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">China Southern (CZ)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-priority" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">57,200 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">16:00 → 13:30</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">14:35 → 06:15</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">2 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 CAN (1.1 sa)<br>🔄 CAN (5.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.csair.com?search=flight&price=57200.22&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">China Southern (CZ)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-priority" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">57,465 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">16:00 → 13:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">14:40 → 06:15</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">2 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 CAN (1.7 sa)<br>🔄 CAN (5.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.csair.com?search=flight&price=57464.58&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">China Southern (CZ)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-priority" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">57,465 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">16:00 → 13:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">14:40 → 06:15</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">2 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 PKX (3.9 sa)<br>🔄 CAN (5.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.csair.com?search=flight&price=57464.58&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Air China (CA)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">64,899 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">14:45 → 13:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:15 → 07:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">2 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 PEK (4.2 sa)<br>🔄 PEK (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.airchina.com?search=flight&price=64898.54&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Air China (CA)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">64,899 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">14:45 → 13:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:15 → 07:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">2 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 PEK (4.2 sa)<br>🔄 PEK (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.airchina.com?search=flight&price=64898.54&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">74,777 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=74777.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">74,777 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=74777.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">74,777 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=74777.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">74,777 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=74777.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">76,533 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=76533.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-22</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.7 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">17:25 → 06:20</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">13:35 → 12:25</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.2 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 11:55</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">QR (QR)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → NRT (Tokyo)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">78,289 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">20:05 → 19:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-07</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">22:25 → 12:10</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">0</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 DOH (2.3 sa)<br>🔄 DOH (3.7 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.google.com/flights?search=flight&price=78289.24&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">21:20 → 21:00</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (5.6 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">21:20 → 21:00</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (5.6 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">21:20 → 21:00</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (5.6 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-05</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:05 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (2.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">18:20 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (4.8 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">81,990 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">06:55 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 ICN (4.9 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=81989.98&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">19:35 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 GMP (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">07:40 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 GMP (4.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">19:35 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 GMP (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">07:40 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 GMP (4.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">21:20 → 21:00</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">19:35 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (5.6 sa)<br>🔄 GMP (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-23</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">21:20 → 21:00</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">07:40 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (5.6 sa)<br>🔄 GMP (4.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">19:35 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 GMP (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 04:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">07:40 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (1.4 sa)<br>🔄 GMP (4.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">19:35 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 GMP (3.6 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+<div class="flight-card" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px; margin: 15px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+        <div>
+            <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Korean Air (KE)</div>
+            <div style="color: #7f8c8d; font-size: 0.9rem;">IST → KIX (Osaka)</div>
+        </div>
+        <div class="price-normal" style="text-align: right;">
+            <div style="font-size: 1.5rem; font-weight: bold;">82,851 ₺</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">2 yetişkin toplam</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">GİDİŞ</div>
+            <div style="font-weight: 600;">2026-05-24</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">09:45 → 06:45</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">DÖNÜŞ</div>
+            <div style="font-weight: 600;">2026-06-06</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">07:40 → 19:40</div>
+        </div>
+        <div>
+            <div style="color: #7f8c8d; font-size: 0.85rem; margin-bottom: 4px;">BAGAJ</div>
+            <div style="font-weight: 600;">1 Adet</div>
+            <div style="font-size: 0.9rem; color: #7f8c8d;">Alt bagaj</div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+        <div style="font-size: 0.9rem; color: #495057;">🔄 Aktarma(lar):</div>
+        <div style="margin-top: 5px;">🔄 ICN (3.4 sa)<br>🔄 GMP (4.0 sa)</div>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://www.koreanair.com?search=flight&price=82850.60&currency=TRY" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem;">🎫 Biletini Satın Al</a>
+    </div>
+</div>
+
+</div>
+
+<footer>
+Bu rapor <strong>OpenClaw</strong> tarafından Amadeus API ile otomatik üretilmiştir.<br>
+API kotaları: Flight Offers Search (3,000/ay) - Kalan: ~2,999<br>
+<small>Son güncelleme: 2026-03-01 14:32</small>
+</footer>
+
+</div>
+</body>
+</html>
