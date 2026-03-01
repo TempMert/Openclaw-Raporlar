@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw & Securi Geliştirme Rehberi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-2: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+    border-radius: 16px;
+    color: white;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+.subtitle {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+}
+h3 {
+    color: var(--accent-2);
+    font-size: 1.4rem;
+    margin-top: 25px;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin: 10px 0;
+    padding-left: 5px;
+}
+code {
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: #fbbf24;
+}
+pre {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #334155;
+}
+.highlight {
+    color: var(--warning);
+    font-weight: 600;
+}
+.critical {
+    color: var(--danger);
+    font-weight: 700;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--text-muted);
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.toc {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+.toc a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 15px;
+}
+.toc a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🛡️ OpenClaw & Securi Geliştirme Rehberi</h1>
+<p class="subtitle">Sisteminizi daha güvenli, stabil ve profesyonel hale getirme kılavuzu</p>
+<p style="font-size:0.9rem; opacity:0.8">Hazırlayan: Claw • Tarih: 2026-03-02 • v1.0</p>
+</header>
+
+<div class="toc">
+<strong>📑 İçerik:</strong>
+<a href="#openclaw">OpenClaw Geliştirme</a>
+<a href="#securi">Securi Agent Geliştirme</a>
+<a href="#security">Güvenlik Özellikleri</a>
+<a href="#monitoring">Monitoring & Alerting</a>
+<a href="#github">GitHub Pages & CI/CD</a>
+<a href="#scenarios">Kullanım Senaryoları</a>
+<a href="#html">HTML Profesyonel Tasarım</a>
+</div>
+
+<section id="openclaw">
+<h2>🔧 OpenClaw En İyi Uygulamaları</h2>
+
+<h3>1. Agent Mimarisinin Güçlendirilmesi</h3>
+<ul>
+<li><strong>Hiyerarşik Agent Yapısı</strong> – CEO (Mertko) → CTO (Claw) → Güvenlik (Securi) → Diğer agent'lar</li>
+<li><strong>Agent Izolasyonu</strong> – Her agent kendi workspace'inde çalışsın (örnek: <code>workspace-securebot</code>)</li>
+<li><strong>Skill Modülerliği</strong> – Her agent sadece gerekli skill'leri yüklesin (örnek: Securi → securi-agent skill)</li>
+<li><strong>Agent Comm.</strong> – Agent'lar birbirine mesaj atabilmeli (sessions_send ile)</li>
+<li><strong>Agent Healthchecks</strong> – Her agent kendi sağlık durumunu rapor etmeli (ping/pong)</li>
+</ul>
+
+<h3>2. Gateway & Config Güvenliği</h3>
+<ul>
+<li><strong>Gateway Token</strong> – Düzenli değiştir (her ay veya şüpheli aktivite)</li>
+<li><strong>Config File Permissions</strong> – <code>chmod 600 ~/.openclaw/openclaw.json</code></li>
+<li><strong>Agent Whitelisting</strong> – Sadece onaylı agent'lar çalışabilsin (<code>allowAny: false</code>)</li>
+<li><strong>TLS/SSL</strong> – Gateway trafiği şifrelensin (HTTPS mandatory)</li>
+<li><strong>Audit Logging</strong> – Tüm agent mesajları loglansın (<code>logs/agent-*.log</code>)</li>
+</ul>
+
+<h3>3. Skill Yönetimi</h3>
+<ul>
+<li><strong>Skill Versioning</strong> – Her skill kendi semver'ine sahip olsun (<code>skill.json</code>)</li>
+<li><strong>Skill Registry</strong> – ClawHub veya private npm registry kullan</li>
+<li><strong>Skill Sandboxing</strong> – Skill'ler kendi container'larında çalışsın (Docker/security sandbox)</li>
+<li><strong>Skill Auditing</strong> – Skill'lerin kodunu incele (VirusTotal scan, manual review)</li>
+<li><strong>Skill Auto-Update</strong> – Güvenlik güncellemeleri otomatik yüklensin (cron + checksum verify)</li>
+</ul>
+
+<h3>4. Resource Limits</h3>
+<ul>
+<li><strong>CPU/Memory Quotas</strong> – Her agent'a CPU (0.5 core) ve RAM (256 MB) limiti</li>
+<li><strong>Timeout Enforcement</strong> – Agent komutları max 5 dakika</li>
+<li><strong>Concurrency Control</strong> – Aynı anda max 3 agent çalışsın (queue)</li>
+<li><strong>Disk Quota</strong> – Workspace başına 1 GB limit</li>
+</ul>
+
+</section>
+
+<section id="securi">
+<h2>🛡️ Securi Agent Geliştirme Önerileri</h2>
+
+<h3>1. Self-Improvement Derinleşmesi</h3>
+<ul>
+<li><strong>Sürekli Öğrenme</strong> – Her tarama sonrası yeni kurallar ekle (machine learning basit model)</li>
+<li><strong>Ontoloji Genişletme</strong> – CVE veritabanını senkronize tut (NVD API)</li>
+<li><strong>Threat Intelligence</strong> – Abrasha ( abuse.ch ), AlienVault OTX entegasyonu</li>
+<li><strong>Benzer Sistemi Tanı</strong> – Başka sunucularda ne tür açıklar olduğunu öğren (anonymized telemetry)</li>
+<li><strong>Auto-White/Blacklist</strong> – IP/Domain whitelist/blacklist oluştur</li>
+</ul>
+
+<h3>2. Kritik Alert Sistemi</h3>
+<ul>
+<li><strong>Severity Levels</strong> – Critical (🚨), High (🔴), Medium (🟡), Low (🟢)</li>
+<li><strong>Instant Telegram</strong> – Critical bulgular anında mesaj (cron beklemez)</li>
+<li><strong>Multi-Channel Alert</strong> – Telegram + Slack + Email (backup channel)</li>
+<li><strong>Rate Limiting</strong> – Aynı alert'i spam'lamasın (5 dakika cool-down)</li>
+<li><strong>Alert Deduplication</strong> – Aynı CVE tekrar raporlanmasın</li>
+</ul>
+
+<h3>3. Proaktif Önlemler</h3>
+<ul>
+<li><strong>Vulnerability Prediction</strong> – Paket version'ine göre risk skoru (CVSS database)</li>
+<li><strong>Compliance Checks</strong> – CIS Level 1/2, GDPR, HIPAA kontrol listeleri</li>
+<li><strong>Configuration Drift</strong> – SSH config dosyası değişmiş mi? Bildir!</li>
+<li><strong>File Integrity Monitoring</strong> – /etc/passwd, /etc/shadow değişti mi?</li>
+<li><strong>Login Anomaly Detection</strong> – Yeni lokasyon/ IP'den giriş var mı?</li>
+</ul>
+
+<h3>4. Raporlamayı Zenginleştirme</h3>
+<ul>
+<li><strong>Interactive Charts</strong> – D3.js veya Chart.js ile görsel grafikler</li>
+<li><strong>Timeline View</strong> – Açıkların zaman çizelgesi</li>
+<li><strong>Remediation Steps</strong> – Her bulgu için 'Nasıl Düzeltilir?' adımları</li>
+<li><strong>CVE Details</strong> – NVD linki, CVSS skoru, exploit var mı?</li>
+<li><strong>PDF Export</strong> – Raporu PDF olarak indirilebilir</li>
+</ul>
+
+</section>
+
+<section id="security">
+<h2>🔐 Genel Güvenlik Özellikleri</h2>
+
+<h3>OpenClaw Güvenlik</h3>
+<ul>
+<li><strong>Agent Authentication</strong> – Mutual TLS veya API key ile agent auth</li>
+<li><strong>Message Signing</strong> – Tüm agent mesajları digital signature ile</li>
+<li><strong>Secrets Management</strong> – HashiCorp Vault veya Azure Key Vault entegrasyonu</li>
+<li><strong>RBAC</strong> – Role-based access control (Admin, Operator, Viewer)</li>
+<li><strong>Session Management</strong> – Session timeout (30 min), auto-logout</li>
+</ul>
+
+<h3>Sistem Güvenliği (Linux)</h3>
+<ul>
+<li><strong>SSH Hardening</strong> – PasswordAuthentication no, Port değiş, fail2ban</li>
+<li><strong>Firewall (UFW)</strong> – Sadece gerekli portlar (22, 80, 443)</li>
+<li><strong>AppArmor/SELinux</strong> – Mandatory Access Control etkinleştir</li>
+<li><strong>Automatic Updates</strong> – Security updates otomatik (unattended-upgrades)</li>
+<li><strong>Intrusion Detection</strong> – Wazuh veya OSSEC kur</li>
+</ul>
+
+<h3>Veri Güvenliği</h3>
+<ul>
+<li><strong>Encryption at Rest</strong> – Raporlar encrypted (openssl aes-256)</li>
+<li><strong>Secure Delete</strong> – Sensitive dosyaları <code>shred</code> ile sil</li>
+<li><strong>Backup Encryption</strong> – Yedekler sifreli ve offsite</li>
+<li><strong>Data Retention Policy</strong> – 90 gün sonra raporları otomatik arşivle/sil</li>
+</ul>
+
+</section>
+
+<section id="monitoring">
+<h2>📊 Monitoring & Alerting</h2>
+
+<h3>1. Sistem Metrikleri</h3>
+<ul>
+<li><strong>CPU/Memory Usage</strong> – Agent başına resource kullanımı</li>
+<li><strong>Disk I/O</strong> – Write latency, space usage</li>
+<li><strong>Network Traffic</strong> – Agent'ların dış bağlantıları</li>
+<li><strong>Process Count</strong> – Zombie process, runaway processes</li>
+</ul>
+
+<h3>2. OpenClaw Metrikleri</h3>
+<ul>
+<li><strong>Agent Latency</strong> – Komut çalıştırma süresi</li>
+<li><strong>Queue Depth</strong> – Bekleyen mesaj sayısı</li>
+<li><strong>Error Rate</strong> – Agent başına hata oranı</li>
+<li><strong>Uptime</strong> – Agent çalışma süresi</li>
+</ul>
+
+<h3>3. Alerting Tools</h3>
+<ul>
+<li><strong>Prometheus + Grafana</strong> – Metrik toplama ve dashboard</li>
+<li><strong>UptimeRobot</strong> – HTTP endpoint monitoring (GitHub Pages erişilebilir mi?)</li>
+<li><strong>Telegram Bot</strong> – Zaten var, kullanılıyor</li>
+<li><strong>Email Digest</strong> – Günlük özet (SMTP integrasyonu)</li>
+</ul>
+
+<h3>4. Log Management</h3>
+<ul>
+<li><strong>Centralized Logging</strong> – Loki v ELK stack (Elasticsearch, Logstash, Kibana)</li>
+<li><strong>Log Rotation</strong> – <code>logrotate</code> ile 7 gün tut</li>
+<li><strong>Structured Logging</strong> – JSON formatında log (machine-parseable)</li>
+<li><strong>Log Levels</strong> – DEBUG, INFO, WARN, ERROR, FATAL</li>
+</ul>
+
+</section>
+
+<section id="github">
+<h2>🚀 GitHub Pages & CI/CD</h2>
+
+<h3>1. Cache-Busting Stratejisi</h3>
+<p>Zaten uyguluyorsunuz: <strong>delete-then-re-add</strong>:</p>
+<ol>
+<li>GitHub'da eski HTML dosyasını sil (<code>git rm --cached</code>)</li>
+<li>Yeni dosyayı ekle</li>
+<li>Push et → CDN cache invalidate</li>
+</ol>
+<p><span class="highlight">Alternatif:</span> Query string hash: <code>bilet_arama_detayli_2026-03-01.html?v=abc123</code></p>
+
+<h3>2. GitHub Actions Workflow</h3>
+<p>Otomatik deploy için workflow oluştur:</p>
+<pre><code>name: Deploy Reports
+on:
+  push:
+    paths:
+      - 'raporlar/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+</code></pre>
+
+<h3>3. Performance Optimizasyonu</h3>
+<ul>
+<li><strong>HTML Minify</strong> – <code>html-minifier</code> ile boyut küçült</li>
+<li><strong>CSS/JS Inline</strong> – Küçük dosyaları inline et (HTTP/2 multiplex)</li>
+<li><strong>Lazy Load Images</strong> – <code>loading="lazy"</code></li>
+<li><strong>Preload Critical</strong> – Font ve kritik CSS'i preload et</li>
+<li><strong>Gzip/Brotli Compression</strong> – GitHub Pages otomatik yapıyor</li>
+</ul>
+
+<h3>4. SEO & Accessibility</h3>
+<ul>
+<li><strong>Meta Tags</strong> – <code>&lt;meta name="description"&gt;</code>, og:title, og:image</li>
+<li><strong>Sitemap.xml</strong> – Tüm raporları içeren sitemap oluştur</li>
+<li><strong>Robots.txt</strong> – Search engine crawling'ı yönet</li>
+<li><strong>ARIA Labels</strong> – Wheelchair accessibility için ARIA</li>
+<li><strong>Contrast Ratio</strong> – WCAG AA/AAA uyumlu renkler</li>
+</ul>
+
+</section>
+
+<section id="scenarios">
+<h2>🌍 Kullanım Senaryoları</h2>
+
+<h3>1. E-Devlet (Government)</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – Vatandaşlar, devlet çalışanları</li>
+<li><strong>Kullanım</strong> – Sözleşme takibi, hizmet durumu raporları, güvenlik denetimleri</li>
+<li><strong>Güvenlik</strong> – GDPR, KVKK, ISO 27001 uyumlu</li>
+<li><strong>Agent'lar</strong> – <code>SecureBot</code> (güvenlik), <code>DocBot</code> (belge yönetimi), <code>NotifyBot</code> (bildirim)</li>
+</ul>
+
+<h3>2. E-Ticaret</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – Mağaza sahibi, operatör</li>
+<li><strong>Kullanım</strong> – Stok takibi, sipariş durumu, müşteri hizmetleri otomasyonu</li>
+<li><strong>Güvenlik</strong> – PCI DSS compliance, fraud detection</li>
+<li><strong>Agent'lar</strong> – <code>StockBot</code> (envanter), <code>OrderBot</code> (sipariş), <code>SupportBot</code> (müşteri hizmetleri)</li>
+</ul>
+
+<h3>3. Sağlık (Healthcare)</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – Doktorlar, hastaneIT, hastalar</li>
+<li><strong>Kullanım</strong> – Randevu takibi, ilaç hatırlatmaları, sağlık raporları</li>
+<li><strong>Güvenlik</strong> – HIPAA compliance, encrypted storage, audit trails</li>
+<li><strong>Agent'lar</strong> – <code>HealthBot</code> (sağlık verisi), <code>AppointmentBot</code> (randevu), <code>PharmaBot</code> (ilaç kontrol)</li>
+</ul>
+
+<h3>4. Finans (Finance/Banking)</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – Müşteriler, operatörler</li>
+<li><strong>Kullanım</strong> – İşlem izleme, dolandırıcılık tespiti, raporlama</li>
+<li><strong>Güvenlik</strong> – PCI DSS, SOX, PSD2 compliance</li>
+<li><strong>Agent'lar</strong> – <code>FraudBot</code> (dolandırıcılık), <code>TradeBot</code> (işlem), <code>ReportBot</code> (finansal rapor)</li>
+</ul>
+
+<h3>5. IoT (Edge Devices)</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – IoT operatörleri, fabrika, akıllı ev</li>
+<li><strong>Kullanım</strong> – Device health, anomaly detection, firmware updates</li>
+<li><strong>Güvenlik</strong> – Device auth, OTA güvenli güncelleme, network segmentation</li>
+<li><strong>Agent'lar</strong> – <code>EdgeBot</code> (edge device), <code>SensorBot</strong> (sensör verisi), <code>UpdateBot</strong> (firmware)</li>
+</ul>
+
+<h3>6. Büyük Şirket (Enterprise)</h3>
+<ul>
+<li><strong>Kullanıcı</strong> – IT, Güvenlik, operasyon ekipleri</li>
+<li><strong>Kullanım</strong> – SOC (Security Operations Center),Change Management, Incident Response</li>
+<li><strong>Güvenlik</strong> – ISO 27001, SOC 2 Type 2, zero-trust architecture</li>
+<li><strong>Agent'lar</strong> – <code>Securi</code> (güvenlik), <code>AuditBot</code> (denetim), <code>IncidentBot</code> (olay yönetimi), <code>ChangeBot</code> (değişiklik yönetimi)</li>
+</ul>
+
+</section>
+
+<section id="html">
+<h2>🎨 HTML & CSS Profesyonel Tasarım</h2>
+
+<h3>1. Responsive Tasarım</h3>
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre>
+<p>CSS Grid / Flexbox ile mobile-first tasarım.</p>
+
+<h3>2. Dark Mode (Koyu Tema)</h3>
+<p>CSS Variables ile:</p>
+<pre><code>:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+}
+@media (prefers-color-scheme: dark) { body { background: var(--bg); } }
+</code></pre>
+
+<h3>3. Accessibility (WCAG 2.1 AA)</h3>
+<ul>
+<li>Yeterli renk kontrastı (4.5:1 minimum)</li>
+<li>Keyboard navigasyonu (tabindex)</li>
+<li>ARIA labels for icons</li>
+<li>Alt text for images</li>
+</ul>
+
+<h3>4. Performance</h3>
+<ul>
+<li>Critical CSS inline (above-the-fold)</li>
+<li>Non-critical CSS async (preload)</li>
+<li>JavaScript defer/async</li>
+<li>HTTP/2 server push (GitHub Pages otomatik)</li>
+</ul>
+
+<h3>5. SEO Best Practices</h3>
+<ul>
+<li>Semantic HTML (header, nav, main, section, article, footer)</li>
+<li>Proper heading hierarchy (h1 → h2 → h3)</li>
+<li>Open Graph tags (Facebook, Twitter)</li>
+<li>Sitemap.xml ( GitHub Pages )</li>
+<li>Robots.txt (allow/disallow)</li>
+</ul>
+
+</section>
+
+<section id="conclusion">
+<h2>✅ Sonuç ve Sonraki Adımlar</h2>
+
+<p>Bu rehber, OpenClaw ve Securi'nizi <strong>profesyonel, güvenli, stabil</strong> bir sisteme dönüştürmek için 7 ana alanda 60+ öneri sunmaktadır.</p>
+
+<h3>Priority List (Hemen Yapılması Gerekenler):</h3>
+<ol>
+<li><strong>Gateway Token'ını Değiştir</strong> – <code>openclaw config set gateway.token &lt;yeni-token&gt;</code></li>
+<li><strong>Securi'yi Custom Skill ile Yükle</strong> – <code>securi-agent</code> skill'ini yayınla</li>
+<li><strong>Cron'u Doğrula</strong> – <code>crontab -l</code> ile kontrol et, logları izle</li>
+<li><strong>HTTPS Enforce</strong> – GitHub Pages'te HTTPS zorla</li>
+<li><strong>Monitoring Kur</strong> – Prometheus + Grafana veya UptimeRobot</li>
+<li><strong>Backup Strategy</strong> – Workspace ve DB yedekleri (encrypted, offsite)</li>
+<li><strong>Skill Audit</strong> – Tüm skill'leri incele, güvenilir olanları koru</li>
+</ol>
+
+<h3>Kısa Vadeli Plan (1-2 hafta):</h3>
+<ul>
+<li>Securi skill'ini test et (<code>self-improve</code>, <code>ontology</code>, <code>answeroverflow</code>)</li>
+<li>HTML raporlarını cache-bust ile güncelle</li>
+<li>GitHub Actions workflow ekle (auto-deploy)</li>
+<li>Telegram alert testi (critical alert simülasyonu)</li>
+</ul>
+
+<h3>Orta Vadeli Plan (1-2 ay):</h3>
+<ul>
+<li>Prometheus monitoring kurulumu</li>
+<li>Vault entegrasyonu (secrets management)</li>
+<li>Skill sandboxing (Docker container'ları)</li>
+<li>Centralized logging (Loki)</li>
+</ul>
+
+<h3>Uzun Vadeli Plan (3-6 ay):</h3>
+<ul>
+<li>Machine learning ile anomaly detection</li>
+<li>Multi-tenancy (birden fazla müşteri/organizasyon)</li>
+<li>HA (High Availability) – agent failover</li>
+<li>Cloud-native deployment (Kubernetes)</li>
+</ul>
+
+<p style="text-align:center; margin-top:40px; color:var(--text-muted)">&mdash; SON &mdash;</p>
+</section>
+
+<footer>
+<p>© 2026 OpenClaw Ecosystem • Hazırlayan: Claw (AI Assistant) • Lisans: MIT</p>
+<p>Bu doküman OpenClaw ve Securi geliştirme rehberidir. Düzenli güncelleme yapılır.</p>
+</footer>
+</div>
+</body>
+</html>
