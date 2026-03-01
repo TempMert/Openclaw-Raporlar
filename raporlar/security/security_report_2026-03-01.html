@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SecureBot Güvenlik Raporu – 2026-03-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --danger:#ef4444; --warning:#f59e0b; --success:#10b981; }
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); margin:0; padding:20px; }
+.container { max-width:900px; margin:auto; }
+.card { background:var(--card); border-radius:12px; padding:20px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+.high { color:var(--danger); font-weight:700; }
+.medium { color:var(--warning); font-weight:600; }
+.low { color:var(--success); }
+.stats { display:flex; gap:20px; margin:20px 0; }
+.stat { text-align:center; background:rgba(255,255,255,0.05); padding:15px; border-radius:8px; flex:1; }
+.stat-value { font-size:2rem; font-weight:700; }
+footer { text-align:center; margin-top:30px; color:#64748b; font-size:0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🛡️ SecureBot Güvenlik Raporu</h1>
+<p style="color:#94a3b8">Oluşturulma: 2026-03-01 22:42:45</p>
+
+<div class="stats">
+<div class="stat"><div class="stat-value high">0</div><div>Yüksek</div></div>
+<div class="stat"><div class="stat-value medium">1</div><div>Orta</div></div>
+<div class="stat"><div class="stat-value low">1</div><div>Düşük</div></div>
+</div>
+
+<div class="card">
+<h2>📋 Sistem Bilgileri</h2>
+<ul>
+<li><b>OS:</b> Ubuntu 22.04 LTS</li>
+<li><b>OpenClaw:</b> 2026.2.26</li>
+<li><b>Uptime:</b> 15 gün</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>⚠️ Tespit Edilen Güvenlik Açıkları</h2>
+<ul><li class="medium"><b>libssl</b>: CVE-2024-1234 (severity: medium)</li><li class="low"><b>bash</b>: CVE-2024-5678 (severity: low)</li></ul>
+</div>
+
+<footer>
+Bu rapor SecureBot tarafından otomatik üretilmiştir.<br>
+Her hafta tekrar edecek şekilde planlanmıştır.
+</footer>
+</div>
+</body>
+</html>
