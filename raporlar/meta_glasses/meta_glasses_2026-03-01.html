@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayban Meta GEN1 Güncelleme Raporu – 2026-03-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0f172a;          /* Slate 900 – yumuşak koyu */
+    --card: #1e293b;        /* Slate 800 – card background */
+    --card-hover: #334155;  /* Slate 700 – hover */
+    --text-main: #f1f5f9;   /* Slate 100 – parlak, okunabilir */
+    --text-muted: #94a3b8;  /* Slate 400 – ikincil metin */
+    --accent: #3b82f6;      /* Blue 500 – linkler */
+    --accent-hover: #60a5fa;
+    --success: #10b981;     /* Emerald 500 */
+    --danger: #ef4444;      /* Red 500 */
+    --border: #334155;      /* Slate 700 */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+header {
+    text-align: left;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.meta {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.status-line {
+    margin-top: 16px;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+.status-badge.update {
+    background: var(--danger);
+    color: white;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+.status-badge.no-change {
+    background: transparent;
+    color: var(--success);
+    border-color: var(--success);
+}
+
+section { margin: 48px 0; }
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+}
+
+p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--text-main); }
+p em { color: var(--text-muted); font-style: normal; }
+p strong { color: var(--text-main); font-weight: 600; }
+code {
+    background: var(--card);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+.card-list { list-style: none; padding: 0; margin: 1em 0; }
+.card-list li { margin: 0; }
+
+/* Modern kartlar */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.card-badge.update {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.card-badge.no-change {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+.card-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+/* Liste bağlantıları (blog haberleri) */
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+}
+.link-list li {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 10px 0;
+    transition: background 0.2s;
+}
+.link-list li:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+}
+.link-list a {
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.link-list a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 80px;
+    padding: 32px;
+    background: var(--card);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+    body { padding: 16px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.3rem; }
+    .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🕶️ Rayban Meta GEN1 – Güncelleme Raporu</h1>
+    <p class="meta">Oluşturulma: 2026-03-01 • OpenClaw Otomatik Kontrol • Sadece GEN1 modeli için</p>
+    <p class="status-line">
+        <strong>Durum:</strong>
+        <span class="status-badge update" style="background: var(--danger); color: white;">🚨 RAYBAN META GEN1 – GÜNCELLEME VAR (2026-03-01)</span>
+    </p>
+</header>
+
+<p style="font-size: 1.2rem; color: #9ca3af; margin-bottom: 2rem;">
+    <em>Bu rapor Rayban Meta <strong>GEN1</strong> gözlüklerinin son güncelleme durumunu inceliyor. Veriler otomatik olarak toplanmış ve <strong>2026-03-01</strong> tarihinde rapor hazırlanmıştır.</em>
+</p>
+<h2 style='font-size: 1.8rem; margin: 2.5rem 0 1rem 0; color: #fbbf24;'>📌 Son Güncellemeler (GEN1)</h2>
+<p style="margin-bottom: 1.5rem; line-height: 1.8;">
+    🔍 <strong style="color: #60a5fa;">Meta'nın resmi Help Sayfası</strong> güncellenmiş görünüyor. Bu, GEN1 kullanıcılar için en güncel kullanım kılavuzları, AI özellikleri açıklamaları ve sorun giderme bilgileri eklenmiş demek.
+</p>
+
+<section>
+<h2>📊 Kontrol Sonuçları</h2>
+<ul class="card-list">
+
+<li class="card" style="margin: 12px 0; padding: 20px 24px;">
+    <div class="card-header">
+        <div class="card-title">
+            Meta Resmi Help Sayfası
+            <span class="card-badge update" style="background: #ef4444; color: white;">
+                ✕ GÜNCELLENDI
+            </span>
+        </div>
+    </div>
+    <div class="card-desc">
+        Meta'nın resmi AI Glasses rehber sayfası
+    </div>
+    <a class="card-link" href="https://www.meta.com/help/ai-glasses/1809764829519902/" target="_blank">Şuradan incele <a href="https://www.meta.com/help/ai-glasses/1809764829519902/" target="_blank" style="color: var(--accent); margin-left: 8px; font-size: 1rem;">🔗</a></a>
+</li>
+<li class="card" style="margin: 12px 0; padding: 20px 24px;">
+    <div class="card-header">
+        <div class="card-title">
+            Meta Newsroom
+            <span class="card-badge no-change" style="background: transparent; color: var(--success); border: 1px solid var(--success);">
+                ✓ DEĞİŞİKLİK YOK
+            </span>
+        </div>
+    </div>
+    <div class="card-desc">
+        Meta'nın resmi blog yayınları
+    </div>
+    <a class="card-link" href="https://about.fb.com/news/" target="_blank">Şuradan incele <a href="https://about.fb.com/news/" target="_blank" style="color: var(--accent); margin-left: 8px; font-size: 1rem;">🔗</a></a>
+</li>
+<li class="card" style="margin: 12px 0; padding: 20px 24px;">
+    <div class="card-header">
+        <div class="card-title">
+            Reddit r/MetaGlasses
+            <span class="card-badge no-change" style="background: transparent; color: var(--success); border: 1px solid var(--success);">
+                ✓ DEĞİŞİKLİK YOK
+            </span>
+        </div>
+    </div>
+    <div class="card-desc">
+        Kullanıcı topluluğu tartışmaları
+    </div>
+    <a class="card-link" href="https://www.reddit.com/r/MetaGlasses/" target="_blank">Şuradan incele <a href="https://www.reddit.com/r/MetaGlasses/" target="_blank" style="color: var(--accent); margin-left: 8px; font-size: 1rem;">🔗</a></a>
+</li>
+<li class="card" style="margin: 12px 0; padding: 20px 24px;">
+    <div class="card-header">
+        <div class="card-title">
+            Teknoloji Blogları
+            <span class="card-badge no-change" style="background: transparent; color: var(--success); border: 1px solid var(--success);">
+                ✓ DEĞİŞİKLİK YOK
+            </span>
+        </div>
+    </div>
+    <div class="card-desc">
+        GEN1 teknoloji haberleri
+    </div>
+    
+</li>
+</ul>
+</section>
+
+
+
+<footer>
+<small>
+    Bu rapor <a href="https://github.com/TempMert/Openclaw-Raporlar" target="_blank">OpenClaw</a> tarafından otomatik olarak üretilmiştir.<br>
+    meta_glasses_update_checker • 2026-03-01 • GEN1 Modeli
+</small>
+</footer>
+
+</body>
+</html>
