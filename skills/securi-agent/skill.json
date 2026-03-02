@@ -1,0 +1,16 @@
+{
+  "name": "securi-agent",
+  "version": "1.0.0",
+  "description": "Self-improvement, ontology, and answeroverflow capabilities for Securi security agent",
+  "main": "index.js",
+  "author": "Mertko",
+  "license": "MIT",
+  "openclaw": {
+    "minVersion": "2026.2.26",
+    "skills": [
+      "self-improvement",
+      "ontology",
+      "answeroverflow"
+    ]
+  }
+}

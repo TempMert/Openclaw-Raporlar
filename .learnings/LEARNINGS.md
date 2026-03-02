@@ -1,5 +1,19 @@
 ## LEARNINGS
 
+### 2026-02-28: Seyahat Tercihleri – Uçak Bilet Arama (CRITICAL)
+- **Kullanıcı:** Mertko
+- **Tarihler:**
+  - Gidiş: 22-24 Mart 2026 (herhangi bir gün)
+  - Dönüş: 5-6 Haziran 2026 (herhangi bir gün)
+- **Rotalar:**
+  - İstanbul (IST/SAW) → Osaka, Japonya
+  - İstanbul (IST/SAW) → Tokyo, Japonya
+- **Yolcu Sayısı:** 2 kişi
+- **Aktarma:** Maksimum 5 saat (kısa aktarma)
+- **Havayolları:** Tercih yok (ucuz bilet)
+- **Kaynaklar:** SkyScanner, Google Flights, doğrudan havayolları (JAL, ANA, Turkish Airlines, Air China, etc.)
+- **Not:** Kullanıcı bu kriterlere uyan biletleri bulduğumda (herhangi bir arama sonucu) linkleri ile birlikte paylaşmalıyım.
+
 ### 2026-02-28: ULTRA-CRITICAL USER CONSENT POLICY (NEW)
 - **ABSOLUTE RULE:** Before performing any system-altering action on the host machine, **ALWAYS obtain explicit user confirmation first**.
 - **Actions requiring confirmation:**
@@ -17,13 +31,35 @@
 - **Problem:** GitHub Pages caches HTML files aggressively (up to hours). Updating a file may not reflect immediately, causing users to see stale content.
 - **Solution:** For every report update, use **delete-then-recreate** workflow:
   1. Delete the old HTML file from git: `git rm path/to/report.html`
-  2. Commit & push: `git commit -m "Remove old report" && git push`
-  3. Regenerate the report fresh (new file created)
-  4. Push again: `git add new_report.html && git commit -m "Add updated report" && git push`
+  2. Commit & push removal (this busts the cache)
+  3. Wait 5 seconds
+  4. Regenerate the report fresh (new file created in same location)
+  5. Add, commit & push the new file
+  6. Verify with `curl -I <url>` – should return HTTP 200 and recent `Last-Modified`
 - **Why this works:** Removing the file forces GitHub Pages to invalidate the cache entry. When the new file is added, it's treated as a brand new resource, bypassing CDN cache.
-- **Automation:** All OpenClaw report generators (`meta_glasses_update_checker.py`, daily_report.sh, etc.) must implement this delete-then-recreate pattern for every update.
-- **Verification:** After push, check `curl -I <url>` – the `Last-Modified` header should be recent (within last minute). If not, repeat the delete-recreate cycle.
-- **User instruction:** When sharing links, always verify with `curl -I` to ensure the latest version is served. If not, trigger rebuild.
+- **Automation:** All OpenClaw report generators must implement this exact pattern (see `meta_glasses_update_checker.py:push_and_verify`).
+- **Important:** Must use **correct path** (`raporlar/<report_type>/`) – not `meta_glasses_reports/`. GitHub Pages serves from `/raporlar/` subtree.
+- **Verification:** After push, check `curl -I <url>` – `Last-Modified` should be within 1 minute. If not, repeat cycle.
+- **User instruction:** When sharing links, always verify with `curl -I`. If stale, trigger rebuild.
+
+### 2026-02-28: HTML Report Design Pattern – Modern Dark Blog Style (CRITICAL)
+- **Design Philosophy:** Use the same template for all HTML reports (AI news, Meta Glasses, etc.).
+- **Core Template:** Dark mode (`#0f172a` slate 900), Inter font, max-width 900px, line-height 1.7.
+- **Components:**
+  - Header: Title (emoji + model/type), meta line (date, automation), status badge (update/no-update with date)
+  - Blog Summary: Paragraph-based, emoji-start, clear explanations, model-specific (e.g., "GEN1", "OpenClaw ecosystem")
+  - Control/Kontroll成果: Card-style list (hover effects, rounded corners, left border accent)
+  - News Links: Modern card list with title + snippet, hover accent border
+  - Footer: Attribution, date, model tag
+- **Color Palette (Slate):**
+  - `--bg: #0f172a` (slate 900)
+  - `--card: #1e293b` (slate 800)
+  - `--text-main: #f1f5f9` (slate 100)
+  - `--accent: #3b82f6` (blue 500)
+  - `--success: #10b981` (emerald 500)
+  - `--danger: #ef4444` (red 500)
+- **Cache Bust:** Always delete-then-recreate to ensure fresh deploy.
+- **Consistency:** All reports must follow this exact pattern for brand consistency.
 
 ### 2026-02-28: ULTRA-CRITICAL API KEY SECURITY POLICY
 - **ABSOLUTELY FORBIDDEN:** Never hardcode or commit API keys (OpenRouter, Tavily, GitHub, Telegram, Google) to ANY repository (public or private).

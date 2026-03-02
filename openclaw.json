@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-03-01T18:59:53.918Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-25T18:07:46.659Z",
+    "lastRunVersion": "2026.2.24",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "openrouter:default": {
+        "provider": "openrouter",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openrouter/auto",
+        "fallbacks": [
+          "stepfun/step-3.5-flash:free",
+          "openrouter/auto",
+          "openrouter/stepfun/step-3.5-flash:free"
+        ]
+      },
+      "models": {
+        "stepfun/step-3.5-flash:free": {},
+        "openrouter/auto": {
+          "alias": "OpenRouter"
+        },
+        "openrouter/openrouter/auto": {},
+        "openrouter/stepfun/step-3.5-flash:free": {},
+        "openrouter/openai/gpt-oss-120b:free": {}
+      },
+      "workspace": "/home/openclaw/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "securebot",
+        "name": "SecureBot",
+        "workspace": "/home/openclaw/.openclaw/workspace-securebot",
+        "agentDir": "/home/openclaw/.openclaw/agents/securebot/agent",
+        "model": "stepfun/step-3.5-flash:free"
+      }
+    ]
+  },
+  "tools": {
+    "exec": {
+      "ask": "always"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8786643587:AAFpV6Kri5GJNZe5mFW36gyb705CLr_1ZTk",
+      "groupPolicy": "allowlist",
+      "streaming": "off"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "156a1a3c8cb6593193dc065b27032bdf6078519039069ed1"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "entries": {
+      "github": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}

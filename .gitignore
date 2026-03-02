@@ -4,6 +4,7 @@ token.json
 gogcli/
 .openclaw/media/inbound/
 *.mp3
+securebot_weekly_report.py
 
 # Personal/private workspace files
 AGENTS.md
