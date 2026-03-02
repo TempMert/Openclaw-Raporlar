@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Advanced Implementation Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-2: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+    border-radius: 16px;
+    color: white;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+.subtitle {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+}
+h3 {
+    color: var(--accent-2);
+    font-size: 1.4rem;
+    margin-top: 25px;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin: 10px 0;
+    padding-left: 5px;
+}
+code {
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: #fbbf24;
+}
+pre {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #334155;
+}
+.highlight {
+    color: var(--warning);
+    font-weight: 600;
+}
+.critical {
+    color: var(--danger);
+    font-weight: 700;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--text-muted);
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.toc {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+.toc a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 15px;
+}
+.toc a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🛡️ OpenClaw Advanced Implementation Guide</h1>
+<p class="subtitle">Enterprise-grade izolasyon, sandboxing, otomatik güncelleme ve proaktif güvenlik</p>
+<p style="font-size:0.9rem; opacity:0.8">Hazırlayan: Claw • Tarih: 2026-03-02 • v1.0</p>
+</header>
+
+<div class="toc">
+<strong>📑 İçerik:</strong>
+<a href="#isolation">Agent Izolasyonu</a>
+<a href="#comm">Agent Communication</a>
+<a href="#sandbox">Skill Sandboxing</a>
+<a href="#autoupdate">Skill Auto-Update</a>
+<a href="#learning">Sürekli Öğrenme</a>
+<a href="#telemetry">Benzer Sistemi Tanı</a>
+<a href="#proactive">Proaktif Önlemler</a>
+<a href="#reporting">Reporting Enhancements</a>
+<a href="#metrics">Sistem Metrikleri</a>
+</div>
+
+<section id="isolation">
+<h2>1. Agent Izolasyonu</h2>
+<h3>Her Agent Kendi Workspace'inde Çalışsın</h3>
+<p>OpenClaw'da her agent kendi workspace dizinine sahip olmalıdır. Bu, dosya sistemi izolasyonu sağlar.</p>
+
+<h3>Nasıl Yapılır?</h3>
+<pre><code>openclaw.json:
+{
+  "agents": {
+    "list": [
+      {
+        "id": "securebot",
+        "name": "🛡️ Security Agent",
+        "workspace": "/home/openclaw/.openclaw/workspace-securebot",
+        "agentDir": "/home/openclaw/.openclaw/agents/securebot/agent",
+        "model": "stepfun/step-3.5-flash:free"
+      },
+      {
+        "id": "main",
+        "name": "🦀 Claw",
+        "workspace": "/home/openclaw/.openclaw/workspace",
+        "agentDir": "/home/openclaw/.openclaw/agents/main/agent",
+        "model": "openrouter/auto"
+      }
+    ]
+  }
+}
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Agent'lar birbirinin dosyalarını okuyamaz</li>
+<li>✅ Workspace corruption'ı tecrit eder</li>
+<li>✅ Agent-specific config/credentials izolasyonu</li>
+<li>✅ Backup/restore kolaylığı (her agent ayrı)</li>
+</ul>
+
+<h3>İleri Seviye: Docker Container Izolasyonu</h3>
+<p>Agent'ları tamamen ayrı container'larda çalıştırmak mümkündür:</p>
+<pre><code>{
+  "agents": {
+    "list": [
+      {
+        "id": "securebot",
+        "sandbox": {
+          "mode": "docker",
+          "image": "openclaw-agent-base:latest",
+          "memory": "256m",
+          "cpu": "0.5",
+          "network": "none"
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Bu, process-level izolasyon ekler. Agent çökse bile host etkilenmez.</p>
+</section>
+
+<section id="comm">
+<h2>2. Agent Communication</h2>
+<h3>Agent'lar Birbirine Mesaj Atabilmeli (sessions_send)</h3>
+<p>OpenClaw built-in <code>sessions_send</code> aracıyla agent'lar arası mesajlaşma mümkündür.</p>
+
+<h3>Nasıl Kullanılır?</h3>
+<p><strong>CLI'den:</strong></p>
+<pre><code>openclaw sessions_send --to securebot -m "healthcheck"
+openclaw sessions_send --to main -m "Durum raporu ver"
+</code></pre>
+
+<p><strong>Python API:</strong></p>
+<pre><code>from openclaw import sessions_send
+response = sessions_send(agent="securebot", message="self-improve")
+print(response)
+</code></pre>
+
+<p><strong>Telegram'dan:</strong></p>
+<pre><code>/session send securebot healthcheck
+/session send main status
+</code></pre>
+
+<h3>Güvenlik Kontrolleri</h3>
+<p>Sadece authorized agent'lar <code>sessions_send</code> kullanabilmeli:</p>
+<pre><code>{
+  "tools": {
+    "deny": ["sessions_spawn", "sessions_send"],
+    "allow": ["sessions_send"]  // Sadece main agent'a izin ver
+  }
+}
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Agent'lar arası koordinasyon (örneğin, Claw → Securi'ye rapor iste)</li>
+<li>✅ Task delegation (main agent, diğerlerine işi dağıtır)</li>
+<li>✅ Microservices mimarisi benzeri</li>
+</ul>
+</section>
+
+<section id="sandbox">
+<h2>3. Skill Sandboxing</h2>
+<h3>Skill'ler Kendi Container'larında Çalışsın</h3>
+<p>Skill'ler doğrudan Gateway process'i içinde çalışır. Bu, bir skill hatasının tüm sistemi etkilemesine yol açabilir. Sandboxing, skill'leri ayrı container'larda (Docker) çalıştırarak izolasyon sağlar.</p>
+
+<h3>Nasıl Yapılır?</h3>
+<p>OpenClaw config'inde agent seviyesinde sandbox ayarı:</p>
+<pre><code>{
+  "agents": {
+    "list": [
+      {
+        "id": "securebot",
+        "sandbox": {
+          "mode": "docker",
+          "image": "openclaw-skill-base:latest",
+          "memory": "256m",
+          "cpu": "0.5",
+          "network": "none",
+          "readOnlyFilesystem": true,
+          "tmpfs": "/tmp:size=64m",
+          "capDrop": ["ALL"],
+          "securityOpt": ["no-new-privileges"]
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+
+<h3>Docker Base Image Oluşturma</h3>
+<pre><code># Dockerfile
+FROM node:18-alpine
+RUN apk add --no-cache python3 make g++
+WORKDIR /skill
+COPY skill.json .
+COPY lib/ lib/
+RUN npm install --production
+CMD ["node", "index.js"]
+</code></pre>
+
+<pre><code>docker build -t openclaw-skill-base .
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Skill çökmesi Gateway'ı etkilemez</li>
+<li>✅ Malicious skill host'a zarar veremez</li>
+<li>✅ Resource limit (memory, CPU)</li>
+<li>✅ Network isolation (exfiltration engellenir)</li>
+<li>✅ Seccomp/AppArmor profili uygulanabilir</li>
+</ul>
+
+<h3>Güvenlik Notları</h3>
+<ul>
+<li>Skill container'ı <strong>read-only</strong> mount edilmeli</li>
+<li><code>capDrop: ["ALL"]</code> ile tüm Linux capability'ler kaldırılmalı</li>
+<li><code>network: none</code> veya sadece whitelist</li>
+<li>Container logları <code>docker logs</code> ile takip edilmeli</li>
+</ul>
+</section>
+
+<section id="autoupdate">
+<h2>4. Skill Auto-Update</h2>
+<h3>Güvenlik Güncellemeleri Otomatik Yüklensin</h3>
+<p>Skill'ler güvenlik açıklarına karşı duyarlıdır. Manuel update yapmak riskli olabilir. Otomatik update sistemi kurulumu:</p>
+
+<h3>Nasıl Yapılır?</h3>
+<p><strong>1. Skill Git Repository'si</strong></p>
+<p>Skill'i private git repo'ya taşı (GitHub/GitLab).</p>
+<pre><code>git init
+git add .
+git commit -m "Initial"
+git push origin main
+</code></pre>
+
+<p><strong>2. Update Script</strong></p>
+<pre><code>#!/bin/bash
+# /home/openclaw/.openclaw/scripts/skill-update-securi.sh
+
+SKILL_DIR="/home/openclaw/.openclaw/workspace/skills/securi-agent"
+cd "$SKILL_DIR"
+
+# Remote SHA
+git fetch origin
+REMOTE_SHA=$(git rev-parse origin/main)
+LOCAL_SHA=$(git rev-parse HEAD)
+
+if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
+  echo "New version detected. Updating..."
+  
+  # Pull
+  git pull origin main
+  
+  # Checksum verify (package.json version)
+  # Eğer version değiştiyse devam et
+  if git diff HEAD@{1} HEAD -- package.json | grep -q '"version"'; then
+    echo "Version changed. Rebuilding..."
+    npm install --production
+    
+    # Optional: GPG signature verify
+    # gpg --verify signature.asc
+    
+    # Gateway restart (skill yüklenir)
+    openclaw gateway restart
+    
+    # Telegram notification
+    curl -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
+      -d "chat_id=$CHAT_ID" \
+      -d "text=🛡️ Security Agent skill güncellendi (version: $(jq -r .version package.json))"
+  else
+    echo "No version change. Skipping."
+  fi
+fi
+</code></pre>
+
+<p><strong>3. Cron Job (Günde 1 kez çalış)</strong></p>
+<pre><code>0 2 * * * /home/openclaw/.openclaw/scripts/skill-update-securi.sh >> /var/log/securi-skill-update.log 2>&1
+</code></pre>
+
+<p><strong>4. Onay Mekanizması (Manuel)</strong></p>
+<p>Eğer otomatik install istemezseniz, script size Telegram'dan onay isteyebilir:</p>
+<pre><code>curl -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
+  -d "chat_id=$CHAT_ID" \
+  -d "text=🛡️ Security Agent yeni version (v1.2.0) mevcut. Yüklemek için /approve_update yazın." \
+  -d "reply_markup={\"inline_keyboard\":[[{\"text\":\"Evet\",\"callback_data\":\"update_approve\"},{\"text\":\"Hayır\",\"callback_data\":\"update_deny\"}]]}"
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Güvenlik açıkları hızla patch'lenir</li>
+<li>✅ Yeni feature'lar otomatik eklenir</li>
+<li>✅ Manual intervention minimize edilir</li>
+<li>✅ Version traceability (git log)</li>
+</ul>
+
+<h3>Riskler</h3>
+<ul>
+<li>⚠️ Yeni version bug içerebilir → onay mekanizması önerilir</li>
+<li>⚠️ Breaking changes → test environment'de önce denemek gerek</li>
+</ul>
+</section>
+
+<section id="learning">
+<h2>5. Sürekli Öğrenme</h2>
+<h3>Her Tarama Sonrası Yeni Kurallar Ekle</h3>
+<p>Securi, her güvenlik taraması sonucunda yeni kuralları öğrenmeli ve gelecekte daha iyi tespit yapmalı.</p>
+
+<h3>Nasıl Yapılır?</h3>
+<p><strong>1. Rule Store (JSON)</strong></p>
+<pre><code>{
+  "rules": [
+    {
+      "id": "ssh_password_enabled",
+      "pattern": "PasswordAuthentication yes",
+      "severity": "critical",
+      "description": "SSH password authentication enabled",
+      "remediation": "Set PasswordAuthentication no in /etc/ssh/sshd_config"
+    },
+    {
+      "id": "world_writable_file",
+      "pattern": "perm -o=w",
+      "severity": "medium",
+      "description": "World-writable file detected",
+      "remediation": "chmod o-w <file>"
+    }
+  ]
+}
+</code></pre>
+
+<p><strong>2. Learning Script</strong></p>
+<pre><code>def learn_from_scan(scan_results):
+    new_rules = []
+    for finding in scan_results:
+        # Eğer bulgu mevcut rule'larda yoksa yeni rule oluştur
+        if not rule_exists(finding):
+            rule = {
+                "id": generate_id(finding),
+                "pattern": finding['pattern'],
+                "severity": finding['severity'],
+                "description": finding['description'],
+                "remediation": suggest_remediation(finding)
+            }
+            new_rules.append(rule)
+    
+    # Rules store'ı güncelle
+    append_rules(new_rules)
+    
+    # Git commit (versioning)
+    git_commit("rules.json", "Add new rules from scan")
+</code></pre>
+
+<p><strong>3. Basit ML Model (Optional)</strong></p>
+<p>Geçmiş tarama sonuçlarından öğrenmek için basit bir model (örneğin, decision tree) eğitilebilir. Python <code>scikit-learn</code> ile:</p>
+<pre><code>from sklearn.tree import DecisionTreeClassifier
+import joblib
+
+# Features: package_version, cve_count, config_weaknesses
+# Target: vulnerability_occurred (binary)
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+joblib.dump(model, 'vuln_prediction_model.pkl')
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Yeni zayıf noktalar otomatik tespit edilir</li>
+<li>✅ Sistem zamanla daha akıllı hale gelir</li>
+<li>✅ Yanlış pozitifler azalır</li>
+<li>✅ Yeni CVE'ler hızlıca rule'a dönüşür</li>
+</ul>
+</section>
+
+<section id="telemetry">
+<h2>6. Benzer Sistemi Tanı (Anonymized Telemetry)</h2>
+<h3>Başka Sunucularda Ne Tür Açıklar Var?</h3>
+<p>Securi, kendi tarama sonuçlarını (anonimleştirilmiş) diğer sistemlerle paylaşılarak kolektif bilgi edinebilir.</p>
+
+<h3>Nasıl Yapılır?</h3>
+<p><strong>1. Telemetry Collection</strong></p>
+<pre><code>def collect_telemetry():
+    findings = run_healthcheck()
+    anonymized = {
+        "os": "Ubuntu 22.04",
+        "openclaw_version": "2026.2.26",
+        "findings": [
+            {
+                "cve": finding['cve'],
+                "package": finding['package'],
+                "severity": finding['severity'],
+                "config_check": finding['config_check']
+            } for finding in findings
+        ],
+        "timestamp": now(),
+        "instance_id": hashlib.sha256(hostname + mac_address).hexdigest()[:16]
+    }
+    return anonymized
+</code></pre>
+
+<p><strong>2. Telemetry Upload</strong></p>
+<pre><code>POST https://telemetry.openclaw.ai/v1/finding
+Headers: { "Authorization": "Bearer <TOKEN>" }
+Body: { ...anonymized data... }
+</code></pre>
+
+<p><strong>3. Global Intelligence</strong></p>
+<p>Telemetry verisi analiz edilir:</p>
+<ul>
+<li>Hangi CVE'ler en yaygın?</li>
+<li>Hangi konfigürasyon hataları daha fazla?</li>
+<li>Hangi distro'lar daha savunmasız?</li>
+</ul>
+
+<p><strong>4. Benzer Sistemi Tanı</strong></p>
+<pre><code>def similar_systems_found():
+    # Telemetry'den benzer instance ID'li sistemlerin bulgularını getir
+    my_findings = collect_telemetry()
+    similar = query_telemetry(my_findings['instance_id'])
+    return similar
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Kolektif zekâ – toplu saldırılar önceden tespit edilebilir</li>
+<li>✅ Yeni threat intelligence hızlı yayılır</li>
+<li>✅ Benchmarking – sisteminiz diğerlerine göre nasıl?</li>
+</ul>
+
+<h3>Gizlilik</h3>
+<p>Hiçbir personal data gönderilmez. Sadece:</li>
+<ul>
+<li>OS/distro</li>
+<li>OpenClaw version</li>
+<li>Zayıf bulgular (anonim)</li>
+<li>Hash'lenmiş instance ID (geri çevrilemez)</li>
+</ul>
+</section>
+
+<section id="proactive">
+<h2>7. Proaktif Önlemler</h2>
+
+<h3>Vulnerability Prediction</h3>
+<p>Paket versiyonlarına göre risk skoru hesapla. CVSS database'sini kullan.</p>
+<pre><code>import requests
+
+def predict_vuln(package, version):
+    # NVD API'den CVE'leri çek
+    url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?cpeName=cpe:2.3:a:{package}:{version}"
+    r = requests.get(url)
+    cves = r.json()['vulnerabilities']
+    
+    # CVSS skorlarına göre risk hesapla
+    risk_score = sum(cve['cvssMetrics'] for cve in cves)
+    return risk_score
+</code></pre>
+
+<h3>Compliance Checks</h3>
+<p>CIS Level 1/2, GDPR, HIPAA kontrol listeleri.</p>
+<pre><code>COMPLIANCE_RULES = {
+    "CIS-1.1": "Ensure SSH Protocol 2 is used",
+    "GDPR-Art32": "Encrypt personal data at rest",
+    "HIPAA-164": "Implement audit controls"
+}
+</code></pre>
+
+<h3>Configuration Drift</h3>
+<p>SSH config dosyası değişmiş mi? Bildir!</p>
+<pre><code>import hashlib
+
+def check_drift(file_path, known_hash):
+    current_hash = hashlib.sha256(open(file_path, 'rb').read()).hexdigest()
+    if current_hash != known_hash:
+        alert(f"Configuration drift detected: {file_path}")
+</code></pre>
+
+<h3>File Integrity Monitoring (FIM)</h3>
+<p>/etc/passwd, /etc/shadow değişti mi?</p>
+<pre><code>FIM_FILES = ["/etc/passwd", "/etc/shadow", "/etc/ssh/sshd_config"]
+for file in FIM_FILES:
+    if file_changed(file):
+        alert(f"FIM: {file} modified!")
+</code></pre>
+
+<h3>Login Anomaly Detection</h3>
+<p>Yeni lokasyon/IP'den giriş var mı?</p>
+<pre><code>def detect_anomaly_login(user, ip, location):
+    known_ips = get_user_known_ips(user)
+    if ip not in known_ips:
+        alert(f"Yeni login: {user} from {ip} ({location})")
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Zayıf yapıları proaktif olarak önle</li>
+<li>✅ Uyumluluk otomatik denetimi</li>
+<li>✅ Inside threat detection</li>
+</ul>
+</section>
+
+<section id="reporting">
+<h2>8. Reporting Enhancements</h2>
+
+<h3>Interactive Charts</h3>
+<p>D3.js veya Chart.js ile görsel grafikler.</p>
+<pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;
+&lt;canvas id="vulnChart"&gt;&lt;/canvas&gt;
+<script>
+new Chart(ctx, {
+    type: 'bar',
+    data: { ... }
+});
+</script>
+</code></pre>
+
+<h3>Timeline View</h3>
+<p>Açıkların zaman çizelgesi.</p>
+<pre><code>&lt;div class="timeline"&gt;
+  &lt;div class="event" data-date="2026-03-01"&gt;SSH açık&lt;/div&gt;
+  &lt;div class="event" data-date="2026-03-02"&gt;OpenSSL CVE-2024-1234&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Remediation Steps</h3>
+<p>Her bulgu için "Nasıl Düzeltilir?" adımları.</p>
+<pre><code>{
+  "finding": "PasswordAuthentication yes",
+  "remediation": [
+    "1. Edit /etc/ssh/sshd_config",
+    "2. Set PasswordAuthentication no",
+    "3. systemctl restart sshd"
+  ]
+}
+</code></pre>
+
+<h3>CVE Details</h3>
+<p>NVD linki, CVSS skoru, exploit var mı?</p>
+<pre><code>&lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2024-1234" target="_blank"&gt;
+  CVE-2024-1234 (CVSS 9.8)
+&lt;/a&gt;
+</code></pre>
+
+<h3>PDF Export</h3>
+<p>Raporu PDF olarak indirilebilir.</p>
+<pre><code># Server-side (Python)
+from weasyprint import HTML
+HTML('report.html').write_pdf('report.pdf')
+
+# Browser-side (jsPDF)
+&lt;button onclick="exportPDF()"&gt;Export PDF&lt;/button&gt;
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Raporlar daha anlaşılır</li>
+<li>✅ İzleme ekiplerine yardımcı</li>
+<li>✅ Audit için kopya</li>
+<li>✅ Dış paylaşım (PDF) güvenli</li>
+</ul>
+</section>
+
+<section id="metrics">
+<h2>9. Sistem Metrikleri</h2>
+
+<h3>CPU/Memory Usage</h3>
+<pre><code>import psutil
+cpu = psutil.cpu_percent(interval=1)
+mem = psutil.virtual_memory().percent
+</code></pre>
+
+<h3>Disk I/O</h3>
+<pre><code>disk_io = psutil.disk_io_counters()
+write_latency = disk_io.write_time / disk_io.write_count
+</code></pre>
+
+<h3>Network Traffic</h3>
+<pre><code>net = psutil.net_io_counters()
+sent_mb = net.bytes_sent / 1024/1024
+recv_mb = net.bytes_recv / 1024/1024
+</code></pre>
+
+<h3>Process Count</h3>
+<pre><code>zombies = [p for p in psutil.process_iter() if p.status() == psutil.STATUS_ZOMBIE]
+runaway = [p for p in psutil.process_iter() if p.cpu_percent(1) > 80]
+</code></pre>
+
+<h3>Faydaları</h3>
+<ul>
+<li>✅ Resource bottleneck tespiti</li>
+<li>✅ Capacity planning</li>
+<li>✅ Alerting (threshold aşılmışsa)</li>
+</ul>
+</section>
+
+<footer>
+<p>© 2026 OpenClaw Ecosystem • Hazırlayan: Claw (AI Assistant) • Lisans: MIT</p>
+<p>Bu doküman enterprise-level OpenClaw implementasyon kılavuzudur.</p>
+</footer>
+</div>
+</body>
+</html>
