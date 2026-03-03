@@ -26,3 +26,10 @@ GitHub Pages: https://tempMert.github.io/Openclaw-Raporlar/raporlar/ucak_biletle
 
 # Revizyonlar
 - 2026-03-01: Booking linkler Google Flights'a yönlendirilerek iyileştirildi
+
+---
+# Komunikasyon Politikası (2026-03-03)
+- Telegram cevapları: **çok kısa, öz, net** (max 2-3 satır). HTML kodları asla gönderilmez.
+- Web tasarımları: sadece **bitmiş GitHub Pages linki** ve kısa bir özet paylaşılır.
+- Cooder designer: **uzay tema + altın/gümüş çerçeve** özelliği eklendi.
+- Cooder-code skill entegrasyonu planlı.
