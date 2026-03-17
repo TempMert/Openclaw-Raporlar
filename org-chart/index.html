@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenClaw Agency - Organizasyon Şeması">
+  <title>OpenClaw Agency - Organizasyon Şeması</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="org-chart-container">
+    <header class="page-header">
+      <h1>OpenClaw Agency</h1>
+      <p>Organizasyon Şeması</p>
+    </header>
+
+    <main class="org-chart" role="tree" aria-label="Organizasyon şeması">
+      <!-- CEO Level -->
+      <div class="org-node level-0" data-level="0" data-id="ceo">
+        <div class="node-card ceo-card" tabindex="0" role="treeitem" aria-expanded="true">
+          <div class="card-header">
+            <div class="avatar ceo-avatar">
+              <span class="avatar-text">M</span>
+            </div>
+            <div class="info">
+              <h2 class="name">Mertko</h2>
+              <p class="title">CEO</p>
+              <span class="badge ceo-badge">Executive</span>
+            </div>
+          </div>
+          <div class="node-details">
+            <div class="details-content">
+              <div class="detail-row">
+                <span class="label"> Rol:</span>
+                <span class="value">Chief Executive Officer</span>
+              </div>
+              <div class="detail-row">
+                <span class="label"> Sorumluluk:</span>
+                <span class="value">Strateji, yatırım, kültür</span>
+              </div>
+              <div class="detail-row">
+                <span class="label"> Raporlar:</span>
+                <span class="value">1 yönetim görevlisi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="connector-line vertical"></div>
+      </div>
+
+      <!-- Manager Level -->
+      <div class="org-level level-1" data-level="1">
+        <div class="org-node" data-id="manager">
+          <div class="node-card manager-card" tabindex="0" role="treeitem" aria-expanded="true">
+            <div class="card-header">
+              <div class="avatar manager-avatar">
+                <span class="avatar-text">L</span>
+              </div>
+              <div class="info">
+                <h3 class="name">Lea</h3>
+                <p class="title">Operations Manager</p>
+                <span class="badge manager-badge">Management</span>
+              </div>
+            </div>
+            <div class="node-details">
+              <div class="details-content">
+                <div class="detail-row">
+                  <span class="label">Rol:</span>
+                  <span class="value">Operations Manager</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Sorumluluk:</span>
+                  <span class="value">Ajan koordinasyonu, kaynak dağıtımı</span>
+                </div>
+                <div class="detail-row">
+                  <span class="label">Raporlar:</span>
+                  <span class="value">7 ajan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="connector-line vertical"></div>
+        </div>
+      </div>
+
+      <!-- Agents Level -->
+      <div class="org-level level-2" data-level="2">
+        <div class="agents-grid">
+          <!-- Security Agent -->
+          <div class="org-node agent-node" data-id="security-agent">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar security-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">security-agent</h4>
+                  <p class="title">Security Specialist</p>
+                  <span class="badge security-badge">Security</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Security & Compliance</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">Güvenlik denetimi, risk analizi, izleme</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend Developer -->
+          <div class="org-node agent-node" data-id="frontend-developer">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar frontend-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">frontend-developer</h4>
+                  <p class="title">UI/UX Engineer</p>
+                  <span class="badge frontend-badge">Development</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Frontend Development</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">React, Vue, accessibility, performance</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Architect -->
+          <div class="org-node agent-node" data-id="backend-architect">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar backend-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                    <line x1="6" y1="6" x2="6.01" y2="6"/>
+                    <line x1="6" y1="18" x2="6.01" y2="18"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">backend-architect</h4>
+                  <p class="title">Systems Architect</p>
+                  <span class="badge backend-badge">Architecture</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Backend Architecture</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">API design, scalability, microservices</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps Engineer -->
+          <div class="org-node agent-node" data-id="devops-engineer">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar devops-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">devops-engineer</h4>
+                  <p class="title">DevOps Specialist</p>
+                  <span class="badge devops-badge">DevOps</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">DevOps & Infrastructure</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">CI/CD, containerization, cloud platforms</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Analyst -->
+          <div class="org-node agent-node" data-id="data-analyst">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar data-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">data-analyst</h4>
+                  <p class="title">Data Scientist</p>
+                  <span class="badge data-badge">Data</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Data Analytics</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">Statistics, ML, business intelligence</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QA Engineer -->
+          <div class="org-node agent-node" data-id="qa-engineer">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar qa-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">qa-engineer</h4>
+                  <p class="title">QA Specialist</p>
+                  <span class="badge qa-badge">QA</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Quality Assurance</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">Test automation, manual testing, CI</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Docs Agent -->
+          <div class="org-node agent-node" data-id="docs-agent">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar docs-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">docs-agent</h4>
+                  <p class="title">Documentation Writer</p>
+                  <span class="badge docs-badge">Docs</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">Technical Documentation</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">API docs, guides, tutorials</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrations Agent -->
+          <div class="org-node agent-node" data-id="integrations-agent">
+            <div class="node-card" tabindex="0" role="treeitem">
+              <div class="card-header">
+                <div class="avatar integrations-avatar">
+                  <svg class="agent-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+                <div class="info">
+                  <h4 class="name">integrations-agent</h4>
+                  <p class="title">Integration Specialist</p>
+                  <span class="badge integrations-badge">Integrations</span>
+                </div>
+              </div>
+              <div class="node-details">
+                <div class="details-content">
+                  <div class="detail-row">
+                    <span class="label">Rol:</span>
+                    <span class="value">API Integrations</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Uzmanlık:</span>
+                    <span class="value">Third-party APIs, webhooks, connectors</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="label">Durum:</span>
+                    <span class="value status-active">Aktif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <p>OpenClaw Agency &copy; 2025 - Organizasyon Şeması</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
