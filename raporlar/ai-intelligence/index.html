@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Intelligence – AI Assistant Platform</title>
+  <meta name="description" content="Explore OpenClaw: the personal AI assistant platform with multi-channel support, agent-based routing, and a thriving ecosystem.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" width="40" height="40">
+        <defs>
+          <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6ee7b7"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="url(#logo-grad)"/>
+        <text x="20" y="26" text-anchor="middle" font-size="18" fill="#fff">🦞</text>
+      </svg>
+      <div>
+        <h1>OpenClaw Intelligence</h1>
+        <p class="tagline">Personal AI Assistant Platform</p>
+      </div>
+    </div>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+      <span class="sun">☀️</span><span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="main">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h2>Intelligence, <span class="gradient-text">Decentralized</span></h2>
+        <p class="hero-desc">Run your own AI assistant on any device. Connect to WhatsApp, Telegram, Slack, Discord, Signal, iMessage, and more. Privacy-first, multi-agent, always-on.</p>
+        <div class="hero-cta">
+          <a href="#showcase" class="btn primary">Explore Projects</a>
+          <a href="https://docs.openclaw.ai" target="_blank" class="btn secondary">Documentation</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glass-card stats-card">
+          <div class="stat"><span class="num" data-target="20">0</span><span class="lab">Channels</span></div>
+          <div class="stat"><span class="num" data-target="156">0</span><span class="lab">Agents</span></div>
+          <div class="stat"><span class="num" data-target="500">0</span><span class="lab">Skills</span></div>
+          <div class="stat"><span class="num" data-target="2">0</span><span class="lab">k+ Community</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights" id="highlights">
+      <h3>Why OpenClaw?</h3>
+      <div class="grid-cards" id="highlights-grid">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="showcase" id="showcase">
+      <h3>Featured Projects</h3>
+      <p class="section-desc">Real-world deployments built on OpenClaw.</p>
+      <div class="grid-projects" id="projects-grid">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <!-- Trends -->
+    <section class="trends" id="trends">
+      <h3>AI & OpenClaw Trends</h3>
+      <div class="timeline" id="trends-list">
+        <!-- injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 OpenClaw Intelligence. Built with 🦞 by the community.</p>
+    <p>Follow <a href="https://github.com/openclaw/openclaw" target="_blank">GitHub</a> • <a href="https://discord.gg/clawd" target="_blank">Discord</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

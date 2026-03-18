@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "OpenClaw Intelligence",
+    "subtitle": "Your personal AI assistant platform – multi-channel, multi-agent, always-on.",
+    "tagline": "Where lobster meets intelligence.",
+    "cta": "Explore"
+  },
+  "highlights": [
+    {
+      "title": "Multi-Channel",
+      "desc": "Works on WhatsApp, Telegram, Slack, Discord, Signal, iMessage, and more.",
+      "icon": "🌐"
+    },
+    {
+      "title": "Agent-Based",
+      "desc": "Spawn specialized agents for security, frontend, backend, QA, and more.",
+      "icon": "🤖"
+    },
+    {
+      "title": "Local-First",
+      "desc": "Runs on your hardware. Privacy and control guaranteed.",
+      "icon": "🔒"
+    },
+    {
+      "title": "Skills Platform",
+      "desc": "Extend with skills from ClawHub or your own workspace.",
+      "icon": "🧩"
+    }
+  ],
+  "showcase": [
+    {
+      "title": "Balbadem Menu",
+      "desc": "Netlify-powered waffle & kumpir menu with admin panel, CRUD, and contact form.",
+      "tags": ["Netlify", "Serverless", "React"],
+      "link": "https://tempmert.github.io/Openclaw-Raporlar/balbadem-menu/",
+      "image": "assets/balbadem.jpg"
+    },
+    {
+      "title": "Japan Travel Guide",
+      "desc": "3 cities, 15+ locations per city, dark/light toggle, responsive.",
+      "tags": ["HTML", "CSS", "JS"],
+      "link": "https://tempmert.github.io/Openclaw-Raporlar/raporlar/japan/",
+      "image": "assets/japan.jpg"
+    },
+    {
+      "title": "Security Agent",
+      "desc": "Automated security audits, GitHub secret scanning, Telegram alerts.",
+      "tags": ["Security", "Automation"],
+      "link": "https://tempmert.github.io/Openclaw-Raporlar/raporlar/security/",
+      "image": "assets/security.jpg"
+    },
+    {
+      "title": "Org Chart Premium",
+      "desc": "Interactive organization chart with glassmorphism, particles, keyboard nav.",
+      "tags": ["Canvas", "API", "CSS"],
+      "link": "https://tempmert.github.io/Openclaw-Raporlar/org-chart/",
+      "image": "assets/orgchart.jpg"
+    }
+  ],
+  "trends": [
+    {
+      "year": "2026",
+      "trend": "Multi-Agent Systems",
+      "detail": "Specialized agents routing, isolation, and session management."
+    },
+    {
+      "year": "2026",
+      "trend": "Local-First AI",
+      "detail": "Running models on-device, privacy-preserving assistants."
+    },
+    {
+      "year": "2025",
+      "trend": "Voice Wake & Talk Mode",
+      "detail": "Continuous voice interaction on mobile devices."
+    },
+    {
+      "year": "2025",
+      "trend": "Live Canvas & A2UI",
+      "detail": "Agent-driven visual workspace for rich interactions."
+    }
+  ],
+  "stats": {
+    "channels": 20,
+    "agents": 156,
+    "skills": "500+",
+    "community": "2k+"
+  }
+}
