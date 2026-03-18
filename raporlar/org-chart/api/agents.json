@@ -1,0 +1,98 @@
+{
+  "agents": [
+    {
+      "id": "ceo",
+      "name": "Mertko",
+      "role": "CEO",
+      "avatar": "👑",
+      "bio": "Founder & Visionary",
+      "expertise": ["Strategy", "Leadership", "Product"],
+      "color": { "from": "#FFD700", "to": "#FFA500" }
+    },
+    {
+      "id": "manager",
+      "name": "Lea",
+      "role": "Manager",
+      "avatar": "👩🏻‍💼",
+      "bio": "Day-to-day oversight, agent coordination, delivery",
+      "expertise": ["Coordination", "Delegation", "Communication"],
+      "color": { "from": "#6A5ACD", "to": "#9370DB" }
+    },
+    {
+      "id": "security-engineer",
+      "name": "Security Engineer",
+      "role": "Security Engineer",
+      "avatar": "🛡️",
+      "bio": "Audits, secure code review, vulnerability assessment",
+      "expertise": ["Security", "Compliance", "DevSecOps"],
+      "color": { "from": "#2E8B57", "to": "#3CB371" }
+    },
+    {
+      "id": "frontend-developer",
+      "name": "Frontend Developer",
+      "role": "Frontend Developer",
+      "avatar": "🎨",
+      "bio": "React, Vue, UI implementation, performance",
+      "expertise": ["UI/UX", "JavaScript", "CSS", "Accessibility"],
+      "color": { "from": "#FF6B6B", "to": "#FF8E53" }
+    },
+    {
+      "id": "backend-architect",
+      "name": "Backend Architect",
+      "role": "Backend Architect",
+      "avatar": "🏗️",
+      "bio": "API design, database architecture, scalability",
+      "expertise": ["APIs", "Databases", "System Design"],
+      "color": { "from": "#4ECDC4", "to": "#556270" }
+    },
+    {
+      "id": "sre",
+      "name": "SRE",
+      "role": "Site Reliability Engineer",
+      "avatar": "⚡",
+      "bio": "SLOs, observability, reliability",
+      "expertise": ["Monitoring", "Kubernetes", "Cloud"],
+      "color": { "from": "#F7DC6F", "to": "#F1C40F" }
+    },
+    {
+      "id": "devops-automator",
+      "name": "DevOps Automator",
+      "role": "DevOps Automator",
+      "avatar": "🚀",
+      "bio": "CI/CD pipelines, infrastructure as code",
+      "expertise": ["CI/CD", "Terraform", "Automation"],
+      "color": { "from": "#E74C3C", "to": "#C0392B" }
+    },
+    {
+      "id": "technical-writer",
+      "name": "Technical Writer",
+      "role": "Technical Writer",
+      "avatar": "📚",
+      "bio": "Documentation, API reference, tutorials",
+      "expertise": ["Docs", "Tutorials", "API Reference"],
+      "color": { "from": "#3498DB", "to": "#2980B9" }
+    },
+    {
+      "id": "qa-engineer",
+      "name": "QA Engineer",
+      "role": "QA Engineer",
+      "avatar": "🔍",
+      "bio": "Test planning, automation, quality gates",
+      "expertise": ["Testing", "Automation", "Quality"],
+      "color": { "from": "#9B59B6", "to": "#8E44AD" }
+    },
+    {
+      "id": "reality-checker",
+      "name": "Reality Checker",
+      "role": "Reality Checker",
+      "avatar": "✅",
+      "bio": "Production readiness, quality certification",
+      "expertise": ["Certification", "Review", "Launch"],
+      "color": { "from": "#1ABC9C", "to": "#16A085" }
+    }
+  ],
+  "meta": {
+    "title": "OpenClaw Agency",
+    "updated": "2026-03-18"
+  }
+}
