@@ -3,6 +3,20 @@
 const THEME_KEY = 'org_theme';
 const API_URL = '/api/agents.json';
 
+// Theme toggle
+const theme = localStorage.getItem(THEME_KEY) || 'dark';
+document.body.dataset.theme = theme;
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = theme === 'dark' ? 'light' : 'dark';
+      document.body.dataset.theme = next;
+      localStorage.setItem(THEME_KEY, next);
+    });
+  }
+});
+
 // Particles canvas
 (() => {
   const canvas = document.getElementById('particles');
