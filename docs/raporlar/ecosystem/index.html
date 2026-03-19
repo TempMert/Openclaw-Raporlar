@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Ecosystem Explorer</title>
+  <meta name="description" content="Curated list of useful GitHub repositories for Linux, OpenClaw, and AI agents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" width="40" height="40">
+        <defs>
+          <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6ee7b7"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="url(#logo-grad)"/>
+        <text x="20" y="26" text-anchor="middle" font-size="18" fill="#fff">🦞</text>
+      </svg>
+      <div>
+        <h1>OpenClaw Ecosystem</h1>
+        <p class="tagline">Linux • Agents • Intelligence</p>
+      </div>
+    </div>
+    <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+      <span class="sun">☀️</span><span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h2>Explore the OpenClaw Universe</h2>
+      <p>Curated repositories for building, deploying, and scaling AI agents on Linux and beyond. Updated every 3 days.</p>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search repos…" aria-label="Search repositories">
+      </div>
+    </section>
+
+    <nav class="categories" id="categories" role="tablist" aria-label="Categories">
+      <button class="cat-btn on" data-cat="all">All</button>
+      <!-- injected by JS -->
+    </nav>
+
+    <section class="grid" id="repos-grid">
+      <!-- injected by JS -->
+    </section>
+
+    <footer class="footer">
+      <p>Last updated: <span id="last-updated"></span> • <a href="https://github.com/openclaw" target="_blank">GitHub Organization</a></p>
+      <p>Built with liquid glass & particles 🦞</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
