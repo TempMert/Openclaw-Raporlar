@@ -1,0 +1,320 @@
+{
+  "updated": "2026-03-19",
+  "categories": [
+    {
+      "id": "core",
+      "title": "Core & Gateway",
+      "icon": "⚙️",
+      "repos": [
+        {
+          "name": "openclaw/openclaw",
+          "url": "https://github.com/openclaw/openclaw",
+          "desc": "Main Gateway repository – control plane, sessions, and tooling",
+          "stars": 1200,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-docs",
+          "url": "https://github.com/openclaw/openclaw-docs",
+          "desc": "Official documentation – guides, reference, runbooks",
+          "stars": 340,
+          "language": "Markdown"
+        },
+        {
+          "name": "openclaw/openclaw-onboarding",
+          "url": "https://github.com/openclaw/openclaw-onboarding",
+          "desc": "Interactive setup wizard for new installations",
+          "stars": 89,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-nix",
+          "url": "https://github.com/openclaw/nix-openclaw",
+          "desc": "Nix flake for declarative OpenClaw installations",
+          "stars": 45,
+          "language": "Nix"
+        },
+        {
+          "name": "openclaw/openclaw-docker",
+          "url": "https://github.com/openclaw/openclaw-docker",
+          "desc": "Docker images and compose setups for the Gateway",
+          "stars": 210,
+          "language": "Dockerfile"
+        }
+      ]
+    },
+    {
+      "id": "agents",
+      "title": "Agents & Skills",
+      "icon": "🤖",
+      "repos": [
+        {
+          "name": "openclaw/agency-agents",
+          "url": "https://github.com/openclaw/agency-agents",
+          "desc": "156 specialized agents (security, frontend, backend, QA, etc.) ready to spawn",
+          "stars": 450,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/skill-creator",
+          "url": "https://github.com/openclaw/skill-creator",
+          "desc": "CLI to scaffold new AgentSkills with templates and assets",
+          "stars": 78,
+          "language": "Node.js"
+        },
+        {
+          "name": "openclaw/clawhub",
+          "url": "https://github.com/openclaw/clawhub",
+          "desc": "Skill registry – search, install, update, publish skills",
+          "stars": 120,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/self-improving-agent",
+          "url": "https://github.com/openclaw/self-improving-agent",
+          "desc": "Learns from errors and corrections to improve over time",
+          "stars": 95,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "desc": "Bundled official skills (weather, gog, obsidian, etc.)",
+          "stars": 310,
+          "language": "Various"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security & Compliance",
+      "icon": "🛡️",
+      "repos": [
+        {
+          "name": "openclaw/security-engineer",
+          "url": "https://github.com/openclaw/security-engineer",
+          "desc": "Agent for audits, secret scanning, and compliance checks",
+          "stars": 180,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/healthcheck",
+          "url": "https://github.com/openclaw/healthcheck",
+          "desc": "System hardening, risk posture, and version checks",
+          "stars": 67,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/secret-scanner",
+          "url": "https://github.com/openclaw/secret-scanner",
+          "desc": "Pre-commit and CI integration to detect leaked secrets",
+          "stars": 130,
+          "language": "Go"
+        },
+        {
+          "name": "openclaw/audit-logger",
+          "url": "https://github.com/openclaw/audit-logger",
+          "desc": "Structured audit logging for compliance requirements",
+          "stars": 52,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps & Deployment",
+      "icon": "🚀",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-kubernetes",
+          "url": "https://github.com/openclaw/openclaw-kubernetes",
+          "desc": "K8s manifests and operators for scaling the Gateway",
+          "stars": 95,
+          "language": "YAML"
+        },
+        {
+          "name": "openclaw/openclaw-ansible",
+          "url": "https://github.com/openclaw/openclaw-ansible",
+          "desc": "Ansible roles for automated server provisioning",
+          "stars": 63,
+          "language": "YAML"
+        },
+        {
+          "name": "openclaw/ci-cd-templates",
+          "url": "https://github.com/openclaw/ci-cd-templates",
+          "desc": "GitHub Actions and GitLab CI templates for OpenClaw projects",
+          "stars": 41,
+          "language": "YAML"
+        },
+        {
+          "name": "openclaw/deployment-guides",
+          "url": "https://github.com/openclaw/deployment-guides",
+          "desc": "Step-by-step deployment instructions for various platforms",
+          "stars": 88,
+          "language": "Markdown"
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring & Observability",
+      "icon": "📊",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-metrics",
+          "url": "https://github.com/openclaw/openclaw-metrics",
+          "desc": "Prometheus metrics endpoint and key performance indicators",
+          "stars": 72,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-grafana-dashboards",
+          "url": "https://github.com/openclaw/openclaw-grafana-dashboards",
+          "desc": "Pre-built Grafana dashboards for Gateway health and traffic",
+          "stars": 56,
+          "language": "JSON"
+        },
+        {
+          "name": "openclaw/openclaw-healthcheck",
+          "url": "https://github.com/openclaw/openclaw-healthcheck",
+          "desc": "CLI and HTTP endpoint for liveness and readiness probes",
+          "stars": 48,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing & QA",
+      "icon": "🧪",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-test",
+          "url": "https://github.com/openclaw/openclaw-test",
+          "desc": "Unit and integration test suites for the Gateway",
+          "stars": 110,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/integration-tests",
+          "url": "https://github.com/openclaw/integration-tests",
+          "desc": "End-to-end tests across channels and agents",
+          "stars": 67,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/qa-engineer",
+          "url": "https://github.com/openclaw/qa-engineer",
+          "desc": "Agent specialized in test planning and automation",
+          "stars": 52,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "integrations",
+      "title": "Channel Integrations",
+      "icon": "🔌",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-slack",
+          "url": "https://github.com/openclaw/openclaw-slack",
+          "desc": "Slack Bolt adapter for OpenClaw",
+          "stars": 92,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-discord",
+          "url": "https://github.com/openclaw/openclaw-discord",
+          "desc": "Discord.js integration with rich media support",
+          "stars": 85,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-telegram",
+          "url": "https://github.com/openclaw/openclaw-telegram",
+          "desc": "Telegram bot using grammY – full feature parity",
+          "stars": 110,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-mcp",
+          "url": "https://github.com/openclaw/openclaw-mcp",
+          "desc": "Model Context Protocol adapter for external tools",
+          "stars": 76,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-google-calendar",
+          "url": "https://github.com/openclaw/openclaw-google-calendar",
+          "desc": "Google Calendar skill using gog CLI",
+          "stars": 45,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "gui",
+      "title": "GUI & Desktop",
+      "icon": "🖥️",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-ui",
+          "url": "https://github.com/openclaw/openclaw-ui",
+          "desc": "Web-based control UI for the Gateway",
+          "stars": 150,
+          "language": "React"
+        },
+        {
+          "name": "openclaw/openclaw-desktop",
+          "url": "https://github.com/openclaw/openclaw-desktop",
+          "desc": "macOS menubar app with voice wake and canvas",
+          "stars": 180,
+          "language": "Swift"
+        },
+        {
+          "name": "openclaw/openclaw-canvas",
+          "url": "https://github.com/openclaw/openclaw-canvas",
+          "desc": "Live Canvas and A2UI for agent-driven UIs",
+          "stars": 98,
+          "language": "TypeScript"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "title": "Mobile & Voice",
+      "icon": "📱",
+      "repos": [
+        {
+          "name": "openclaw/openclaw-ios",
+          "url": "https://github.com/openclaw/openclaw-ios",
+          "desc": "iOS node with Voice Wake, Talk Mode, and Canvas",
+          "stars": 75,
+          "language": "Swift"
+        },
+        {
+          "name": "openclaw/openclaw-android",
+          "url": "https://github.com/openclaw/openclaw-android",
+          "desc": "Android node with continuous voice and device commands",
+          "stars": 68,
+          "language": "Kotlin"
+        },
+        {
+          "name": "openclaw/openclaw-voice",
+          "url": "https://github.com/openclaw/openclaw-voice",
+          "desc": "Voice Wake and push-to-talk system",
+          "stars": 82,
+          "language": "TypeScript"
+        },
+        {
+          "name": "openclaw/openclaw-tts",
+          "url": "https://github.com/openclaw/openclaw-tts",
+          "desc": "Text-to-speech integrations (ElevenLabs, system TTS)",
+          "stars": 60,
+          "language": "TypeScript"
+        }
+      ]
+    }
+  ]
+}
