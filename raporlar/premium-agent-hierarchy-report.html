@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>premium-agent-hierarchy-report</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+</head>
+<body>
+<h1 id="premium-hiyerarşi-dashboard-raporu">Premium Hiyerarşi Dashboard
+Raporu</h1>
+<p><strong>Tarih:</strong> 2026-03-21<br />
+<strong>Agent:</strong> frontend-designer<br />
+<strong>Kullanıcı:</strong> Mertko</p>
+<hr />
+<h2 id="talimat">Talimat</h2>
+<p>Eski hiyerarşi HTML dosyasını (Uzay temalı kartlar) bulup, yeni
+premium özelliklerle baştan oluştur.</p>
+<h2 id="kaynak-eski-html">Kaynak (Eski HTML)</h2>
+<ul>
+<li><code>raporlar_OLD_20260313_230448/raporlar/hiyerarisi.html</code></li>
+<li>Uzay temalı, kartlar (Mertko, Claw, Security, Cooder)</li>
+<li>Basit CSS, Inter font, kutu efektleri</li>
+</ul>
+<h2 id="premium-çıktı-react-tailwind-framer-motion">Premium Çıktı (React
++ Tailwind + Framer Motion)</h2>
+<p><strong>Dizin:</strong> <code>frontend-agent-hierarchy/</code></p>
+<h3 id="ana-bileşen">Ana Bileşen</h3>
+<ul>
+<li><code>components/AgentHierarchyDashboard.jsx</code> – Premium React
+bileşeni (16.9 KB)
+<ul>
+<li>Glassmorphic cards with gold/silver/blue borders</li>
+<li>Magnetic hover effects (useMotionValue)</li>
+<li>Staggered entrance animations (staggerChildren)</li>
+<li>Liquid glass material (backdrop-blur-xl, inner border, inset
+shadow)</li>
+<li>Parallax starfield background (canvas/CSS)</li>
+<li>Responsive (2x2 desktop → 1 column mobile)</li>
+<li>Framer Motion &gt;=11.0.0</li>
+</ul></li>
+</ul>
+<h3 id="diğer-dosyalar">Diğer Dosyalar</h3>
+<ul>
+<li><code>premium-hierarchy-dashboard.json</code> – Komponent ağacı</li>
+<li><code>hierarchical-dashboard.json</code> – Orijinal ağac</li>
+<li><code>components/App.jsx</code>, <code>PremiumDashboard.jsx</code> –
+Destekleyici bileşenler</li>
+<li><code>package.json</code>, <code>vite.config.js</code>,
+<code>styles/</code>, <code>src/</code> – Proje yapısı</li>
+<li><code>AGENT_HIERARCHY_README.md</code> – Detaylı özellikler ve
+kurulum</li>
+<li><code>DELIVERABLE_SUMMARY.json</code>, <code>TREE.txt</code> –
+Manifest ve ağaç</li>
+</ul>
+<h2 id="premium-özellikler">Premium Özellikler</h2>
+<ul>
+<li><strong>Design Variance:</strong> 7 (asymmetric, split-screen,
+offset)</li>
+<li><strong>Motion Intensity:</strong> 8 (magnetic, parallax, staggered,
+shared transitions, spring physics)</li>
+<li><strong>Luxury Level:</strong> 9 (liquid glass, grain texture
+overlay, border gradients, backdrop-saturate, CSS variables)</li>
+<li><strong>Materiality:</strong> Grain overlay (fixed,
+pointer-events-none, opacity 0.03), inset shadows, soft tinted
+shadows</li>
+<li><strong>Typography:</strong> Geist font (NO Inter), high contrast,
+large display sizes</li>
+<li><strong>Colors:</strong> Dark zinc/slate palette, single accent
+(gold/silver/blue) &lt;80% saturation</li>
+<li><strong>Accessibility:</strong> ARIA, keyboard nav, skip links, WCAG
+AA</li>
+</ul>
+<h2 id="kurulum">Kurulum</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> frontend-agent-hierarchy</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code></pre></div>
+<p>Ardından http://localhost:3000</p>
+<h2 id="not">Not</h2>
+<ul>
+<li>ElevenLabs TTS API key geçersiz → sesli mesaj mümkün değil</li>
+<li>Dosyalar ZIP formatında da gönderildi</li>
+</ul>
+<hr />
+<p><strong>Lea</strong> – OpenClaw Assistant</p>
+</body>
+</html>
