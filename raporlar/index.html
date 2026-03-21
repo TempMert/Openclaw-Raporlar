@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Agent Hierarchy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] }, colors: { zinc: { 950: '#0a0a0a' } } } } }
+  </script>
+  <style>
+    body { background: radial-gradient(ellipse at bottom, #0b0d17, #000); color:#fff; min-height:100vh; overflow-x:hidden; }
+    .stars { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;
+      background-image: radial-gradient(circle at 10% 20%,rgba(255,255,255,.8) 0%,transparent 2%),
+                        radial-gradient(circle at 80% 50%,rgba(255,255,255,.6) 0%,transparent 1.5%),
+                        radial-gradient(circle at 40% 70%,rgba(255,255,255,.7) 0%,transparent 2%),
+                        radial-gradient(circle at 90% 10%,rgba(255,255,255,.5) 0%,transparent 1%),
+                        radial-gradient(circle at 30% 30%,rgba(255,255,255,.6) 0%,transparent 1.2%);
+      background-size:400px 400px; filter:blur(1px); z-index:-1; }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div id="root"></div>
+
+  <!-- React & ReactDOM (jsDelivr) -->
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Babel Standalone -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Framer Motion (UMD) -->
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+    const { useMotionValue, useTransform, motion, AnimatePresence } = window.Motion;
+
+    const LiquidGlassCard = ({ emoji, name, role, color, delay = 0 }) => {
+      const colorStyles = {
+        gold: { border:'6px solid #FFD700', boxShadow:'0 0 60px rgba(255,215,0,.6), inset 0 0 30px rgba(255,215,0,.25)', hoverBoxShadow:'0 0 80px rgba(255,215,0,.9), inset 0 0 35px rgba(255,215,0,.4)', textColor:'#FFD700' },
+        silver: { border:'6px solid #C0C0C0', boxShadow:'0 0 60px rgba(192,192,192,.6), inset 0 0 30px rgba(192,192,192,.25)', hoverBoxShadow:'0 0 80px rgba(192,192,192,.9), inset 0 0 35px rgba(192,192,192,.3)', textColor:'#C0C0C0' },
+        blue: { border:'6px solid #3b82f6', boxShadow:'0 0 60px rgba(59,130,246,.6), inset 0 0 30px rgba(59,130,246,.25)', hoverBoxShadow:'0 0 80px rgba(59,130,246,.9), inset 0 0 35px rgba(59,130,246,.3)', textColor:'#3b82f6' }
+      };
+      const style = colorStyles[color];
+      const [hover, setHover] = useState(false);
+      const x = useMotionValue(0); const y = useMotionValue(0);
+      const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        x.set((e.clientX - cx)*0.2); y.set((e.clientY - cy)*0.2);
+      };
+      const handleMouseLeave = () => { setHover(false); x.set(0); y.set(0); };
+      return (
+        <motion.div initial={{ opacity:0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ delay, duration:0.6, type:'spring', stiffness:100, damping:20 }}
+          onMouseEnter={()=>setHover(true)} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}
+          style={{ x, y, borderRadius:'28px', background:'rgba(20,30,50,.75)', border:style.border, boxShadow:style.boxShadow, transition:'box-shadow .3s ease, transform .3s cubic-bezier(.175,.885,.32,1.275)' }}
+          className="w-full max-w-[280px] min-h-[260px] p-[40px_20px] flex flex-col items-center justify-center text-center relative overflow-hidden backdrop-blur-xl"
+        >
+          <motion.div className="absolute top-0 left-0 w-[300%] h-[300%] pointer-events-none" style={{ background:'linear-gradient(rgba(255,255,255,.1) 0%,transparent 60%)', transform:'rotate(45deg)', opacity:hover?1:0 }} />
+          <div className="emoji text-4xl mb-4 drop-shadow-[0_0_10px_currentColor]" style={{color:style.textColor}}>{emoji}</div>
+          <div className="name text-xl font-extrabold mb-2 tracking-wider" style={{letterSpacing:'0.5px'}}>{name}</div>
+          <div className="role text-gray-400 text-sm leading-tight">{role}</div>
+        </motion.div>
+      );
+    };
+
+    const App = () => {
+      const agents = [
+        { emoji:'👑', name:'Mertko', role:'CEO / Owner', color:'gold' },
+        { emoji:'👩🏻‍💼', name:'Claw', role:'Chief Assistant Agent (Admin)', color:'silver' },
+        { emoji:'🛡️', name:'Security Agent', role:'Güvenlik Sorumlusu', color:'blue' },
+        { emoji:'👨🏾‍💻', name:'Cooder', role:'Developer & Designer Agent', color:'blue' }
+      ];
+      return (
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <motion.h1 initial={{opacity:0,y:-30}} animate={{opacity:1,y:0}} transition={{duration:0.8}} className="text-4xl md:text-6xl font-extrabold text-center mb-16 tracking-tight">
+            OpenClaw Agent Hiyerarşisi
+          </motion.h1>
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            {agents.map((a,i) => <LiquidGlassCard key={i} {...a} delay={i*0.15} />)}
+          </div>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
+```
+assistant
+<think>
+
+</think>
+✅ Düzeltilmiş HTML (Framer Motion jsDelivr CDN, React/ReactDOM jsDelivr CDN). Şimdi GitHub'a atıyorum:
+
+```bash
+git add raporlar/premium-hierarchy-site-v2.html
+git commit -m "Update premium hierarchy site v2 (fixed CDN imports)"
+git push origin main
+```<tool_call>
+<function=exec>
