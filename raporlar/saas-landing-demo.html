@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium SaaS Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { light: '#818cf8', main: '#6366f1', dark: '#4f46e5' },
+            accent: { cyan: '#22d3ee', emerald: '#10b981', violet: '#8b5cf6' },
+            glass: { bg: 'rgba(15,23,42,0.6)', border: 'rgba(148,163,184,0.2)', highlight: 'rgba(255,255,255,0.05)' }
+          },
+          backgroundImage: {
+            'gradient-mesh': 'radial-gradient(at 0% 0%, rgba(99,102,241,0.3) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(139,92,246,0.3) 0px, transparent 50%), radial-gradient(at 50% 50%, rgba(34,211,238,0.2) 0px, transparent 50%)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: radial-gradient(ellipse at bottom, #020617, #000); color:#fff; min-height:100vh; overflow-x:hidden; }
+    .glass-card { backdrop-filter: blur(16px); background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.2); }
+    .glass-card-hover:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 40px -10px rgba(99,102,241,0.2); }
+    .magnetic { transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.min.js"></script>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+    const { useMotionValue, useSpring, motion, AnimatePresence } = window.Motion;
+
+    const DS = {
+      colors: {
+        primary: { light: '#818cf8', main: '#6366f1', dark: '#4f46e5' },
+        accent: { cyan: '#22d3ee', emerald: '#10b981', violet: '#8b5cf6' }
+      },
+      glass: { bg: 'rgba(15,23,42,0.6)', border: 'rgba(148,163,184,0.2)' }
+    };
+
+    const MagneticButton = ({ children, onClick, variant = 'primary', large = false }) => {
+      const x = useMotionValue(0);
+      const y = useMotionValue(0);
+      const ref = useRef(null);
+      const handleMouseMove = (e) => {
+        const rect = ref.current.getBoundingClientRect();
+        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        x.set((e.clientX - cx) * 0.2);
+        y.set((e.clientY - cy) * 0.2);
+      };
+      const reset = () => { x.set(0); y.set(0); };
+      const base = "magnetic font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2";
+      const variants = {
+        primary: "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50",
+        secondary: "bg-white/10 backdrop-blur text-white border border-white/20 hover:bg-white/20"
+      };
+      const sizes = large ? "px-8 py-4 text-lg" : "px-6 py-3 text-base";
+      return (
+        <motion.button
+          ref={ref}
+          style={{ x, y }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={reset}
+          className={`${base} ${variants[variant]} ${sizes}`}
+          onClick={onClick}
+        >
+          {children}
+        </motion.button>
+      );
+    };
+
+    const GlassCard = ({ title, description, icon, features, className = '' }) => (
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className={`glass-card p-6 rounded-3xl hover:glass-card-hover transition-all duration-300 ${className}`}
+      >
+        <div className="text-4xl mb-4">{icon}</div>
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-gray-400 mb-4">{description}</p>
+        {features && (
+          <ul className="space-y-2">
+            {features.map((f, i) => (
+              <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> {f}
+              </li>
+            ))}
+          </ul>
+        )}
+      </motion.div>
+    );
+
+    const PricingCard = ({ tier, highlighted }) => (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className={`p-8 rounded-3xl border transition-all duration-300 ${highlighted ? 'border-2 border-indigo-500/50 bg-indigo-950/30 scale-105' : 'border border-slate-700/50 bg-slate-900/30'}`}
+      >
+        <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+        <div className="text-4xl font-extrabold mb-2">${tier.price}<span className="text-lg font-normal text-gray-400">{tier.period}</span></div>
+        <p className="text-gray-400 mb-6">{tier.description}</p>
+        <ul className="space-y-3 mb-8">
+          {tier.features.map((feat, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm">
+              <span className="text-emerald-400 mt-0.5">✓</span> {feat}
+            </li>
+          ))}
+        </ul>
+        <MagneticButton variant={highlighted ? "primary" : "secondary"} large={highlighted}>
+          {tier.cta}
+        </MagneticButton>
+      </motion.div>
+    );
+
+    const TestimonialCarousel = ({ testimonials }) => (
+      <div className="grid md:grid-cols-3 gap-6">
+        {testimonials.map((t, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i*0.1 }}
+            className="glass-card p-6 rounded-2xl"
+          >
+            <p className="text-gray-200 mb-4 italic">"{t.quote}"</p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center font-bold">{t.avatar}</div>
+              <div>
+                <div className="font-semibold">{t.author}</div>
+                <div className="text-sm text-gray-400">{t.role}</div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    );
+
+    const App = () => {
+      return (
+        <div className="min-h-screen">
+          {/* Hero */}
+          <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden bg-gradient-mesh">
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400">
+                Build Faster with <span className="text-white">Nexus</span>
+              </h1>
+              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">The modern platform for team collaboration</p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <MagneticButton variant="primary" large>Start Free Trial</MagneticButton>
+                <MagneticButton variant="secondary" large>Watch Demo</MagneticButton>
+              </div>
+            </motion.div>
+          </section>
+
+          {/* Features */}
+          <section className="py-24 px-4">
+            <div className="max-w-6xl mx-auto">
+              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl font-bold text-center mb-16">
+                Powerful Features
+              </motion.h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  { title: "Real-time Collaboration", description: "Work together seamlessly with live editing, comments, and presence indicators", icon: "⚡", features: ["Live cursors", "Instant updates", "Conflict resolution"] },
+                  { title: "Advanced Analytics", description: "Deep insights into your team's performance with beautiful dashboards", icon: "📊", features: ["Custom reports", "Real-time metrics", "Export to CSV/PDF"] },
+                  { title: "Secure by Design", description: "Enterprise-grade security with end-to-end encryption and compliance", icon: "🔒", features: ["SOC 2 certified", "GDPR compliant", "SSO integration"] },
+                  { title: "Automated Workflows", description: "Automate repetitive tasks with our powerful workflow engine", icon: "🤖", features: ["Visual builder", "100+ integrations", "Custom triggers"] },
+                  { title: "Team Management", description: "Invite members, set roles, and manage permissions with ease", icon: "👥", features: ["Role-based access", "Bulk invites", "Audit logs"] },
+                  { title: "24/7 Support", description: "Our dedicated team is always here to help you succeed", icon: "💬", features: ["Live chat", "Phone support", "Dedicated CSM"] }
+                ].map((card, idx) => <GlassCard key={idx} {...card} />)}
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials */}
+          <section className="py-24 px-4 bg-slate-900/30">
+            <div className="max-w-6xl mx-auto">
+              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl font-bold text-center mb-16">
+                Loved by Teams Worldwide
+              </motion.h2>
+              <TestimonialCarousel testimonials={[
+                { quote: "Nexus transformed how our team works. We've cut project delivery time by 40%.", author: "Michael Chen", role: "CTO at TechCorp", avatar: "MC" },
+                { quote: "The best collaboration tool we've ever used. Intuitive, powerful, and beautiful.", author: "Sarah Williams", role: "Product Manager at StartupXYZ", avatar: "SW" },
+                { quote: "Implementation was seamless and the ROI was immediate. Worth every penny.", author: "David Rodriguez", role: "Engineering Lead at Enterprise Inc", avatar: "DR" }
+              ]} />
+            </div>
+          </section>
+
+          {/* Pricing */}
+          <section className="py-24 px-4">
+            <div className="max-w-6xl mx-auto">
+              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl font-bold text-center mb-16">
+                Simple, Transparent Pricing
+              </motion.h2>
+              <div className="grid md:grid-cols-3 gap-8 items-start">
+                {[
+                  { name: "Starter", price: 29, period: "/month", description: "Perfect for small teams getting started", features: ["Up to 5 users", "10GB storage", "Basic analytics", "Email support"], highlight: false, cta: "Get Started" },
+                  { name: "Professional", price: 79, period: "/month", description: "For growing teams that need more power", features: ["Up to 20 users", "100GB storage", "Advanced analytics", "Priority support", "API access", "Custom integrations"], highlight: true, cta: "Start Free Trial" },
+                  { name: "Enterprise", price: 199, period: "/month", description: "For large organizations with custom needs", features: ["Unlimited users", "Unlimited storage", "Enterprise analytics", "24/7 phone support", "Dedicated CSM", "Custom SLA", "On-premise option"], highlight: false, cta: "Contact Sales" }
+                ].map((tier, idx) => <PricingCard key={idx} tier={tier} highlighted={tier.highlight} />)}
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA */}
+          <section className="py-24 px-4 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/40 to-violet-900/40 backdrop-blur-sm"></div>
+            <div className="max-w-4xl mx-auto text-center relative z-10">
+              <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-bold mb-6">
+                Ready to transform your workflow?
+              </motion.h2>
+              <p className="text-xl text-gray-400 mb-10">Join 10,000+ teams already using Nexus</p>
+              <MagneticButton variant="primary" large>
+                Get Started for Free
+              </MagneticButton>
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="py-12 px-4 border-t border-slate-800 text-center text-gray-500">
+            <p>© 2026 Nexus. All rights reserved.</p>
+          </footer>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
