@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Agent Hiyerarşisi – Ultimate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            zinc: { 950: '#0a0a0a' },
+            accent: { gold: '#FFD700', silver: '#C0C0C0', blue: '#3b82f6', green: '#22c55e', purple: '#a855f7', red: '#ef4444', orange: '#f97316', teal: '#14b8a6', yellow: '#eab308', gray: '#6b7280' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: radial-gradient(ellipse at bottom, #0b0d17, #000); color:#fff; min-height:100vh; overflow-x:hidden; }
+    .stars { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;
+      background-image: radial-gradient(circle at 10% 20%,rgba(255,255,255,.8) 0%,transparent 2%),
+                        radial-gradient(circle at 80% 50%,rgba(255,255,255,.6) 0%,transparent 1.5%),
+                        radial-gradient(circle at 40% 70%,rgba(255,255,255,.7) 0%,transparent 2%),
+                        radial-gradient(circle at 90% 10%,rgba(255,255,255,.5) 0%,transparent 1%),
+                        radial-gradient(circle at 30% 30%,rgba(255,255,255,.6) 0%,transparent 1.2%);
+      background-size:400px 400px; filter:blur(1px); z-index:-1; }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div id="root"></div>
+
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+    const { useMotionValue, motion } = window.Motion;
+
+    const LiquidGlassCard = ({ emoji, name, role, color, delay = 0, size = 'normal', id }) => {
+      const colorStyles = {
+        gold: { border:'6px solid #FFD700', boxShadow:'0 0 60px rgba(255,215,0,.6), inset 0 0 30px rgba(255,215,0,.25)', textColor:'#FFD700' },
+        silver: { border:'6px solid #C0C0C0', boxShadow:'0 0 60px rgba(192,192,192,.6), inset 0 0 30px rgba(192,192,192,.25)', textColor:'#C0C0C0' },
+        blue: { border:'6px solid #3b82f6', boxShadow:'0 0 60px rgba(59,130,246,.6), inset 0 0 30px rgba(59,130,246,.25)', textColor:'#3b82f6' },
+        green: { border:'6px solid #22c55e', boxShadow:'0 0 60px rgba(34,197,94,.6), inset 0 0 30px rgba(34,197,94,.25)', textColor:'#22c55e' },
+        purple: { border:'6px solid #a855f7', boxShadow:'0 0 60px rgba(168,85,247,.6), inset 0 0 30px rgba(168,85,247,.25)', textColor:'#a855f7' },
+        red: { border:'6px solid #ef4444', boxShadow:'0 0 60px rgba(239,68,68,.6), inset 0 0 30px rgba(239,68,68,.25)', textColor:'#ef4444' },
+        orange: { border:'6px solid #f97316', boxShadow:'0 0 60px rgba(249,115,22,.6), inset 0 0 30px rgba(249,115,22,.3)', textColor:'#f97316' },
+        teal: { border:'6px solid #14b8a6', boxShadow:'0 0 60px rgba(20,184,166,.6), inset 0 0 30px rgba(20,184,166,.3)', textColor:'#14b8a6' },
+        yellow: { border:'6px solid #eab308', boxShadow:'0 0 60px rgba(234,179,8,.6), inset 0 0 30px rgba(234,179,8,.4)', textColor:'#eab308' },
+        gray: { border:'6px solid #6b7280', boxShadow:'0 0 60px rgba(107,114,128,.6), inset 0 0 30px rgba(107,114,128,.3)', textColor:'#9ca3af' }
+      };
+      const style = colorStyles[color] || colorStyles.blue;
+      const [hover, setHover] = useState(false);
+      const x = useMotionValue(0); const y = useMotionValue(0);
+      const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        x.set((e.clientX - cx)*0.2); y.set((e.clientY - cy)*0.2);
+      };
+      const handleMouseLeave = () => { setHover(false); x.set(0); y.set(0); };
+      const cardClass = size === 'large' ? 'max-w-[360px] min-h-[320px] text-2xl' : 'max-w-[280px] min-h-[260px] text-lg';
+      return (
+        <motion.div
+          id={id}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay, duration: 0.6, type: 'spring', stiffness: 100, damping: 20 }}
+          onMouseEnter={()=>setHover(true)} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}
+          style={{
+            x, y,
+            borderRadius:'28px',
+            background:'rgba(20,30,50,.75)',
+            border:style.border,
+            boxShadow:style.boxShadow,
+            transition:'box-shadow .3s ease, transform .3s cubic-bezier(.175,.885,.32,1.275)'
+          }}
+          className={`${cardClass} p-8 flex flex-col items-center justify-center text-center relative overflow-hidden backdrop-blur-xl`}
+        >
+          <motion.div className="absolute top-0 left-0 w-[300%] h-[300%] pointer-events-none" style={{ background:'linear-gradient(rgba(255,255,255,.1) 0%,transparent 60%)', transform:'rotate(45deg)', opacity:hover?1:0 }} />
+          <div className="emoji text-5xl mb-4 drop-shadow-[0_0_10px_currentColor]" style={{color:style.textColor}}>{emoji}</div>
+          <div className="name text-2xl font-extrabold mb-2 tracking-wider" style={{letterSpacing:'0.5px'}}>{name}</div>
+          <div className="role text-gray-400 text-base leading-tight">{role}</div>
+        </motion.div>
+      );
+    };
+
+    const TreeConnector = ({ from, to }) => {
+      const [path, setPath] = useState('');
+      useEffect(() => {
+        let mounted = true;
+        const update = () => {
+          if (!mounted) return;
+          const fromEl = document.getElementById(from);
+          const toEl = document.getElementById(to);
+          if (fromEl && toEl) {
+            const f = fromEl.getBoundingClientRect();
+            const t = toEl.getBoundingClientRect();
+            const x1 = f.left + f.width/2, y1 = f.bottom - 10;
+            const x2 = t.left + t.width/2, y2 = t.top + 10;
+            const cp1x = x1, cp1y = y1 + 40;
+            const cp2x = x2, cp2y = t.top - 40;
+            setPath(`M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x}, ${cp2y}, ${x2} ${y2}`);
+            return true;
+          }
+          return false;
+        };
+        let attempts = 0;
+        const maxAttempts = 50;
+        const interval = setInterval(() => {
+          if (update() || attempts++ > maxAttempts) clearInterval(interval);
+        }, 100);
+        return () => { mounted = false; clearInterval(interval); };
+      }, [from, to]);
+      if (!path) return null;
+      return (
+        <svg className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+          <path d={path} stroke="rgba(255,255,255,0.2)" strokeWidth="2" fill="none" />
+        </svg>
+      );
+    };
+
+    const App = () => {
+      const mertko = {
+        emoji: '👑',
+        name: 'Mertko',
+        role: 'Sahip / Kullanıcı',
+        color: 'gold',
+        size: 'large'
+      };
+
+      const agents = [
+        { emoji: '👤', name: 'Lea', role: 'Ana Assistant', color: 'silver' },
+        { emoji: '🎤', name: 'Voice Assistant', role: 'Sesli Asistan', color: 'green' },
+        { emoji: '✨', name: 'Prompt Engineer', role: 'Prompt Üretici', color: 'purple' },
+        { emoji: '🎨', name: 'Frontend Designer', role: 'UI/UX Tasarımcı', color: 'blue' },
+        { emoji: '🏗️', name: 'Backend Architect', role: 'Backend Mimar', color: 'gray' },
+        { emoji: '🛡️', name: 'Security Agent', role: 'Güvenlik Sorumlusu', color: 'red' },
+        { emoji: '🚀', name: 'DevOps', role: 'Deployment & Infra', color: 'orange' },
+        { emoji: '📚', name: 'Technical Writer', role: 'Dokümantasyon', color: 'teal' },
+        { emoji: '🔍', name: 'QA Engineer', role: 'Kalite Güvence', color: 'yellow' }
+      ];
+
+      return (
+        <div className="relative min-h-screen">
+          <svg className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+            {agents.map((_, i) => (
+              <TreeConnector key={i} from="mertko-card" to={`agent-${i}`} />
+            ))}
+          </svg>
+
+          <div className="container mx-auto px-4 py-16 relative z-10">
+            <div className="flex justify-center mb-20">
+              <LiquidGlassCard id="mertko-card" {...mertko} delay={0} size="large" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {agents.map((agent, idx) => (
+                <LiquidGlassCard key={idx} id={`agent-${idx}`} {...agent} delay={0.2 + idx*0.08} />
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
+EOF
