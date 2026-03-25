@@ -458,3 +458,43 @@ header {
     font-size: 1.1rem;
   }
 }
+
+/* ——— Mobile Responsive Fixes ——— */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+  .header-container { padding: 0 1rem !important; }
+  .container, .wrapper, .content { max-width: 100% !important; width: 100% !important; }
+  
+  /* Grid systems */
+  .grid, .product-grid, .category-grid { 
+    grid-template-columns: 1fr !important; 
+    gap: 1rem !important;
+  }
+  
+  /* Cards */
+  .card, .product-card, .banner-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  /* Header */
+  .site-header { padding: 0.5rem 0 !important; }
+  .logo h1 { font-size: 1.4rem !important; }
+  .header-actions { gap: 0.8rem !important; }
+  
+  /* Hero */
+  .hero-slide { height: auto !important; min-height: 50vh; }
+  .hero-content { padding: 2rem 1rem !important; }
+  
+  /* Category bar */
+  .category-scroll { padding: 0.8rem 1rem !important; }
+  .category-btn { padding: 0.5rem 1rem !important; font-size: 0.9rem !important; }
+  
+  /* Images */
+  img { max-width: 100% !important; height: auto !important; }
+  
+  /* Prevent horizontal scroll */
+  * { max-width: 100% !important; }
+  body { overflow-x: hidden !important; }
+}
