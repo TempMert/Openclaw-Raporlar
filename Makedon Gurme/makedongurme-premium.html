@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makedon Gurme – Seçkin Şarküteri & Gurme Lezzetler</title>
+<link rel="icon" href="https://makedongurme.com/wp-content/uploads/2025/04/cropped-Makedon-Gurme-Logo-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream:    { DEFAULT:'#f8f5f2', dark:'#f0ebe3', deeper:'#e8dfd4' },
+        brown:    { DEFAULT:'#8b6f5c', dark:'#6b5344', light:'#b08a76', pale:'#f0e6df' },
+        sage:     { DEFAULT:'#a3b18a', dark:'#7a8f6e', light:'#c5d4af', pale:'#eef3e8' },
+        accent:   { DEFAULT:'#d4a373', dark:'#c08a52', light:'#e8c4a0', pale:'#fdf3e9' },
+        ink:      { DEFAULT:'#3d3530', light:'#6b5e57', muted:'#a09088' },
+      },
+      fontFamily: {
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body:    ['Poppins', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        'card':     '0 2px 16px rgba(61,53,48,.07)',
+        'card-hover':'0 8px 36px rgba(61,53,48,.14)',
+        'soft':     '0 4px 24px rgba(139,111,92,.10)',
+        'float':    '0 12px 48px rgba(61,53,48,.18)',
+      },
+      borderRadius: {
+        '2xl':'16px',
+        '3xl':'20px',
+        '4xl':'28px',
+      },
+    }
+  }
+}
+</script>
+
+<style>
+/* ——— Global base ——— */
+* { box-sizing: border-box; }
+body { font-family: 'Poppins', system-ui, sans-serif; background: #f8f5f2; color: #3d3530; overflow-x: hidden; }
+h1,h2,h3,.font-display { font-family: 'Playfair Display', Georgia, serif; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+/* ——— Grain texture overlay ——— */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+/* ——— Topbar ——— */
+.topbar { background: #3d3530; }
+
+/* ——— Header scrolled ——— */
+.site-header { transition: box-shadow .3s ease; }
+.site-header.scrolled { box-shadow: 0 4px 24px rgba(61,53,48,.12); }
+
+/* ——— Hero ——— */
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+.hero-slide.active { opacity: 1; }
+
+/* ——— Card hover lift ——— */
+.card-lift { transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s ease; }
+.card-lift:hover { transform: translateY(-12px) scale(1.04) !important; box-shadow: 0 30px 60px rgba(30,25,22,.25) !important; z-index: 20; }
+
+/* ——— Product card image zoom ——— */
+.prod-img-wrap { overflow: hidden; }
+.prod-img-wrap img { transition: transform .6s cubic-bezier(.4,0,.2,1); }
+.prod-card:hover .prod-img-wrap img { transform: scale(1.1); }
+
+/* ——— Category card ——— */
+.cat-img-wrap img { transition: transform .8s cubic-bezier(.2,0,.2,1); }
+.cat-card:hover .cat-img-wrap img { transform: scale(1.15); }
+.text-shadow-sm { text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+.text-shadow-md { text-shadow: 0 4px 12px rgba(0,0,0,0.75); }
+.text-shadow-ink { text-shadow: 0 2px 8px rgba(61,53,48,0.4); }
+.price-style { font-family: 'Poppins', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+
+/* ——— Scrollbar ——— */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f0ebe3; }
+::-webkit-scrollbar-thumb { background: #c5b4ac; border-radius: 99px; }
+
+/* ——— Smooth underline nav ——— */
+.nav-link { position: relative; }
+.nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1.5px; background:#8b6f5c; transition:width .3s ease; }
+.nav-link:hover::after { width:100%; }
+
+/* ——— Pill tag ——— */
+.pill-tag { transition: background .25s, color .25s, border-color .25s; }
+.pill-tag:hover { background:#8b6f5c; color:#fff; border-color:#8b6f5c; }
+
+/* ——— Fade in on scroll ——— */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .05s }
+.reveal-d2 { transition-delay: .10s }
+.reveal-d3 { transition-delay: .15s }
+.reveal-d4 { transition-delay: .20s }
+.reveal-d5 { transition-delay: .25s }
+.reveal-d6 { transition-delay: .30s }
+
+/* ——— Mobile drawer ——— */
+#mobileDrawer { transition: transform .35s cubic-bezier(.4,0,.2,1); }
+
+/* ——— Wholesale page ——— */
+#wholesalePage { transition: opacity .3s ease; }
+
+/* ——— Star rating ——— */
+.star-filled { color: #d4a373; }
+.star-empty  { color: #ddd; }
+
+/* ——— Search bar focus ——— */
+.search-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(212,163,115,.25); }
+
+/* ——— Add to cart btn ——— */
+.btn-cart-add { transition: background .25s, transform .2s; }
+.btn-cart-add:hover { background: #6b5344; transform: translateY(-1px); }
+.btn-cart-add:active { transform: translateY(0); }
+
+/* ——— WhatsApp float ——— */
+.wa-float { animation: wa-pulse 3s ease-in-out infinite; }
+@keyframes wa-pulse {
+  0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,.38); }
+  50%      { box-shadow: 0 6px 36px rgba(37,211,102,.6); }
+}
+
+/* ——— Scroll to top ——— */
+#scrollTop { transition: opacity .3s, transform .3s; }
+#scrollTop.hidden-btn { opacity:0; pointer-events:none; transform: translateY(8px); }
+
+/* ——— Toast ——— */
+#toast { transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .35s ease; }
+#toast.show { transform: translateX(0) !important; opacity: 1 !important; }
+</style>
+</head>
+<body class="font-body text-ink">
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar py-2 px-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
+    <div class="flex items-center gap-4 text-xs text-white/70 flex-wrap">
+      <a href="tel:+905012359595" class="flex items-center gap-1.5 hover:text-white transition-colors">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/></svg>
+        0501 235 95 95
+      </a>
+      <span class="text-white/30">|</span>
+      <a href="https://makedongurme.com/hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a>
+      <span class="text-white/30">|</span>
+      <a href="http://makedongurme.com/iletisim" class="hover:text-white transition-colors">İletişim</a>
+      <span class="text-white/30">|</span>
+      <a href="https://www.google.com/maps?daddr=Zafer+Cd.+138/B,+Bayrampaşa" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>
+        Bayrampaşa, İstanbul
+      </a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://api.whatsapp.com/send?phone=905012359595" class="flex items-center gap-1.5 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        WhatsApp
+      </a>
+      <span class="text-white/30">|</span>
+      <a href="https://makedongurme.com/hesabim/" class="text-xs text-white/70 hover:text-white transition-colors">Giriş Yap</a>
+      <a href="https://makedongurme.com/hesabim/" class="text-xs bg-brown/60 hover:bg-brown text-white px-3 py-1 rounded-full transition-colors">Kayıt Ol</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader" class="site-header sticky top-0 z-50 bg-cream border-b border-brown-pale/60 backdrop-blur-sm bg-cream/95">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-[72px] gap-4">
+
+      <!-- Logo -->
+      <a href="https://makedongurme.com/" class="flex items-center gap-3 flex-shrink-0">
+        <img src="https://makedongurme.com/wp-content/uploads/2025/04/cropped-Makedon-Gurme-Logo-192x192.png"
+             onerror="this.style.display='none'" alt="Makedon Gurme" class="h-10 w-auto drop-shadow-sm">
+        <div>
+          <div class="font-display text-xl font-semibold text-ink leading-tight">Makedon <span class="text-brown">Gurme</span></div>
+          <div class="text-[10px] tracking-[0.18em] text-ink-muted uppercase font-medium">Gurme Şarküteri</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="https://makedongurme.com/magaza/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Mağaza</a>
+        <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Baharatlar</a>
+        <a href="https://makedongurme.com/urun-kategori/soslar/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Soslar</a>
+        <a href="https://makedongurme.com/urun-kategori/et-urunleri/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Et Ürünleri</a>
+        <a href="https://makedongurme.com/urun-kategori/peynir/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Peynir</a>
+        <a href="https://makedongurme.com/urun-kategori/hediyelik/" class="nav-link text-sm font-medium text-ink-light hover:text-brown transition-colors px-3 py-2">Hediyelik</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2">
+        <!-- Search -->
+        <button id="searchToggle" class="hidden md:flex items-center gap-2 bg-cream-dark border border-brown-pale/60 rounded-full px-4 py-2 text-sm text-ink-muted hover:border-brown/40 transition-all hover:bg-cream-deeper/40 group">
+          <svg class="w-4 h-4 text-ink-muted group-hover:text-brown transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span class="text-xs">Ürün ara...</span>
+        </button>
+
+        <!-- Account -->
+        <a href="https://makedongurme.com/hesabim/" class="hidden md:flex items-center justify-center w-9 h-9 rounded-full hover:bg-brown-pale transition-colors">
+          <svg class="w-4.5 h-4.5 text-ink-light" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+
+        <!-- Toptan Satış -->
+        <button onclick="showWholesale()" class="hidden md:flex items-center gap-1.5 text-xs font-semibold text-brown border border-brown/30 hover:bg-brown hover:text-white px-3.5 py-2 rounded-full transition-all duration-300">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+          Toptan Satış
+        </button>
+
+        <!-- Cart -->
+        <a href="https://makedongurme.com/sepet/" class="relative flex items-center gap-2 bg-brown hover:bg-brown-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow-soft hover:shadow-float hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="hidden sm:inline">Sepetim</span>
+          <span class="flex items-center justify-center w-4.5 h-4.5 bg-accent text-[10px] font-bold text-white rounded-full min-w-[18px] min-h-[18px] text-center leading-none px-1">0</span>
+        </a>
+
+        <!-- Mobile Menu -->
+        <button id="mobileMenuBtn" class="lg:hidden flex items-center justify-center w-9 h-9 rounded-full hover:bg-brown-pale transition-colors">
+          <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Dropdown -->
+  <div id="searchDropdown" class="hidden border-t border-brown-pale/40 bg-cream/98 py-4 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="relative">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Ürün, kategori veya marka ara..." class="search-input w-full pl-11 pr-4 py-3 bg-cream-dark border border-brown-pale/60 rounded-2xl text-sm text-ink placeholder-ink-muted focus:border-brown/50 transition-all">
+        <button onclick="closeSearch()" class="absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted hover:text-ink transition-colors text-lg leading-none">×</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div id="mobileDrawer" class="fixed inset-y-0 left-0 w-72 bg-cream-dark z-50 transform -translate-x-full shadow-float flex flex-col">
+  <div class="flex items-center justify-between p-5 border-b border-brown-pale/40">
+    <div class="font-display text-lg font-semibold text-ink">Makedon <span class="text-brown">Gurme</span></div>
+    <button onclick="closeMobile()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-brown-pale transition-colors text-ink-light text-lg">×</button>
+  </div>
+  <nav class="flex-1 overflow-y-auto p-4 flex flex-col gap-1">
+    <a href="https://makedongurme.com/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🏠 Anasayfa</a>
+    <a href="https://makedongurme.com/magaza/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🛍️ Tüm Ürünler</a>
+    <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🌿 Baharatlar</a>
+    <a href="https://makedongurme.com/urun-kategori/soslar/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🫙 Özel Soslar</a>
+    <a href="https://makedongurme.com/urun-kategori/et-urunleri/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🥩 Et Ürünleri</a>
+    <a href="https://makedongurme.com/urun-kategori/peynir/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🧀 İthal Peynir</a>
+    <a href="https://makedongurme.com/urun-kategori/kahvaltiliklar/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🍳 Kahvaltılıklar</a>
+    <a href="https://makedongurme.com/urun-kategori/hediyelik/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🎁 Hediyelik</a>
+    <a href="https://makedongurme.com/urun-kategori/atistirmaliklar/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">🍿 Atıştırmalıklar</a>
+    <a href="https://makedongurme.com/urun-kategori/kahve-cay/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">☕ Kahve & Çay</a>
+    <div class="border-t border-brown-pale/40 my-2"></div>
+    <button onclick="showWholesale(); closeMobile();" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-accent-pale text-sm font-semibold text-accent-dark transition-colors hover:bg-accent/20">🏭 Toptan Satış</button>
+    <a href="https://makedongurme.com/hesabim/" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brown-pale text-sm font-medium text-ink-light transition-colors">👤 Hesabım</a>
+  </nav>
+  <div class="p-4 border-t border-brown-pale/40">
+    <a href="https://api.whatsapp.com/send?phone=905012359595" class="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold py-3 rounded-2xl transition-colors">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z"/></svg>
+      WhatsApp Sipariş
+    </a>
+  </div>
+</div>
+<div id="mobileOverlay" class="fixed inset-0 bg-ink/40 z-40 hidden" onclick="closeMobile()"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="relative overflow-hidden" style="height: 520px; min-height: 400px;">
+  <!-- Slides -->
+  <div id="heroSlider" class="absolute inset-0">
+    <div class="hero-slide active absolute inset-0">
+      <img src="Banner/Gemini_Generated_Image_pyw89cpyw89cpyw8.png"
+           onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80'"
+           class="w-full h-full object-cover" alt="Hero">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/35 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase text-accent bg-ink/30 backdrop-blur-sm border border-accent/30 rounded-full px-4 py-1.5 mb-5">
+              ✦ Seçkin Gurme Lezzetler
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+              İstanbul'un<br><em class="text-accent not-italic">En İyi</em> Şarküterisi
+            </h1>
+            <p class="text-white/75 text-sm sm:text-base mb-8 max-w-md leading-relaxed">Bayrampaşa'dan dünyaya — özenle seçilmiş baharatlar, soslar, et ürünleri ve daha fazlası.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://makedongurme.com/magaza/" class="inline-flex items-center gap-2 bg-brown hover:bg-brown-dark text-white font-semibold text-sm px-6 py-3 rounded-full transition-all duration-300 shadow-soft hover:shadow-float hover:-translate-y-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                Alışverişe Başla
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=905012359595" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/35 hover:bg-white/20 text-white font-medium text-sm px-6 py-3 rounded-full transition-all">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+                WhatsApp Sipariş
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide absolute inset-0">
+      <img src="Banner/Gemini_Generated_Image_vzyf31vzyf31vzyf.png"
+           class="w-full h-full object-cover" alt="Baharatlar">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/35 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase text-sage bg-ink/30 backdrop-blur-sm border border-sage/40 rounded-full px-4 py-1.5 mb-5">
+              🌿 Doğal & Taze
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+              Dünyadan<br><em class="text-sage-light not-italic">Seçkin</em> Baharatlar
+            </h1>
+            <p class="text-white/75 text-sm sm:text-base mb-8 max-w-md leading-relaxed">Dünyanın dört bir yanından özenle getirilen aromatik baharatlar ve özel soslar.</p>
+            <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white font-semibold text-sm px-6 py-3 rounded-full transition-all shadow-soft hover:-translate-y-0.5">
+              Baharatları Keşfet →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide absolute inset-0">
+      <img src="Banner/Gemini_Generated_Image_5lk8j55lk8j55lk8.png"
+           class="w-full h-full object-cover" alt="Hediyelik">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/35 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase text-accent bg-ink/30 backdrop-blur-sm border border-accent/40 rounded-full px-4 py-1.5 mb-5">
+              🎁 Özel Koleksiyon
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+              Sevdiklerinize<br><em class="text-accent-light not-italic">Gurme</em> Hediyeler
+            </h1>
+            <p class="text-white/75 text-sm sm:text-base mb-8 max-w-md leading-relaxed">Özenle hazırlanan gurme hediye setleriyle sevdiklerinizi şaşırtın.</p>
+            <a href="https://makedongurme.com/urun-kategori/hediyelik/" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold text-sm px-6 py-3 rounded-full transition-all shadow-soft hover:-translate-y-0.5">
+              Hediye Setleri →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls -->
+  <button id="heroPrev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full flex items-center justify-center text-white hover:bg-brown/70 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button id="heroNext" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full flex items-center justify-center text-white hover:bg-brown/70 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div id="heroDots" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    <button class="hero-dot w-2 h-2 rounded-full bg-white transition-all active-dot" data-s="0"></button>
+    <button class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all" data-s="1"></button>
+    <button class="hero-dot w-2 h-2 rounded-full bg-white/40 transition-all" data-s="2"></button>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<div class="bg-cream-dark border-y border-brown-pale/40 py-3 overflow-hidden">
+  <div class="trust-strip flex gap-0 w-max">
+    <!-- items duplicated via JS -->
+    <div class="trust-items flex items-center gap-0">
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Güvenli Ödeme
+      </span>
+      <span class="text-brown-pale">•</span>
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8m-9 4h4"/></svg>
+        Hızlı Kargo
+      </span>
+      <span class="text-brown-pale">•</span>
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Yemek Kartı Geçerli
+      </span>
+      <span class="text-brown-pale">•</span>
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        Kapıda Ödeme
+      </span>
+      <span class="text-brown-pale">•</span>
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+        WhatsApp Sipariş
+      </span>
+      <span class="text-brown-pale">•</span>
+      <span class="flex items-center gap-2 px-8 text-xs font-medium text-ink-light whitespace-nowrap">
+        <svg class="w-4 h-4 text-brown flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Kolay İade & Değişim
+      </span>
+      <span class="text-brown-pale">•</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PAYMENT SLIDER (NARROW) ===================== -->
+<style>
+@keyframes ptStepScroll {
+  0%, 22% { transform: translateX(0); }
+  25%, 47% { transform: translateX(-12.5%); }
+  50%, 72% { transform: translateX(-25%); }
+  75%, 97% { transform: translateX(-37.5%); }
+  100% { transform: translateX(-50%); }
+}
+.pt-strip { animation: ptStepScroll 20s cubic-bezier(0.65, 0, 0.35, 1) infinite; width: max-content; }
+.pt-strip:hover { animation-play-state: paused; }
+.pt-card-big { height: 50px; min-width: 180px; background: white; border: 1.5px solid rgba(139,111,92,0.18); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 0 24px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(139,111,92,0.06); transition: all 0.3s; }
+.pt-card-big:hover { transform: translateY(-3px); border-color: #8b6f5c; box-shadow: 0 8px 24px rgba(139,111,92,0.12); }
+</style>
+<div class="bg-cream-dark/50 border-b border-brown-pale/30 py-8 overflow-hidden relative z-10">
+  <div class="pt-strip flex">
+    <!-- Set 1 -->
+    <div class="flex items-center gap-6 pr-6">
+      <div class="pt-card-big"><img src="https://makedongurme.com/wp-content/uploads/2025/03/sodexo-logo-makedongurme.png" class="h-6 opacity-95" alt="Sodexo"></div>
+      <div class="pt-card-big"><span class="text-[12px] font-bold text-blue-700 tracking-tight">AMERICAN EXPRESS</span></div>
+      <div class="pt-card-big"><span class="text-[14px] font-black text-blue-800 italic tracking-tighter">VISA</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#00529b]">SETCARD</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#e41e1b]">Edenred</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#1f2a44]">Metropol Card</span></div>
+      <div class="pt-card-big"><span class="text-[11px] font-semibold text-ink-light">+ Diğer Yemek Kartları</span></div>
+      <div class="pt-card-big gap-2.5"><svg class="h-5 w-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg><span class="text-[10px] font-bold text-green-700 uppercase tracking-widest">Güvenli Alışveriş</span></div>
+    </div>
+    <!-- Set 2 (Identical Copy) -->
+    <div class="flex items-center gap-6 pr-6">
+      <div class="pt-card-big"><img src="https://makedongurme.com/wp-content/uploads/2025/03/sodexo-logo-makedongurme.png" class="h-6 opacity-95" alt="Sodexo"></div>
+      <div class="pt-card-big"><span class="text-[12px] font-bold text-blue-700 tracking-tight">AMERICAN EXPRESS</span></div>
+      <div class="pt-card-big"><span class="text-[14px] font-black text-blue-800 italic tracking-tighter">VISA</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#00529b]">SETCARD</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#e41e1b]">Edenred</span></div>
+      <div class="pt-card-big"><span class="text-[13px] font-bold text-[#1f2a44]">Metropol Card</span></div>
+      <div class="pt-card-big"><span class="text-[11px] font-semibold text-ink-light">+ Diğer Yemek Kartları</span></div>
+      <div class="pt-card-big gap-2.5"><svg class="h-5 w-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg><span class="text-[10px] font-bold text-green-700 uppercase tracking-widest">Güvenli Alışveriş</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+  <div class="text-center mb-12 reveal">
+    <div class="flex items-center justify-center gap-3 mb-3">
+      <div class="h-px w-12 bg-brown/30"></div>
+      <span class="text-xs font-semibold tracking-[0.18em] uppercase text-brown text-shadow-ink">Kategoriler</span>
+      <div class="h-px w-12 bg-brown/30"></div>
+    </div>
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink mb-3 text-shadow-ink">Öne Çıkan <em class="text-brown not-italic">Kategoriler</em></h2>
+    <p class="text-ink-muted text-sm max-w-md mx-auto text-shadow-ink">Seçkin gurme lezzetleri kategorilere göre keşfedin</p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+    <!-- Baharatlar -->
+    <div class="reveal">
+      <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="Banner/Categories/Baharatlar.png"
+               onerror="this.src='https://images.unsplash.com/photo-1528522163469-48975b805f50?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="Baharatlar" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">Baharatlar</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Özel Soslar -->
+    <div class="reveal reveal-d1">
+      <a href="https://makedongurme.com/urun-kategori/soslar/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="Banner/Categories/Özel Soslar.png"
+               onerror="this.src='https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="Özel Soslar" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">Özel Soslar</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Et Ürünleri -->
+    <div class="reveal reveal-d2">
+      <a href="https://makedongurme.com/urun-kategori/et-urunleri/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="Banner/Categories/Et Ürünleri.png"
+               onerror="this.src='https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="Et Ürünleri" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">Et Ürünleri</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- İthal Peynir -->
+    <div class="reveal reveal-d3">
+      <a href="https://makedongurme.com/urun-kategori/peynir/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/peynir2-kategori-makedongurme.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="İthal Peynir" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">İthal Peynir</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Kahvaltılıklar -->
+    <div class="reveal reveal-d4">
+      <a href="https://makedongurme.com/urun-kategori/kahvaltiliklar/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/kahvaltilik2-kategori-makedongurme.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="Kahvaltılıklar" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">Kahvaltılıklar</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Hediyelik -->
+    <div class="reveal reveal-d5">
+      <a href="https://makedongurme.com/urun-kategori/hediyelik/" class="cat-card card-lift group rounded-3xl overflow-hidden bg-white shadow-xl relative aspect-[3/4] block">
+        <div class="cat-img-wrap absolute inset-0">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/hediyelik2-kategori-makedongurme.jpg"
+               onerror="this.src='https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&q=80'"
+               class="w-full h-full object-cover object-center" alt="Hediyelik" loading="lazy">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5">
+          <span class="font-display text-white font-bold text-lg leading-tight block group-hover:text-accent transition-colors text-shadow-md">Hediyelik</span>
+          <span class="text-white text-xs mt-1 block font-medium group-hover:text-white transition-colors text-shadow-sm">Keşfet →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Extra category pills -->
+  <div class="flex flex-wrap gap-2 mt-6 justify-center">
+    <a href="https://makedongurme.com/urun-kategori/atistirmaliklar/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card hover:shadow-none">🍿 Atıştırmalıklar</a>
+    <a href="https://makedongurme.com/urun-kategori/kahve-cay/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">☕ Kahve & Çay</a>
+    <a href="https://makedongurme.com/urun-kategori/saglikli-atistirmalik/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">🥗 Sağlıklı</a>
+    <a href="https://makedongurme.com/urun-kategori/biskuvi/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">🍪 Bisküvi</a>
+    <a href="https://makedongurme.com/urun-kategori/kuruyemis-cips/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">🥜 Kuruyemiş</a>
+    <a href="https://makedongurme.com/urun-kategori/organikler/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">🌱 Organikler</a>
+    <a href="https://makedongurme.com/urun-kategori/deniz-urunleri/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">🐟 Deniz Ürünleri</a>
+    <a href="https://makedongurme.com/urun-kategori/pratikler/" class="pill-tag px-4 py-1.5 bg-white border border-brown-pale/60 rounded-full text-xs font-medium text-ink-light shadow-card">⚡ Pratikler</a>
+    <a href="http://makedongurme.com/urun-kategori/genel/" class="px-4 py-1.5 bg-brown text-white rounded-full text-xs font-semibold shadow-card hover:bg-brown-dark transition-colors">✦ Tüm Ürünler</a>
+  </div>
+</section>
+
+<!-- ===================== FEATURED PRODUCTS ===================== -->
+<section class="py-20 px-4 sm:px-6 bg-cream-dark">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-end justify-between mb-12 reveal">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="h-px w-12 bg-brown/30"></div>
+          <span class="text-xs font-semibold tracking-[0.18em] uppercase text-brown">Ürünler</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink">Öne Çıkan <em class="text-brown not-italic">Ürünler</em></h2>
+      </div>
+      <a href="https://makedongurme.com/magaza/" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-brown border border-brown/25 hover:bg-brown hover:text-white px-5 py-2.5 rounded-full transition-all duration-300">
+        Tümünü Gör
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+
+      <!-- Product 1 -->
+      <div class="prod-card group bg-cream rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-350 flex flex-col reveal reveal-d1">
+        <div class="prod-img-wrap relative bg-cream-dark rounded-t-3xl" style="aspect-ratio:1/1">
+          <a href="https://makedongurme.com/urun/ferrero-rocher-100-gr/">
+            <img src="Product Photos/Edited Photos/Mellona Bal/Website/2.png"
+                 onerror="this.src='https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&q=80'"
+                 class="w-full h-full object-cover" alt="Mellona Bal" loading="lazy">
+          </a>
+          <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide">🔥 POPÜLER</span>
+          <button class="absolute top-3 right-3 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brown-pale" title="Favorilere Ekle">
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="text-[10px] uppercase tracking-widest text-brown/60 font-semibold mb-1">Atıştırmalık</span>
+          <a href="https://makedongurme.com/urun/ferrero-rocher-100-gr/" class="font-semibold text-sm text-ink leading-snug mb-3 hover:text-brown transition-colors line-clamp-2">Mellona Bal</a>
+          <div class="mt-auto">
+            <span class="price-style text-xl text-brown block mb-3">1999₺</span>
+            <a href="/?add-to-cart=4307" class="btn-cart-add flex items-center justify-center gap-2 w-full bg-brown text-white text-xs font-semibold py-2.5 rounded-2xl">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Sepete Ekle
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="prod-card group bg-cream rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-350 flex flex-col reveal reveal-d2">
+        <div class="prod-img-wrap relative bg-cream-dark rounded-t-3xl" style="aspect-ratio:1/1">
+          <a href="https://makedongurme.com/urun/tabasco-milf-60-ml/">
+            <img src="Product Photos/Edited Photos/Nutella/Website/test-image-2.png"
+                 onerror="this.src='https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=400&q=80'"
+                 class="w-full h-full object-cover" alt="Nutella" loading="lazy">
+          </a>
+          <span class="absolute top-3 left-3 bg-sage-dark text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide">✦ YENİ</span>
+          <button class="absolute top-3 right-3 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brown-pale" title="Favorilere Ekle">
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="text-[10px] uppercase tracking-widest text-brown/60 font-semibold mb-1">Özel Sos</span>
+          <a href="https://makedongurme.com/urun/tabasco-milf-60-ml/" class="font-semibold text-sm text-ink leading-snug mb-3 hover:text-brown transition-colors line-clamp-2">Nutella</a>
+          <div class="mt-auto">
+            <span class="price-style text-xl text-brown block mb-3">269,99₺</span>
+            <a href="/?add-to-cart=4289" class="btn-cart-add flex items-center justify-center gap-2 w-full bg-brown text-white text-xs font-semibold py-2.5 rounded-2xl">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Sepete Ekle
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="prod-card group bg-cream rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-350 flex flex-col reveal reveal-d3">
+        <div class="prod-img-wrap relative bg-cream-dark rounded-t-3xl" style="aspect-ratio:1/1">
+          <a href="https://makedongurme.com/urun/hp-orjinal-sauce-450-ml/">
+            <img src="Product Photos/Edited Photos/Ovchavina/Website/8zo5LqQbQs_fFiA8sDz4LQ.png"
+                 onerror="this.src='https://images.unsplash.com/photo-1587451271814-eb8f1e4e7a48?w=400&q=80'"
+                 class="w-full h-full object-cover" alt="Ovchavina" loading="lazy">
+          </a>
+          <button class="absolute top-3 right-3 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brown-pale" title="Favorilere Ekle">
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="text-[10px] uppercase tracking-widest text-brown/60 font-semibold mb-1">Özel Sos</span>
+          <a href="https://makedongurme.com/urun/hp-orjinal-sauce-450-ml/" class="font-semibold text-sm text-ink leading-snug mb-3 hover:text-brown transition-colors line-clamp-2">Ovchavina</a>
+          <div class="mt-auto">
+            <span class="price-style text-xl text-brown block mb-3">220,00₺</span>
+            <a href="/?add-to-cart=4281" class="btn-cart-add flex items-center justify-center gap-2 w-full bg-brown text-white text-xs font-semibold py-2.5 rounded-2xl">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Sepete Ekle
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 – Stock photo -->
+      <div class="prod-card group bg-cream rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-350 flex flex-col reveal reveal-d4">
+        <div class="prod-img-wrap relative bg-cream-dark rounded-t-3xl" style="aspect-ratio:1/1">
+          <a href="https://makedongurme.com/urun-kategori/baharatlar/">
+            <img src="Product Photos/Edited Photos/Edam Peynir/Website/Edam Peynir3.png"
+                 class="w-full h-full object-cover" alt="Edam Peynir" loading="lazy">
+          </a>
+          <span class="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide">% İNDİRİM</span>
+          <button class="absolute top-3 right-3 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brown-pale" title="Favorilere Ekle">
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="text-[10px] uppercase tracking-widest text-brown/60 font-semibold mb-1">Baharatlar</span>
+          <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="font-semibold text-sm text-ink leading-snug mb-3 hover:text-brown transition-colors line-clamp-2">Edam Peynir</a>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="price-style text-xl text-brown">149,90₺</span>
+              <span class="text-[10px] text-ink-muted line-through font-medium opacity-70">189,90₺</span>
+            </div>
+            <a href="https://makedongurme.com/urun-kategori/baharatlar/" class="btn-cart-add flex items-center justify-center gap-2 w-full bg-brown text-white text-xs font-semibold py-2.5 rounded-2xl">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Sepete Ekle
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 – Stock photo -->
+      <div class="prod-card group bg-cream rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-350 flex flex-col reveal reveal-d5">
+        <div class="prod-img-wrap relative bg-cream-dark rounded-t-3xl" style="aspect-ratio:1/1">
+          <a href="https://makedongurme.com/urun-kategori/kahve-cay/">
+            <img src="Product Photos/Edited Photos/Blueberry Syrup/Website/test-image.png"
+                 class="w-full h-full object-cover" alt="Blueberry Syrup" loading="lazy">
+          </a>
+          <span class="absolute top-3 left-3 bg-sage-dark text-white text-[10px] font-bold px-2.5 py-1 rounded-full tracking-wide">✦ YENİ</span>
+          <button class="absolute top-3 right-3 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brown-pale" title="Favorilere Ekle">
+            <svg class="w-3.5 h-3.5 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="text-[10px] uppercase tracking-widest text-brown/60 font-semibold mb-1">Kahve & Çay</span>
+          <a href="https://makedongurme.com/urun-kategori/kahve-cay/" class="font-semibold text-sm text-ink leading-snug mb-3 hover:text-brown transition-colors line-clamp-2">Blueberry Syrup</a>
+          <div class="mt-auto">
+            <span class="price-style text-xl text-brown block mb-3">189,90₺</span>
+            <a href="https://makedongurme.com/urun-kategori/kahve-cay/" class="btn-cart-add flex items-center justify-center gap-2 w-full bg-brown text-white text-xs font-semibold py-2.5 rounded-2xl">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Sepete Ekle
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 reveal">
+      <a href="https://makedongurme.com/magaza/" class="inline-flex items-center gap-2 bg-brown/8 border border-brown/20 hover:bg-brown hover:text-white text-brown font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-300">
+        Tüm Ürünleri Gör
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BANNER STRIP ===================== -->
+<section class="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+  <div class="grid sm:grid-cols-2 gap-5 reveal">
+    <a href="https://makedongurme.com/urun-kategori/et-urunleri/" class="group relative rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow" style="min-height:280px">
+      <img src="Banner/Categories/Et Ürünleri.png"
+           onerror="this.src='https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&q=80'"
+           class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Et Ürünleri" loading="lazy">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent"></div>
+      <div class="relative p-8 flex flex-col justify-end h-full min-h-[280px]">
+        <span class="text-[10px] font-bold tracking-[0.18em] uppercase text-accent mb-2">Seçkin Koleksiyon</span>
+        <h3 class="font-display text-3xl font-bold text-white mb-4 leading-tight">Premium<br>Et Ürünleri</h3>
+        <span class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/40 hover:bg-brown hover:border-brown px-5 py-2.5 rounded-full transition-all w-fit backdrop-blur-sm">
+          Keşfet →
+        </span>
+      </div>
+    </a>
+    <a href="https://makedongurme.com/urun-kategori/hediyelik/" class="group relative rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow" style="min-height:280px">
+      <img src="https://makedongurme.com/wp-content/uploads/2025/03/hediyelik2-kategori-makedongurme.jpg"
+           onerror="this.src='https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80'"
+           class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Hediyelik" loading="lazy">
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/30 to-transparent"></div>
+      <div class="relative p-8 flex flex-col justify-end h-full min-h-[280px]">
+        <span class="text-[10px] font-bold tracking-[0.18em] uppercase text-sage mb-2">Özel Hediyeler</span>
+        <h3 class="font-display text-3xl font-bold text-white mb-4 leading-tight">Gurme<br>Hediye Seti</h3>
+        <span class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/40 hover:bg-sage-dark hover:border-sage-dark px-5 py-2.5 rounded-full transition-all w-fit backdrop-blur-sm">
+          Hediye Al →
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== NEDEN BİZ ===================== -->
+<section class="py-20 px-4 sm:px-6" style="background: linear-gradient(135deg, #f0ebe3 0%, #f8f5f2 60%, #eef3e8 100%)">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="h-px w-12 bg-brown/30"></div>
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-brown">Fark Yaratan Detaylar</span>
+        <div class="h-px w-12 bg-brown/30"></div>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink">Neden <em class="text-brown not-italic">Makedon Gurme?</em></h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-3xl p-7 shadow-card card-lift text-center reveal reveal-d1">
+        <div class="w-14 h-14 bg-accent-pale rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8m-9 4h4"/></svg>
+        </div>
+        <h3 class="font-semibold text-ink text-base mb-2">Hızlı Kargo</h3>
+        <p class="text-ink-muted text-sm leading-relaxed">İstanbul ve Türkiye geneline hızlı, güvenli teslimat.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 shadow-card card-lift text-center reveal reveal-d2">
+        <div class="w-14 h-14 bg-sage-pale rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-sage-dark" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-semibold text-ink text-base mb-2">Kalite Garantisi</h3>
+        <p class="text-ink-muted text-sm leading-relaxed">Her ürün titizlikle seçilir, kalite kontrolünden geçer.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 shadow-card card-lift text-center reveal reveal-d3">
+        <div class="w-14 h-14 bg-brown-pale rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-brown" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3 class="font-semibold text-ink text-base mb-2">Yemek Kartı Geçerli</h3>
+        <p class="text-ink-muted text-sm leading-relaxed">Sodexo, Ticket ve tüm yemek kartları kabul edilir.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-7 shadow-card card-lift text-center reveal reveal-d4">
+        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-emerald-600" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+        </div>
+        <h3 class="font-semibold text-ink text-base mb-2">WhatsApp Sipariş</h3>
+        <p class="text-ink-muted text-sm leading-relaxed">7/24 WhatsApp üzerinden kolayca sipariş verin.</p>
+      </div>
+    </div>
+
+    <!-- Payment logos -->
+    <div class="mt-14 bg-white rounded-3xl px-8 py-7 shadow-card reveal">
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        <span class="text-[11px] font-bold text-ink uppercase tracking-[0.2em] whitespace-nowrap">Ödeme Yöntemleri</span>
+        <div class="flex flex-wrap items-center gap-6 sm:gap-9">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/resim_2025-03-07_173458005-1024x614.png" style="height:32px" onerror="this.style.display='none'" alt="Mastercard" class="transition-transform hover:scale-110 duration-300">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/sodexo-logo-makedongurme.png" style="height:28px" onerror="this.style.display='none'" alt="Sodexo/Pluxee" class="transition-transform hover:scale-110 duration-300">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/resim_2025-03-07_173622092-e1741358194713-1024x290.png" style="height:24px" onerror="this.style.display='none'" alt="American Express" class="transition-transform hover:scale-110 duration-300">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/yemek-kartlari-makedongurme.png" style="height:24px" onerror="this.style.display='none'" alt="Yemek Kartları" class="transition-transform hover:scale-110 duration-300">
+          <img src="https://makedongurme.com/wp-content/uploads/2025/03/resim_2025-03-07_173417013-e1741358072322-1024x365.png" style="height:24px" onerror="this.style.display='none'" alt="Visa" class="transition-transform hover:scale-110 duration-300">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="py-20 px-4 sm:px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="h-px w-12 bg-brown/30"></div>
+        <span class="text-xs font-semibold tracking-[0.18em] uppercase text-brown">Müşteri Yorumları</span>
+        <div class="h-px w-12 bg-brown/30"></div>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink mb-2">Müşterilerimiz <em class="text-brown not-italic">Ne Diyor?</em></h2>
+      <div class="flex items-center justify-center gap-1 mt-3">
+        <span class="star-filled text-xl">★★★★★</span>
+        <span class="text-sm font-semibold text-ink ml-2">4.9/5</span>
+        <span class="text-sm text-ink-muted ml-1">(200+ yorum)</span>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Review 1 -->
+      <div class="bg-cream rounded-3xl p-7 shadow-card card-lift reveal reveal-d1">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="star-filled">★★★★★</span>
+        </div>
+        <p class="text-ink-light text-sm leading-relaxed mb-5 italic">"Baharatlar gerçekten muhteşem! Çok taze, koku ve tat mükemmel. Hızlı kargo ve özenli paketleme için teşekkürler."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brown flex items-center justify-center text-white font-semibold text-sm">AY</div>
+          <div>
+            <div class="font-semibold text-ink text-sm">Ayşe Y.</div>
+            <div class="text-xs text-ink-muted">İstanbul</div>
+          </div>
+          <span class="ml-auto text-[10px] bg-sage-pale text-sage-dark font-semibold px-2.5 py-1 rounded-full">✓ Doğrulanmış</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-cream rounded-3xl p-7 shadow-card card-lift reveal reveal-d2">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="star-filled">★★★★★</span>
+        </div>
+        <p class="text-ink-light text-sm leading-relaxed mb-5 italic">"HP Sauce ve Tabasco aldım, hem kalite hem fiyat çok uygun. WhatsApp'tan sipariş verdim, ertesi gün elime geçti!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sage-dark flex items-center justify-center text-white font-semibold text-sm">MK</div>
+          <div>
+            <div class="font-semibold text-ink text-sm">Mehmet K.</div>
+            <div class="text-xs text-ink-muted">Ankara</div>
+          </div>
+          <span class="ml-auto text-[10px] bg-sage-pale text-sage-dark font-semibold px-2.5 py-1 rounded-full">✓ Doğrulanmış</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-cream rounded-3xl p-7 shadow-card card-lift reveal reveal-d3">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="star-filled">★★★★★</span>
+        </div>
+        <p class="text-ink-light text-sm leading-relaxed mb-5 italic">"Hediyelik set aldım, nefis bir sunum ve içerik. Yemek kartıyla ödeme yapabilmek de ayrı bir kolaylık. Kesinlikle tavsiye ederim."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-semibold text-sm">ZD</div>
+          <div>
+            <div class="font-semibold text-ink text-sm">Zeynep D.</div>
+            <div class="text-xs text-ink-muted">İzmir</div>
+          </div>
+          <span class="ml-auto text-[10px] bg-sage-pale text-sage-dark font-semibold px-2.5 py-1 rounded-full">✓ Doğrulanmış</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="background: #2a2018; color: rgba(255,255,255,0.65)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/8">
+
+      <!-- Brand col -->
+      <div class="lg:col-span-2">
+        <div class="font-display text-2xl font-semibold text-white mb-1">Makedon <span style="color:#d4a373">Gurme</span></div>
+        <div class="text-[10px] tracking-[0.2em] uppercase mb-5" style="color:rgba(255,255,255,0.35)">Gurme Şarküteri</div>
+        <p class="text-sm leading-relaxed mb-6" style="color:rgba(255,255,255,0.45)">İstanbul Bayrampaşa'da konumlanan mağazamızda dünyadan özenle seçilmiş gurme ürünleri sunuyoruz.</p>
+        <div class="space-y-2 mb-6">
+          <a href="https://www.google.com/maps?daddr=Zafer+Cd.+138/B,+Bayrampaşa" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 text-sm hover:text-white transition-colors group">
+            <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:#d4a373" fill="currentColor" viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>
+            Zafer Cd. 138/B, Bayrampaşa/İstanbul
+          </a>
+          <a href="tel:+905012359595" class="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+            <svg class="w-4 h-4 flex-shrink-0" style="color:#d4a373" fill="currentColor" viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/></svg>
+            0501 235 95 95
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=905012359595" class="flex items-center gap-2.5 text-sm hover:text-white transition-colors" style="color:#25D366">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+            WhatsApp: 0501 235 95 95
+          </a>
+        </div>
+        <div class="flex gap-2">
+          <a href="#" class="w-9 h-9 rounded-xl flex items-center justify-center transition-colors hover:bg-white/10" style="background:rgba(255,255,255,0.07)">
+            <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=905012359595" class="w-9 h-9 rounded-xl flex items-center justify-center transition-colors hover:bg-emerald-500" style="background:rgba(255,255,255,0.07)">
+            <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h6 class="text-xs font-bold tracking-[0.16em] uppercase mb-5 pb-3 border-b border-white/8" style="color:#d4a373">Kurumsal</h6>
+        <ul class="space-y-2.5">
+          <li><a href="https://makedongurme.com/hakkimizda/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Hakkımızda</a></li>
+          <li><a href="https://makedongurme.com/mesafelisatissozlesmesi/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Banka Bilgileri</a></li>
+          <li><a href="http://makedongurme.com/iletisim" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">İletişim</a></li>
+          <li><a href="http://makedongurme.com/gizlilik" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Gizlilik Sözleşmesi</a></li>
+          <li><a href="http://makedongurme.com/mesafelisatissozlesmesi" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Mesafeli Satış</a></li>
+          <li><a href="https://makedongurme.com/teslimat-ve-iade-sartlari/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Teslimat Şartları</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h6 class="text-xs font-bold tracking-[0.16em] uppercase mb-5 pb-3 border-b border-white/8" style="color:#d4a373">Alışveriş</h6>
+        <ul class="space-y-2.5">
+          <li><a href="https://makedongurme.com/magaza/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Tüm Ürünler</a></li>
+          <li><a href="https://makedongurme.com/urun-kategori/baharatlar/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Baharatlar</a></li>
+          <li><a href="https://makedongurme.com/urun-kategori/soslar/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Özel Soslar</a></li>
+          <li><a href="https://makedongurme.com/urun-kategori/et-urunleri/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Et Ürünleri</a></li>
+          <li><a href="https://makedongurme.com/urun-kategori/peynir/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">İthal Peynir</a></li>
+          <li><a href="http://makedongurme.com/urun-kategori/genel/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">En Çok Satılanlar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h6 class="text-xs font-bold tracking-[0.16em] uppercase mb-5 pb-3 border-b border-white/8" style="color:#d4a373">Hesabım</h6>
+        <ul class="space-y-2.5">
+          <li><a href="https://makedongurme.com/hesabim/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Giriş Yap</a></li>
+          <li><a href="https://makedongurme.com/hesabim/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Kayıt Ol</a></li>
+          <li><a href="https://makedongurme.com/hesabim/orders/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Siparişlerim</a></li>
+          <li><a href="https://makedongurme.com/odeme/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Ödeme</a></li>
+          <li><a href="https://makedongurme.com/sepet/" class="text-sm hover:text-white transition-colors hover:translate-x-1 inline-block duration-200">Sepetim</a></li>
+          <li><button onclick="showWholesale()" class="text-sm hover:text-white transition-colors text-left" style="color:rgba(212,163,115,0.8)">🏭 Toptan Satış</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs" style="color:rgba(255,255,255,0.25)">© 2025 Makedon Gurme. Tüm hakları saklıdır. &nbsp;|&nbsp;
+        <a href="http://makedongurme.com/gizlilik" class="hover:text-white/60 transition-colors">Gizlilik</a> &nbsp;|&nbsp;
+        <a href="http://makedongurme.com/mesafelisatissozlesmesi" class="hover:text-white/60 transition-colors">Mesafeli Satış</a>
+      </p>
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <img src="https://makedongurme.com/wp-content/uploads/2025/03/resim_2025-03-07_173458005-1024x614.png" style="height:20px;filter:brightness(0.4)" onerror="this.style.display='none'" alt="Ödeme" class="hover:brightness-75 transition-all">
+        <img src="https://makedongurme.com/wp-content/uploads/2025/03/sodexo-logo-makedongurme.png" style="height:18px;filter:brightness(0.4)" onerror="this.style.display='none'" alt="Sodexo" class="hover:brightness-75 transition-all">
+        <img src="https://makedongurme.com/wp-content/uploads/2025/03/yemek-kartlari-makedongurme.png" style="height:16px;filter:brightness(0.4)" onerror="this.style.display='none'" alt="Yemek Kartları" class="hover:brightness-75 transition-all">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOAT ===================== -->
+<a href="https://api.whatsapp.com/send?phone=905012359595" class="wa-float fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-5 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1">
+  <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  <span class="hidden sm:inline">WhatsApp Sipariş</span>
+</a>
+
+<!-- Scroll to top -->
+<button id="scrollTop" class="sc-top hidden-btn fixed bottom-24 right-6 z-50 w-11 h-11 bg-brown hover:bg-brown-dark text-white rounded-full flex items-center justify-center shadow-soft">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- ===================== TOAST ===================== -->
+<div id="toast" class="fixed top-6 right-6 z-50 flex items-center gap-3 bg-ink text-white text-sm font-medium px-5 py-3.5 rounded-2xl shadow-float opacity-0 pointer-events-none" style="transform: translateX(20px)">
+  <svg class="w-4 h-4 text-sage flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg">Ürün sepete eklendi!</span>
+</div>
+
+<!-- =================== WHOLESALE PAGE =================== -->
+<div id="wholesalePage" class="fixed inset-0 z-[60] overflow-y-auto opacity-0 pointer-events-none" style="background: #f5f1eb">
+  <div class="min-h-screen">
+    <!-- WS Header -->
+    <div class="bg-white border-b border-brown-pale/40 px-4 py-4 flex items-center justify-between sticky top-0 z-10 shadow-sm">
+      <div class="flex items-center gap-3">
+        <div class="font-display text-xl font-semibold text-ink">Makedon <span class="text-brown">Gurme</span></div>
+        <span class="text-xs font-bold tracking-widest uppercase text-brown bg-brown-pale px-3 py-1 rounded-full">Toptan Satış</span>
+      </div>
+      <button onclick="hideWholesale()" class="flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Ana Sayfaya Dön
+      </button>
+    </div>
+
+    <!-- WS Content -->
+    <div class="max-w-lg mx-auto px-4 py-12">
+
+      <!-- Info Box (uyarı kutusu) -->
+      <div class="rounded-2xl border-2 mb-8 overflow-hidden" style="background:#fff8f0; border-color:#e8a264">
+        <div class="px-5 py-4 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#d4a373">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-base mb-1.5" style="color:#7a4a1e">Toptan Satış Paneli Hakkında</h4>
+            <p class="text-sm leading-relaxed" style="color:#9c6535">
+              Toptan satış panelimiz <strong>yalnızca toptan alım yapan</strong> kurumsal ve ticari müşterilerimize özeldir.
+              <br><br>
+              Perakende müşteriyseniz lütfen alışverişinize <a href="#" onclick="hideWholesale()" class="font-semibold underline hover:no-underline" style="color:#c07030">ana sayfa üzerinden</a> devam ediniz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auth Tabs -->
+      <div class="bg-white rounded-3xl shadow-float overflow-hidden">
+        <!-- Tab buttons -->
+        <div class="flex border-b border-brown-pale/40">
+          <button id="wsTabLogin" onclick="wsTab('login')" class="flex-1 py-4 text-sm font-semibold transition-colors text-brown border-b-2 border-brown">
+            Giriş Yap
+          </button>
+          <button id="wsTabRegister" onclick="wsTab('register')" class="flex-1 py-4 text-sm font-medium transition-colors text-ink-muted border-b-2 border-transparent hover:text-ink">
+            Başvuru Yap
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="wsLogin" class="p-8">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:#f5f1eb">
+              <svg class="w-8 h-8 text-brown" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-ink mb-1">Toptan Hesabınıza<br>Giriş Yapın</h2>
+            <p class="text-sm text-ink-muted">Kurumsal müşteri bilgilerinizle devam edin</p>
+          </div>
+
+          <form onsubmit="wsLoginSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">E-posta / Firma Kodu</label>
+              <input type="email" placeholder="firma@ornek.com" required
+                class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm text-ink placeholder-ink-muted focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Şifre</label>
+              <div class="relative">
+                <input id="wsPass" type="password" placeholder="••••••••" required
+                  class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm text-ink placeholder-ink-muted focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all pr-12">
+                <button type="button" onclick="togglePass('wsPass')" class="absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted hover:text-ink transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <label class="flex items-center gap-2 text-ink-muted cursor-pointer">
+                <input type="checkbox" class="rounded"> Beni hatırla
+              </label>
+              <a href="https://makedongurme.com/hesabim/" class="text-brown hover:text-brown-dark transition-colors font-medium">Şifremi unuttum</a>
+            </div>
+            <button type="submit" class="w-full bg-brown hover:bg-brown-dark text-white font-semibold py-3.5 rounded-2xl transition-all duration-300 hover:shadow-soft hover:-translate-y-0.5 mt-2">
+              Giriş Yap
+            </button>
+          </form>
+
+          <div class="mt-6 pt-6 border-t border-brown-pale/30 text-center">
+            <p class="text-xs text-ink-muted mb-3">Destek için ulaşın:</p>
+            <a href="https://api.whatsapp.com/send?phone=905012359595" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+              WhatsApp: 0501 235 95 95
+            </a>
+          </div>
+        </div>
+
+        <!-- Register / Application Form -->
+        <div id="wsRegister" class="p-8 hidden">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:#f5f1eb">
+              <svg class="w-8 h-8 text-brown" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h2 class="font-display text-2xl font-semibold text-ink mb-1">Toptan Satış<br>Başvurusu</h2>
+            <p class="text-sm text-ink-muted">Başvurunuz 1-2 iş günü içinde değerlendirilecektir</p>
+          </div>
+
+          <form onsubmit="wsRegisterSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Ad</label>
+                <input type="text" placeholder="Adınız" required class="w-full px-4 py-3 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Soyad</label>
+                <input type="text" placeholder="Soyadınız" required class="w-full px-4 py-3 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Firma Adı</label>
+              <input type="text" placeholder="Örnek Ticaret A.Ş." required class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Vergi No / TC Kimlik</label>
+              <input type="text" placeholder="1234567890" required class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">E-posta</label>
+              <input type="email" placeholder="firma@ornek.com" required class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Telefon</label>
+              <input type="tel" placeholder="0501 000 00 00" required class="w-full px-4 py-3.5 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">İlgilendiğiniz Ürün Grupları</label>
+              <div class="flex flex-wrap gap-2">
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Baharatlar</label>
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Soslar</label>
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Et Ürünleri</label>
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Peynir</label>
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Hediyelik</label>
+                <label class="flex items-center gap-2 text-xs text-ink-light cursor-pointer"><input type="checkbox" class="rounded"> Diğer</label>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-ink-light mb-2 uppercase tracking-wider">Ek Açıklama (İsteğe Bağlı)</label>
+              <textarea rows="3" placeholder="Firmânız ve ihtiyaçlarınız hakkında kısa bilgi verin..." class="w-full px-4 py-3 bg-cream border border-brown-pale/60 rounded-2xl text-sm focus:outline-none focus:border-brown/50 focus:ring-2 focus:ring-brown/10 transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brown hover:bg-brown-dark text-white font-semibold py-3.5 rounded-2xl transition-all duration-300 hover:shadow-soft hover:-translate-y-0.5">
+              Başvuruyu Gönder
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Back link -->
+      <div class="text-center mt-8">
+        <button onclick="hideWholesale()" class="text-sm text-ink-muted hover:text-brown transition-colors flex items-center gap-2 mx-auto">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Ana Sayfaya Dön
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+// ——— Hero Slider ———
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  let cur = 0, tmr;
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('opacity-100', 'w-5');
+    dots[cur].classList.add('opacity-40');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('opacity-100', 'w-5');
+    dots[cur].classList.remove('opacity-40');
+  }
+
+  // init dot widths via Tailwind inline
+  dots.forEach((d,i) => {
+    d.style.width  = i === 0 ? '20px' : '8px';
+    d.style.opacity = i === 0 ? '1' : '0.4';
+    d.style.background = 'white';
+    d.style.borderRadius = '4px';
+    d.style.transition = 'all .35s ease';
+    d.addEventListener('click', () => { clearInterval(tmr); goTo(parseInt(d.dataset.s)); play(); });
+  });
+
+  function play() { tmr = setInterval(() => goTo(cur + 1), 5500); }
+  document.getElementById('heroPrev').onclick = () => { clearInterval(tmr); goTo(cur-1); play(); };
+  document.getElementById('heroNext').onclick = () => { clearInterval(tmr); goTo(cur+1); play(); };
+  play();
+})();
+
+// ——— Trust strip duplicate ———
+(function() {
+  const el = document.querySelector('.trust-strip');
+  if (!el) return;
+  const inner = el.querySelector('.trust-items');
+  if (inner) {
+    el.appendChild(inner.cloneNode(true));
+    el.style.animation = 'trustScroll 40s linear infinite';
+  }
+})();
+const style = document.createElement('style');
+style.textContent = `@keyframes trustScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }`;
+document.head.appendChild(style);
+document.querySelector('.trust-strip').style.animation = 'trustScroll 40s linear infinite';
+
+// ——— Header scroll shadow ———
+window.addEventListener('scroll', () => {
+  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 20);
+  document.getElementById('scrollTop').classList.toggle('hidden-btn', window.scrollY < 300);
+});
+document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ——— Search toggle ———
+window.searchToggle = () => { document.getElementById('searchDropdown').classList.toggle('hidden'); };
+window.closeSearch  = () => { document.getElementById('searchDropdown').classList.add('hidden'); };
+document.getElementById('searchToggle').addEventListener('click', searchToggle);
+
+// ——— Mobile nav ———
+window.closeMobile = () => {
+  document.getElementById('mobileDrawer').classList.remove('translate-x-0');
+  document.getElementById('mobileDrawer').style.transform = 'translateX(-100%)';
+  document.getElementById('mobileOverlay').classList.add('hidden');
+  document.body.style.overflow = '';
+};
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+  document.getElementById('mobileDrawer').style.transform = 'translateX(0)';
+  document.getElementById('mobileOverlay').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+});
+
+// ——— Wholesale page ———
+window.showWholesale = () => {
+  const ws = document.getElementById('wholesalePage');
+  ws.style.opacity = '0';
+  ws.style.pointerEvents = 'all';
+  ws.scrollTop = 0;
+  requestAnimationFrame(() => { ws.style.opacity = '1'; });
+  document.body.style.overflow = 'hidden';
+};
+window.hideWholesale = () => {
+  const ws = document.getElementById('wholesalePage');
+  ws.style.opacity = '0';
+  setTimeout(() => { ws.style.pointerEvents = 'none'; }, 300);
+  document.body.style.overflow = '';
+};
+
+// ——— WS tabs ———
+window.wsTab = (tab) => {
+  const login    = document.getElementById('wsLogin');
+  const register = document.getElementById('wsRegister');
+  const btnL     = document.getElementById('wsTabLogin');
+  const btnR     = document.getElementById('wsTabRegister');
+  if (tab === 'login') {
+    login.classList.remove('hidden'); register.classList.add('hidden');
+    btnL.style.borderBottomColor = '#8b6f5c'; btnL.style.color = '#8b6f5c'; btnL.style.fontWeight = '600';
+    btnR.style.borderBottomColor = 'transparent'; btnR.style.color = '#9c8880'; btnR.style.fontWeight = '500';
+  } else {
+    register.classList.remove('hidden'); login.classList.add('hidden');
+    btnR.style.borderBottomColor = '#8b6f5c'; btnR.style.color = '#8b6f5c'; btnR.style.fontWeight = '600';
+    btnL.style.borderBottomColor = 'transparent'; btnL.style.color = '#9c8880'; btnL.style.fontWeight = '500';
+  }
+};
+
+// ——— WS form submits ———
+window.wsLoginSubmit = (e) => {
+  e.preventDefault();
+  showToast('Giriş bilgileriniz kontrol ediliyor...');
+  setTimeout(() => { window.location.href = 'https://makedongurme.com/hesabim/'; }, 1000);
+};
+window.wsRegisterSubmit = (e) => {
+  e.preventDefault();
+  showToast('Başvurunuz alındı! En kısa sürede dönüş yapılacaktır.');
+  setTimeout(() => hideWholesale(), 2500);
+};
+
+// ——— Toggle password ———
+window.togglePass = (id) => {
+  const inp = document.getElementById(id);
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+};
+
+// ——— Toast ———
+window.showToast = (msg, duration = 3000) => {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+};
+
+// ——— Add to cart buttons ———
+document.querySelectorAll('.btn-cart-add').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (btn.tagName === 'A' && btn.href.includes('add-to-cart')) {
+      e.preventDefault();
+      showToast('✓ Ürün sepetinize eklendi!');
+    }
+  });
+});
+
+// ——— Scroll reveal ———
+(function() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
